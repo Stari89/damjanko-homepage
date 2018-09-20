@@ -1,13 +1,31 @@
 import React, { Component } from "react";
-import Alert from "react-bootstrap/lib/Alert";
+import { BrowserRouter, Route, Link } from "react-router-dom";
+
+import { Home } from "./components/Home";
+import { Experience } from "./components/Experience";
+import { Skills } from "./components/Skills";
 
 class App extends Component {
 	render() {
 		return (
-			<div className="App">
-				<p>Damjan Kovačič</p>
-				<Alert bsSize="danger">Test</Alert>
-			</div>
+			<BrowserRouter>
+				<div>
+					<ul>
+						<li>
+							<Link to="/">Home</Link>
+						</li>
+						<li>
+							<Link to="/experience">Experience</Link>
+						</li>
+						<li>
+							<Link to="/skills">Skills</Link>
+						</li>
+					</ul>
+					<Route exact path="/" component={Home} />
+					<Route path="/experience" component={Experience} />
+					<Route path="/skills" component={Skills} />
+				</div>
+			</BrowserRouter>
 		);
 	}
 }

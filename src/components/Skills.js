@@ -1,6 +1,116 @@
 import React from "react";
 import { Container, Row, Col, Table } from "reactstrap";
 
+const document = {
+  articleElements: [
+    {
+      type: "h2",
+      content: "Skills"
+    },
+    {
+      type: "skills",
+      skillRows: [
+        {
+          stars: 1,
+          content:
+            "<strong>Beginner</strong> - at least 1 task complete in professional career"
+        },
+        {
+          stars: 2,
+          content:
+            "<strong>Intermediate</strong> - help by a mentor is highly appreciated"
+        },
+        {
+          stars: 3,
+          content:
+            "<strong>Adept</strong> - can complete complex tasks independently"
+        },
+        {
+          stars: 4,
+          content:
+            "<strong>Expert</strong> - understands advanced concepts, shows proficiency and superior skill level"
+        }
+      ]
+    },
+    {
+      type: "h4",
+      content: "Programming and scripting languages"
+    },
+    {
+      type: "skills",
+      skillRows: [
+        { stars: 4, content: "C#" },
+        { stars: 3, content: "PHP" },
+        { stars: 3, content: "Javascript" },
+        { stars: 2, content: "Typescript" },
+        { stars: 2, content: "Java" },
+        { stars: 1, content: "Python" },
+        { stars: 1, content: "C++" }
+      ]
+    },
+    {
+      type: "h4",
+      content: "Web development"
+    },
+    {
+      type: "skills",
+      skillRows: [
+        { stars: 4, content: "ASP .NET Web-Forms" },
+        { stars: 2, content: "ASP .NET MVC" },
+        { stars: 2, content: "Angular" },
+        { stars: 2, content: "React.js" },
+        { stars: 1, content: "Node.js" },
+        { stars: 3, content: "MS SQL" },
+        { stars: 2, content: "MySQL" },
+        { stars: 1, content: "MongoDB" },
+        { stars: 4, content: "HTML" },
+        { stars: 3, content: "Bootstrap" },
+        { stars: 3, content: "CSS" },
+        { stars: 2, content: "Ajax" },
+        { stars: 2, content: "Umbraco" },
+        { stars: 1, content: "Magento" },
+        { stars: 2, content: "Joomla" }
+      ]
+    },
+    {
+      type: "h4",
+      content: "Mobile development"
+    },
+    {
+      type: "skills",
+      skillRows: [
+        { stars: 3, content: "Windows Store Apps" },
+        { stars: 1, content: "Android" }
+      ]
+    },
+    {
+      type: "h4",
+      content: "Development related"
+    },
+    {
+      type: "skills",
+      skillRows: [
+        { stars: 3, content: "Git" },
+        { stars: 3, content: "SourceTree" },
+        { stars: 3, content: "Microsoft Visual Studio" },
+        { stars: 3, content: "Visual Studio Code" },
+        { stars: 2, content: "Sublime Text" },
+        { stars: 1, content: "Unity" },
+        { stars: 1, content: "Marmalade" },
+        { stars: 3, content: "Jenkins" },
+        { stars: 3, content: "Powershell" },
+        { stars: 2, content: "Linux terminal" },
+        { stars: 2, content: "LAMP stack" },
+        { stars: 2, content: "MEAN stack" }
+      ]
+    },
+    {
+      type: "h3",
+      content: "Languages"
+    }
+  ]
+};
+
 export const Skills = () => {
   return (
     <Container>

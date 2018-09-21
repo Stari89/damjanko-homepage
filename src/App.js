@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
-import { Alert } from "reactstrap";
 
 import { Home } from "./components/Home";
 import { Experience } from "./components/Experience";
@@ -11,7 +10,6 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Alert>Reactstrap and bootstrap v4 are installed</Alert>
           <ul>
             <li>
               <Link to="/">Home</Link>

@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Experience } from "./components/Experience";
 import { Skills } from "./components/Skills";
-import { Navigation } from "./components/Navigation";
+import { Navigation } from "./components/Navigation/Navigation";
 
 class App extends Component {
 	render() {

@@ -1,340 +1,314 @@
 import React from "react";
-import { Container, Row, Col, Table } from "reactstrap";
+import { Container, Row } from "reactstrap";
+import { Skill } from "./Skill/Skill";
 
-const document = {
-  articleElements: [
-    {
-      type: "h2",
-      content: "Skills"
-    },
-    {
-      type: "skills",
-      skillRows: [
-        {
-          stars: 1,
-          content:
-            "<strong>Beginner</strong> - at least 1 task complete in professional career"
-        },
-        {
-          stars: 2,
-          content:
-            "<strong>Intermediate</strong> - help by a mentor is highly appreciated"
-        },
-        {
-          stars: 3,
-          content:
-            "<strong>Adept</strong> - can complete complex tasks independently"
-        },
-        {
-          stars: 4,
-          content:
-            "<strong>Expert</strong> - understands advanced concepts, shows proficiency and superior skill level"
-        }
-      ]
-    },
-    {
-      type: "h4",
-      content: "Programming and scripting languages"
-    },
-    {
-      type: "skills",
-      skillRows: [
-        { stars: 4, content: "C#" },
-        { stars: 3, content: "PHP" },
-        { stars: 3, content: "Javascript" },
-        { stars: 2, content: "Typescript" },
-        { stars: 2, content: "Java" },
-        { stars: 1, content: "Python" },
-        { stars: 1, content: "C++" }
-      ]
-    },
-    {
-      type: "h4",
-      content: "Web development"
-    },
-    {
-      type: "skills",
-      skillRows: [
-        { stars: 4, content: "ASP .NET Web-Forms" },
-        { stars: 2, content: "ASP .NET MVC" },
-        { stars: 2, content: "Angular" },
-        { stars: 2, content: "React.js" },
-        { stars: 1, content: "Node.js" },
-        { stars: 3, content: "MS SQL" },
-        { stars: 2, content: "MySQL" },
-        { stars: 1, content: "MongoDB" },
-        { stars: 4, content: "HTML" },
-        { stars: 3, content: "Bootstrap" },
-        { stars: 3, content: "CSS" },
-        { stars: 2, content: "Ajax" },
-        { stars: 2, content: "Umbraco" },
-        { stars: 1, content: "Magento" },
-        { stars: 2, content: "Joomla" }
-      ]
-    },
-    {
-      type: "h4",
-      content: "Mobile development"
-    },
-    {
-      type: "skills",
-      skillRows: [
-        { stars: 3, content: "Windows Store Apps" },
-        { stars: 1, content: "Android" }
-      ]
-    },
-    {
-      type: "h4",
-      content: "Development related"
-    },
-    {
-      type: "skills",
-      skillRows: [
-        { stars: 3, content: "Git" },
-        { stars: 3, content: "SourceTree" },
-        { stars: 3, content: "Microsoft Visual Studio" },
-        { stars: 3, content: "Visual Studio Code" },
-        { stars: 2, content: "Sublime Text" },
-        { stars: 1, content: "Unity" },
-        { stars: 1, content: "Marmalade" },
-        { stars: 3, content: "Jenkins" },
-        { stars: 3, content: "Powershell" },
-        { stars: 2, content: "Linux terminal" },
-        { stars: 2, content: "LAMP stack" },
-        { stars: 2, content: "MEAN stack" }
-      ]
-    },
-    {
-      type: "h3",
-      content: "Languages"
-    }
-  ]
+const article = {
+	content: [
+		{
+			type: "h2",
+			key: "h2-skills",
+			content: "Skills"
+		},
+		{
+			type: "p",
+			key: "p-intro",
+			content:
+				"I am well-versed in full-stack of Microsoft's web technologies. Lately, I am pivoting my focus towards front-end web development (Javascript, Angular, React.js, etc.). In my professional career I've been introduced to the following technologies and tools:"
+		},
+		{
+			type: "h4",
+			key: "h4-web-development",
+			content: "Web development"
+		},
+		{
+			type: "Row",
+			key: "row-web-development",
+			content: [
+				{
+					type: "Skill",
+					key: "skill-asp-net",
+					logoSrc: "/assets/images/logo-dotnet.svg",
+					content: "ASP.NET"
+				},
+				{
+					type: "Skill",
+					key: "skill-angular",
+					logoSrc: "/assets/images/logo-angular.svg",
+					content: "Angular"
+				},
+				{
+					type: "Skill",
+					key: "skill-react",
+					logoSrc: "/assets/images/logo-react.svg",
+					content: "React.js"
+				},
+				{
+					type: "Skill",
+					key: "skill-nodejs",
+					logoSrc: "/assets/images/logo-nodejs.svg",
+					content: "Node.js"
+				},
+				{
+					type: "Skill",
+					key: "skill-mssql",
+					logoSrc: "/assets/images/logo-mssql.svg",
+					content: "MS SQL"
+				},
+				{
+					type: "Skill",
+					key: "skill-mysql",
+					logoSrc: "/assets/images/logo-mysql.svg",
+					content: "MySQL"
+				},
+				{
+					type: "Skill",
+					key: "skill-mongodb",
+					logoSrc: "/assets/images/logo-mongodb.svg",
+					content: "MongoDB"
+				},
+				{
+					type: "Skill",
+					key: "skill-html5",
+					logoSrc: "/assets/images/logo-html5.svg",
+					content: "HTML"
+				},
+				{
+					type: "Skill",
+					key: "skill-bootstrap",
+					logoSrc: "/assets/images/logo-bootstrap.svg",
+					content: "Bootstrap"
+				},
+				{
+					type: "Skill",
+					key: "skill-css3",
+					logoSrc: "/assets/images/logo-css3.svg",
+					content: "CSS"
+				},
+				{
+					type: "Skill",
+					key: "skill-ajax",
+					logoSrc: "/assets/images/logo-ajax.svg",
+					content: "Ajax"
+				},
+				{
+					type: "Skill",
+					key: "skill-umbraco",
+					logoSrc: "/assets/images/logo-umbraco.svg",
+					content: "Umbraco"
+				},
+				{
+					type: "Skill",
+					key: "skill-magento",
+					logoSrc: "/assets/images/logo-magento.svg",
+					content: "Magento"
+				},
+				{
+					type: "Skill",
+					key: "skill-joomla",
+					logoSrc: "/assets/images/logo-joomla.svg",
+					content: "Joomla"
+				}
+			]
+		},
+		{
+			type: "h4",
+			key: "h4-mobile-development",
+			content: "Mobile development"
+		},
+		{
+			type: "Row",
+			key: "row-mobile-development",
+			content: [
+				{
+					type: "Skill",
+					key: "skill-windows-store-apps",
+					logoSrc: "/assets/images/logo-winrt.svg",
+					content: "Windows Store Apps"
+				},
+				{
+					type: "Skill",
+					key: "skill-android",
+					logoSrc: "/assets/images/logo-android.svg",
+					content: "Android"
+				}
+			]
+		},
+		{
+			type: "h4",
+			key: "h4-programming-and-scripting-languages",
+			content: "Programming and scripting languages"
+		},
+		{
+			type: "Row",
+			key: "row-programming-and-scripting-languages",
+			content: [
+				{
+					type: "Skill",
+					key: "skill-csharp",
+					logoSrc: "/assets/images/logo-csharp.svg",
+					content: "C#"
+				},
+				{
+					type: "Skill",
+					key: "skill-php",
+					logoSrc: "/assets/images/logo-php.svg",
+					content: "PHP"
+				},
+				{
+					type: "Skill",
+					key: "skill-javascript",
+					logoSrc: "/assets/images/logo-javascript.svg",
+					content: "Javascript"
+				},
+				{
+					type: "Skill",
+					key: "skill-typescript",
+					logoSrc: "/assets/images/logo-typescript.svg",
+					content: "Typescript"
+				},
+				{
+					type: "Skill",
+					key: "skill-java",
+					logoSrc: "/assets/images/logo-java.svg",
+					content: "Java"
+				},
+				{
+					type: "Skill",
+					key: "skill-python",
+					logoSrc: "/assets/images/logo-python.svg",
+					content: "Python"
+				},
+				{
+					type: "Skill",
+					key: "skill-cpp",
+					logoSrc: "/assets/images/logo-cpp.svg",
+					content: "C++"
+				}
+			]
+		},
+		{
+			type: "h4",
+			key: "h4-related",
+			content: "Related"
+		},
+		{
+			type: "Row",
+			key: "row-related",
+			content: [
+				{
+					type: "Skill",
+					key: "skill-git",
+					logoSrc: "/assets/images/logo-git.svg",
+					content: "Git"
+				},
+				{
+					type: "Skill",
+					key: "skill-sourcetree",
+					logoSrc: "/assets/images/logo-sourcetree.svg",
+					content: "SourceTree"
+				},
+				{
+					type: "Skill",
+					key: "skill-visualstudio",
+					logoSrc: "/assets/images/logo-visualstudio.svg",
+					content: "Microsoft Visual Studio"
+				},
+				{
+					type: "Skill",
+					key: "skill-visualstudiocode",
+					logoSrc: "/assets/images/logo-visualstudiocode.svg",
+					content: "Visual Studio Code"
+				},
+				{
+					type: "Skill",
+					key: "skill-sublime",
+					logoSrc: "/assets/images/logo-sublime.svg",
+					content: "Sublime Text"
+				},
+				{
+					type: "Skill",
+					key: "skill-unity",
+					logoSrc: "/assets/images/logo-unity.svg",
+					content: "Unity"
+				},
+				{
+					type: "Skill",
+					key: "skill-marmalade",
+					logoSrc: "/assets/images/logo-marmalade.svg",
+					content: "Marmalade"
+				},
+				{
+					type: "Skill",
+					key: "skill-jenkins",
+					logoSrc: "/assets/images/logo-jenkins.svg",
+					content: "Jenkins"
+				},
+				{
+					type: "Skill",
+					key: "skill-powershell",
+					logoSrc: "/assets/images/logo-powershell.svg",
+					content: "Powershell"
+				},
+				{
+					type: "Skill",
+					key: "skill-linuxterminal",
+					logoSrc: "/assets/images/logo-linuxterminal.svg",
+					content: "Linux terminal"
+				},
+				{
+					type: "Skill",
+					key: "skill-lamp",
+					logoSrc: "/assets/images/logo-lamp.svg",
+					content: "LAMP stack"
+				},
+				{
+					type: "Skill",
+					key: "skill-mean",
+					logoSrc: "/assets/images/logo-nodejs.svg",
+					content: "MEAN stack"
+				}
+			]
+		}
+	]
+};
+
+const renderContent = content => {
+	return (
+		<React.Fragment>
+			{content.map(section => {
+				if (section.type === "p") {
+					return <p key={section.key}>{section.content}</p>;
+				}
+				if (section.type === "h1") {
+					return <h1 key={section.key}>{section.content}</h1>;
+				}
+				if (section.type === "h2") {
+					return <h2 key={section.key}>{section.content}</h2>;
+				}
+				if (section.type === "h3") {
+					return <h3 key={section.key}>{section.content}</h3>;
+				}
+				if (section.type === "h4") {
+					return <h4 key={section.key}>{section.content}</h4>;
+				}
+				if (section.type === "Row") {
+					return <Row key={section.key}>{renderContent(section.content)}</Row>;
+				}
+				if (section.type === "Skill") {
+					return (
+						<Skill
+							key={section.key}
+							logoSrc={section.logoSrc}
+							content={section.content}
+						/>
+					);
+				}
+				return null;
+			})}
+		</React.Fragment>
+	);
 };
 
 export const Skills = () => {
-  return (
-    <Container>
-      <h2>Skills</h2>
-      <Container>
-        <SkillRow stars="1">
-          <strong>Beginner</strong> - at least 1 task complete in professional
-          career
-        </SkillRow>
-        <SkillRow stars="2">
-          <strong>Intermediate</strong> - help by a mentor is highly appreciated
-        </SkillRow>
-        <SkillRow stars="3">
-          <strong>Adept</strong> - can complete complex tasks independently
-        </SkillRow>
-        <SkillRow stars="4">
-          <strong>Expert</strong> - understands advanced concepts, shows
-          proficiency and superior skill level
-        </SkillRow>
-      </Container>
-      <h4>Programming and scripting languages</h4>
-      <Container>
-        <SkillRow stars="4">C#</SkillRow>
-        <SkillRow stars="3">PHP</SkillRow>
-        <SkillRow stars="3">Javascript</SkillRow>
-        <SkillRow stars="2">Typescript</SkillRow>
-        <SkillRow stars="2">Java</SkillRow>
-        <SkillRow stars="1">Python</SkillRow>
-        <SkillRow stars="1">C++</SkillRow>
-      </Container>
-      <h4>Web development</h4>
-      <Container>
-        <SkillRow stars="4">ASP .NET Web-Forms</SkillRow>
-        <SkillRow stars="2">ASP .NET MVC</SkillRow>
-        <SkillRow stars="2">Angular</SkillRow>
-        <SkillRow stars="2">React.js</SkillRow>
-        <SkillRow stars="1">Node.js</SkillRow>
-        <SkillRow stars="3">MS SQL</SkillRow>
-        <SkillRow stars="2">MySQL</SkillRow>
-        <SkillRow stars="1">MongoDB</SkillRow>
-        <SkillRow stars="4">HTML</SkillRow>
-        <SkillRow stars="3">Bootstrap</SkillRow>
-        <SkillRow stars="3">CSS</SkillRow>
-        <SkillRow stars="2">Ajax</SkillRow>
-        <SkillRow stars="2">Umbraco</SkillRow>
-        <SkillRow stars="1">Magento</SkillRow>
-        <SkillRow stars="2">Joomla</SkillRow>
-      </Container>
-      <h4>Mobile development</h4>
-      <Container>
-        <SkillRow stars="3">Windows Store Apps</SkillRow>
-        <SkillRow stars="1">Android</SkillRow>
-      </Container>
-      <h4>Development related</h4>
-      <Container>
-        <SkillRow stars="3">Git</SkillRow>
-        <SkillRow stars="3">SourceTree</SkillRow>
-        <SkillRow stars="3">Microsoft Visual Studio</SkillRow>
-        <SkillRow stars="3">Visual Studio Code</SkillRow>
-        <SkillRow stars="2">Sublime Text</SkillRow>
-        <SkillRow stars="1">Unity</SkillRow>
-        <SkillRow stars="1">Marmalade</SkillRow>
-        <SkillRow stars="3">Jenkins</SkillRow>
-        <SkillRow stars="3">Powershell</SkillRow>
-        <SkillRow stars="2">Linux terminal</SkillRow>
-        <SkillRow stars="2">LAMP stack</SkillRow>
-        <SkillRow stars="2">MEAN stack</SkillRow>
-      </Container>
-      <h3>Languages</h3>
-      <p>
-        Native language: <strong>Slovenian</strong>
-      </p>
-      <p>
-        Self-evaluated non-native languages in accordance with{" "}
-        <a
-          href="http://www.coe.int/t/dg4/linguistic/CADRE1_EN.asp"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Common European Framework of Reference for Languages
-        </a>
-        :
-      </p>
-      <Table className="table-stripped table-small">
-        <thead>
-          <tr>
-            <th scope="col" />
-            <th scope="col" colSpan="2">
-              <span>Understanding</span>
-            </th>
-            <th scope="col" colSpan="2">
-              <span>Speaking</span>
-            </th>
-            <th scope="col" rowSpan="2" className="rotate">
-              <div>
-                <span>Writing</span>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th />
-            <th className="rotate">
-              <div>
-                <span>Listening</span>
-              </div>
-            </th>
-            <th className="rotate">
-              <div>
-                <span>Reading</span>
-              </div>
-            </th>
-            <th className="rotate">
-              <div>
-                <span>Interaction</span>
-              </div>
-            </th>
-            <th className="rotate">
-              <div>
-                <span>Production</span>
-              </div>
-            </th>
-          </tr>
-          <tr>
-            <th className="rotate">
-              <div>
-                <span>English</span>
-              </div>
-            </th>
-            <td className="align-middle">C2</td>
-            <td className="align-middle">C2</td>
-            <td className="align-middle">C1</td>
-            <td className="align-middle">C1</td>
-            <td className="align-middle">C2</td>
-          </tr>
-          <tr>
-            <th className="rotate">
-              <div>
-                <span>Croatian</span>
-              </div>
-            </th>
-            <td className="align-middle">C1</td>
-            <td className="align-middle">B2</td>
-            <td className="align-middle">B2</td>
-            <td className="align-middle">B2</td>
-            <td className="align-middle">B2</td>
-          </tr>
-          <tr>
-            <th className="rotate">
-              <div>
-                <span>German</span>
-              </div>
-            </th>
-            <td className="align-middle">A2</td>
-            <td className="align-middle">A2</td>
-            <td className="align-middle">A1</td>
-            <td className="align-middle">A1</td>
-            <td className="align-middle">A1</td>
-          </tr>
-        </tbody>
-      </Table>
-      <br />
-      <h3>Other</h3>
-      <ul>
-        <li>B-category driving licence</li>
-        <li>Hobbies: LEGO, RC airplanes, bass guitar</li>
-        <li>Member of Mensa Slovenia</li>
-        <li>
-          Assessed as <strong className="text-success">GREEN</strong> on{" "}
-          <a
-            href="http://corestrengths.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            The Core SDI Experience
-          </a>{" "}
-          workshop
-        </li>
-      </ul>
-    </Container>
-  );
-};
-
-const SkillRow = props => {
-  return (
-    <Row>
-      <Col xs="2">
-        <SkillStarIndicator stars={props.stars} />
-      </Col>
-      <Col xs="10">
-        <span>{props.children}</span>
-      </Col>
-    </Row>
-  );
-};
-
-const SkillStarIndicator = props => {
-  const intermediate = props.stars > 1;
-  const adept = props.stars > 2;
-  const expert = props.stars > 3;
-
-  return (
-    <Container className="px-0">
-      <Row>
-        <SkillStar on={true} />
-        <SkillStar on={intermediate} />
-        <SkillStar on={adept} />
-        <SkillStar on={expert} />
-      </Row>
-    </Container>
-  );
-};
-
-const SkillStar = props => {
-  return (
-    <img
-      className="col-3 px-0 h-25"
-      alt=""
-      src={
-        props.on
-          ? "/assets/images/ico-star-light.svg"
-          : "/assets/images/ico-star-dark.svg"
-      }
-    />
-  );
+	return <Container>{renderContent(article.content)}</Container>;
 };

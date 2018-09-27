@@ -1,13 +1,15 @@
 import React from "react";
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
+import { Navbar, Nav, NavItem, NavLink } from "reactstrap";
 import { Link } from "react-router-dom";
 
 export const Navigation = () => {
 	return (
 		<Navbar>
-			<NavbarBrand>
-				<Link to="/">DamjanKo</Link>
-			</NavbarBrand>
+			<Nav>
+				<NavItem>
+					<Link to="/">DamjanKo</Link>
+				</NavItem>
+			</Nav>
 			<Nav>
 				<NavItem>
 					<Link className="nav-link" to="/experience">

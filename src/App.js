@@ -4,30 +4,21 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Experience } from "./components/Experience";
 import { Skills } from "./components/Skills";
+import { Navigation } from "./components/Navigation";
 
 class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <div>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/experience">Experience</Link>
-            </li>
-            <li>
-              <Link to="/skills">Skills</Link>
-            </li>
-          </ul>
-          <Route exact path="/" component={Home} />
-          <Route path="/experience" component={Experience} />
-          <Route path="/skills" component={Skills} />
-        </div>
-      </BrowserRouter>
-    );
-  }
+	render() {
+		return (
+			<BrowserRouter>
+				<div>
+					<Navigation />
+					<Route exact path="/" component={Home} />
+					<Route path="/experience" component={Experience} />
+					<Route path="/skills" component={Skills} />
+				</div>
+			</BrowserRouter>
+		);
+	}
 }
 
 export default App;

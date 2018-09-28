@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Badge } from "reactstrap";
+import { Article } from "./../Article";
 import "./Experience.css";
 
 const article = {
@@ -332,21 +333,6 @@ const renderContent = content => {
   return (
     <React.Fragment>
       {content.map(section => {
-        if (section.type === "p") {
-          return <p key={section.key}>{section.content}</p>;
-        }
-        if (section.type === "h1") {
-          return <h1 key={section.key}>{section.content}</h1>;
-        }
-        if (section.type === "h2") {
-          return <h2 key={section.key}>{section.content}</h2>;
-        }
-        if (section.type === "h3") {
-          return <h3 key={section.key}>{section.content}</h3>;
-        }
-        if (section.type === "h4") {
-          return <h4 key={section.key}>{section.content}</h4>;
-        }
         if (section.type === "Row") {
           return <Row key={section.key}>{renderContent(section.content)}</Row>;
         }
@@ -366,7 +352,7 @@ const renderContent = content => {
         if (section.type === "EmploymentTag") {
           return <EmploymentTag key={section.key} content={section.content} />;
         }
-        return null;
+        return <Article key={section.key} section={section} />;
       })}
     </React.Fragment>
   );

@@ -1,0 +1,29 @@
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  .employment {
+    border-left: 1px solid #dee2e6 !important;
+  }
+  .employment::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 8px;
+    left: -3px;
+    width: 0;
+    height: 0;
+    border: 3px solid #f7c351;
+    border-radius: 3px;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+}

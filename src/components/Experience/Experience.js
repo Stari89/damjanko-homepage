@@ -2,97 +2,378 @@ import React from "react";
 import { Container, Row, Col, Badge } from "reactstrap";
 import "./Experience.css";
 
-export const Experience = () => {
+const article = {
+  content: [
+    {
+      type: "h2",
+      key: "h2-experience",
+      content: "Experience"
+    },
+    {
+      type: "EmploymentPanel",
+      key: "employment-panel-agitavit",
+      startedDate: "August 2017",
+      companyName: "Agitavit Solutions d.o.o.",
+      companyPosition: "Software developer",
+      companyLogoSrc: "/assets/images/logo-agitavit.png",
+      content: [
+        {
+          type: "EmploymentTag",
+          key: "tag-csharp",
+          content: "C#"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-web-forms",
+          content: "ASP .NET Web Forms"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-mvc",
+          content: "ASP .NET MVC"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-mssql",
+          content: "MS SQL"
+        },
+
+        {
+          type: "EmploymentTag",
+          key: "tag-javascript",
+          content: "Javascript"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-visual-studio",
+          content: "Microsoft Visual Studio"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-tfs",
+          content: "Microsoft TFS"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-ajax",
+          content: "Ajax"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-html",
+          content: "HTML"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-css",
+          content: "CSS"
+        }
+      ]
+    },
+    {
+      type: "EmploymentPanel",
+      key: "employment-panel-5ka",
+      startedDate: "October 2016",
+      companyName: "5ka digitalni svet (Aljoša Motore s.p.)",
+      companyPosition: "Software developer",
+      companyLogoSrc: "/assets/images/logo-5ka.png",
+      content: [
+        {
+          type: "EmploymentTag",
+          key: "tag-PHP",
+          content: "PHP"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-MySQL",
+          content: "MySQL"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-HTML",
+          content: "HTML"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-css",
+          content: "CSS"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Ajax",
+          content: "Ajax"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Magento",
+          content: "Magento"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Joomla",
+          content: "Joomla"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Git",
+          content: "Git"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Linux Terminal",
+          content: "Linux Terminal"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Apache",
+          content: "Apache"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Sublime Text",
+          content: "Sublime Text"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Photoshop",
+          content: "Photoshop"
+        }
+      ]
+    },
+    {
+      type: "EmploymentPanel",
+      key: "employment-panel-outfit7",
+      startedDate: "October 2014",
+      companyName: "Ekipa2 d.o.o. (Outfit7 subsidiary)",
+      companyPosition: "Software Architect",
+      companyLogoSrc: "/assets/images/logo-outfit7.png",
+      content: [
+        {
+          type: "EmploymentTag",
+          key: "tag-Talking Tom",
+          content: "Talking Tom"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-csharp",
+          content: "C#"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Windows Store Apps",
+          content: "Windows Store Apps"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Windows Phone",
+          content: "Windows Phone"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Unity",
+          content: "Unity"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Marmalade",
+          content: "Marmalade"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Jenkins",
+          content: "Jenkins"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Powershell",
+          content: "Powershell"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Microsoft Visual Studio",
+          content: "Microsoft Visual Studio"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Git",
+          content: "Git"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-SourceTree",
+          content: "SourceTree"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Jira",
+          content: "Jira"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Review Board",
+          content: "Review Board"
+        }
+      ]
+    },
+    {
+      type: "EmploymentPanel",
+      key: "employment-panel-net-informatika",
+      startedDate: "December 2012",
+      companyName: "NET Informatika d.o.o.",
+      companyPosition: "Programmer / developer .NET C#",
+      companyLogoSrc: "/assets/images/logo-net-informatika.png",
+      content: [
+        {
+          type: "EmploymentTag",
+          key: "tag-csharp",
+          content: "C#"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-ASP .NET Web Forms",
+          content: "ASP .NET Web Forms"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-HTML",
+          content: "HTML"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-CSS",
+          content: "CSS"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Jira",
+          content: "Jira"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Javascript",
+          content: "Javascript"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Ajax",
+          content: "Ajax"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Windows Forms",
+          content: "Windows Forms"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-MS SQL",
+          content: "MS SQL"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Umbraco",
+          content: "Umbraco"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Windows Store Apps",
+          content: "Windows Store Apps"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Android",
+          content: "Android"
+        }
+      ]
+    },
+    {
+      type: "EmploymentPanel",
+      key: "employment-panel-italia",
+      startedDate: "July 2010",
+      companyName: "Restaurant and pizzeria LaItalia d.o.o.",
+      companyPosition: "Delivery driver (student)",
+      companyLogoSrc: "/assets/images/logo-italia.png",
+      content: [
+        {
+          type: "EmploymentTag",
+          key: "tag-Food delivery",
+          content: "Food delivery"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-PHP",
+          content: "PHP"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-MySQL",
+          content: "MySQL"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-CSS",
+          content: "CSS"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-HTML",
+          content: "HTML"
+        },
+        {
+          type: "EmploymentTag",
+          key: "tag-Apache",
+          content: "Apache"
+        }
+      ]
+    }
+  ]
+};
+
+const renderContent = content => {
   return (
-    <Container>
-      <h2>Experience</h2>
-      <EmploymentPanel
-        startedDate="August 2017"
-        companyName="Agitavit Solutions d.o.o."
-        companyPosition="Software developer"
-        companyLogoSrc="/assets/images/logo-agitavit.png"
-      >
-        <EmploymentTag name="C#" />
-        <EmploymentTag name="ASP .NET Web Forms" />
-        <EmploymentTag name="ASP .NET MVC" />
-        <EmploymentTag name="MS SQL" />
-        <EmploymentTag name="Javascript" />
-        <EmploymentTag name="Microsoft Visual Studio" />
-        <EmploymentTag name="Microsoft TFS" />
-        <EmploymentTag name="Ajax" />
-        <EmploymentTag name="HTML" />
-        <EmploymentTag name="CSS" />
-      </EmploymentPanel>
-      <EmploymentPanel
-        startedDate="October 2016"
-        companyName="5ka digitalni svet (Aljoša Motore s.p.)"
-        companyPosition="Software developer"
-        companyLogoSrc="/assets/images/logo-5ka.png"
-      >
-        <EmploymentTag name="PHP" />
-        <EmploymentTag name="MySQL" />
-        <EmploymentTag name="HTML" />
-        <EmploymentTag name="CSS" />
-        <EmploymentTag name="Ajax" />
-        <EmploymentTag name="Magento" />
-        <EmploymentTag name="Joomla" />
-        <EmploymentTag name="Git" />
-        <EmploymentTag name="Linux Terminal" />
-        <EmploymentTag name="Apache" />
-        <EmploymentTag name="Sublime Text" />
-        <EmploymentTag name="Photoshop" />
-      </EmploymentPanel>
-      <EmploymentPanel
-        startedDate="October 2014"
-        companyName="Ekipa2 d.o.o. (Outfit7 subsidiary)"
-        companyPosition="Software Architect"
-        companyLogoSrc="/assets/images/logo-outfit7.png"
-      >
-        <EmploymentTag name="Talking Tom" />
-        <EmploymentTag name="C#" />
-        <EmploymentTag name="Windows Store Apps" />
-        <EmploymentTag name="Windows Phone" />
-        <EmploymentTag name="Unity" />
-        <EmploymentTag name="Marmalade" />
-        <EmploymentTag name="Jenkins" />
-        <EmploymentTag name="Powershell" />
-        <EmploymentTag name="Microsoft Visual Studio" />
-        <EmploymentTag name="Git" />
-        <EmploymentTag name="SourceTree" />
-        <EmploymentTag name="Jira" />
-        <EmploymentTag name="Review Board" />
-      </EmploymentPanel>
-      <EmploymentPanel
-        startedDate="December 2012"
-        companyName="NET Informatika d.o.o."
-        companyPosition="Programmer / developer .NET C#"
-        companyLogoSrc="/assets/images/logo-net-informatika.png"
-      >
-        <EmploymentTag name="C#" />
-        <EmploymentTag name="ASP .NET Web Forms" />
-        <EmploymentTag name="HTML" />
-        <EmploymentTag name="CSS" />
-        <EmploymentTag name="Javascript" />
-        <EmploymentTag name="Ajax" />
-        <EmploymentTag name="Windows Forms" />
-        <EmploymentTag name="MS SQL" />
-        <EmploymentTag name="Umbraco" />
-        <EmploymentTag name="Windows Store Apps" />
-        <EmploymentTag name="Android" />
-      </EmploymentPanel>
-      <EmploymentPanel
-        startedDate="July 2010"
-        companyName="Restaurant and pizzeria LaItalia d.o.o."
-        companyPosition="Delivery driver (student)"
-        companyLogoSrc="/assets/images/logo-italia.png"
-      >
-        <EmploymentTag name="Food delivery" />
-        <EmploymentTag name="PHP" />
-        <EmploymentTag name="MySQL" />
-        <EmploymentTag name="Apache" />
-      </EmploymentPanel>
-    </Container>
+    <React.Fragment>
+      {content.map(section => {
+        if (section.type === "p") {
+          return <p key={section.key}>{section.content}</p>;
+        }
+        if (section.type === "h1") {
+          return <h1 key={section.key}>{section.content}</h1>;
+        }
+        if (section.type === "h2") {
+          return <h2 key={section.key}>{section.content}</h2>;
+        }
+        if (section.type === "h3") {
+          return <h3 key={section.key}>{section.content}</h3>;
+        }
+        if (section.type === "h4") {
+          return <h4 key={section.key}>{section.content}</h4>;
+        }
+        if (section.type === "Row") {
+          return <Row key={section.key}>{renderContent(section.content)}</Row>;
+        }
+        if (section.type === "EmploymentPanel") {
+          return (
+            <EmploymentPanel
+              key={section.key}
+              startedDate={section.startedDate}
+              companyName={section.companyName}
+              companyPosition={section.companyPosition}
+              companyLogoSrc={section.companyLogoSrc}
+            >
+              {renderContent(section.content)}
+            </EmploymentPanel>
+          );
+        }
+        if (section.type === "EmploymentTag") {
+          return <EmploymentTag key={section.key} content={section.content} />;
+        }
+        return null;
+      })}
+    </React.Fragment>
   );
+};
+
+export const Experience = () => {
+  return <Container>{renderContent(article.content)}</Container>;
 };
 
 const EmploymentPanel = props => {
@@ -129,7 +410,7 @@ const EmploymentPanel = props => {
 const EmploymentTag = props => {
   return (
     <Badge color="info" className="mr-1">
-      {props.name}
+      {props.content}
     </Badge>
   );
 };

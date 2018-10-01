@@ -1,3 +1,44 @@
+.skill {
+	transition: all 100ms ease-in-out;
+}
+
+.skill.popout {
+	background-color: white;
+	transform: scale(1.5);
+	z-index: 10;
+}
+
+.skill::after {
+	content: "";
+	transition: all 200ms ease-in-out;
+	width: 0;
+	height: 5px;
+	bottom: 3%;
+	margin: 0 5%;
+	left: 0;
+	position: absolute;
+}
+
+.skill.skill-25.popout::after {
+	background-color: #95bf74;
+	width: 22.5%;
+}
+
+.skill.skill-50.popout::after {
+	background-color: #98d2eb;
+	width: 45%;
+}
+
+.skill.skill-75.popout::after {
+	background-color: #c29de7;
+	width: 67.5%;
+}
+
+.skill.skill-100.popout::after {
+	background-color: #f4bc33;
+	width: 90%;
+}
+
 .skill-image {
 	position: relative;
 	overflow: hidden;

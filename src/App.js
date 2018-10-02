@@ -6,16 +6,28 @@ import { Home } from "./components/Home";
 import { Experience } from "./components/Experience/Experience";
 import { Skills } from "./components/Skills";
 import { Navigation } from "./components/Navigation/Navigation";
+import { Footer } from "./components/Footer";
 
 class App extends Component {
 	render() {
 		return (
 			<BrowserRouter>
 				<React.Fragment>
-					<Navigation />
-					<Home />
-					<Experience />
-					<Skills />
+					<header>
+						<Navigation />
+					</header>
+					<section className="page-section" id="home">
+						<Home />
+					</section>
+					<section className="page-section" id="experience">
+						<Experience />
+					</section>
+					<section className="page-section" id="skills">
+						<Skills />
+					</section>
+					<footer className="bg-dark text-light">
+						<Footer />
+					</footer>
 				</React.Fragment>
 			</BrowserRouter>
 		);

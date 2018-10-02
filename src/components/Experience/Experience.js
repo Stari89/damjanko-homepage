@@ -34,11 +34,7 @@ const renderContent = content => {
 };
 
 export const Experience = () => {
-	return (
-		<Container id="experience" className="page-section">
-			{renderContent(data.experience.content)}
-		</Container>
-	);
+	return <Container>{renderContent(data.experience.content)}</Container>;
 };
 
 const EmploymentPanel = props => {

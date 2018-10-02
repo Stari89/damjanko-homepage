@@ -3,7 +3,7 @@ import { Container } from "reactstrap";
 
 export const Home = () => {
 	return (
-		<Container id="home" className="page-section">
+		<Container>
 			<h2>Home</h2>
 		</Container>
 	);

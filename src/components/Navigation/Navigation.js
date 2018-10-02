@@ -9,6 +9,7 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
+import ReactGA from "react-ga";
 import "./Navigation.css";
 
 export class Navigation extends React.Component {
@@ -23,10 +24,42 @@ export class Navigation extends React.Component {
 		this.setState({ collapsed: !this.state.collapsed });
 	}
 
+	handleLogoClick() {
+		ReactGA.event({ category: "nav", action: "logo-click" });
+	}
+
+	handleIntroductionClick() {
+		ReactGA.event({ category: "nav", action: "introduction-click" });
+	}
+
+	handleExperienceClick() {
+		ReactGA.event({ category: "nav", action: "experience-click" });
+	}
+
+	handleSkillsClick() {
+		ReactGA.event({ category: "nav", action: "skills-click" });
+	}
+
+	handleEmailClick() {
+		ReactGA.event({ category: "nav", action: "email-click" });
+	}
+
+	handleLinkedInClick() {
+		ReactGA.event({ category: "nav", action: "linkedin-click" });
+	}
+
+	handleFacebookClick() {
+		ReactGA.event({ category: "nav", action: "facebook-click" });
+	}
+
+	handleGitHubClick() {
+		ReactGA.event({ category: "nav", action: "github-click" });
+	}
+
 	render() {
 		return (
 			<Navbar color="light" light expand="md" className="fixed-top">
-				<Link to="/" className="navbar-brand">
+				<Link to="/" className="navbar-brand" onClick={this.handleLogoClick}>
 					<img
 						src="/assets/images/logo.svg"
 						className="img-fluid logo mr-3"
@@ -43,6 +76,7 @@ export class Navigation extends React.Component {
 								activeClassName="active"
 								to="/#introduction"
 								exact
+								onClick={this.handleIntroductionClick}
 							>
 								Introduction
 							</NavHashLink>
@@ -52,6 +86,7 @@ export class Navigation extends React.Component {
 								className="nav-link"
 								activeClassName="active"
 								to="/#experience"
+								onClick={this.handleExperienceClick}
 							>
 								Experience
 							</NavHashLink>
@@ -61,6 +96,7 @@ export class Navigation extends React.Component {
 								className="nav-link"
 								activeClassName="active"
 								to="/#skills"
+								onClick={this.handleSkillsClick}
 							>
 								Skills
 							</NavHashLink>
@@ -68,7 +104,11 @@ export class Navigation extends React.Component {
 					</Nav>
 					<Nav className="ml-auto" navbar>
 						<NavItem>
-							<NavLink href="mailto:letecnez@gmail.com" className="p-1">
+							<NavLink
+								href="mailto:letecnez@gmail.com"
+								className="p-1"
+								onClick={this.handleEmailClick}
+							>
 								<img src="/assets/images/ico-mail.svg" alt="E-mail" />
 							</NavLink>
 						</NavItem>
@@ -77,6 +117,7 @@ export class Navigation extends React.Component {
 								href="https://www.linkedin.com/in/damjanko/"
 								className="p-1"
 								target="_blank"
+								onClick={this.handleLinkedInClick}
 							>
 								<img src="/assets/images/ico-linkedin.svg" alt="LinkedIn" />
 							</NavLink>
@@ -86,6 +127,7 @@ export class Navigation extends React.Component {
 								href="https://www.facebook.com/letecnez"
 								className="p-1"
 								target="_blank"
+								onClick={this.handleFacebookClick}
 							>
 								<img src="/assets/images/ico-facebook.svg" alt="Facebook" />
 							</NavLink>
@@ -95,6 +137,7 @@ export class Navigation extends React.Component {
 								href="https://github.com/Stari89"
 								className="p-1"
 								target="_blank"
+								onClick={this.handleGitHubClick}
 							>
 								<img src="/assets/images/ico-github.svg" alt="GitHub" />
 							</NavLink>

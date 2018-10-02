@@ -1,5 +1,6 @@
 import React from "react";
 import { Col } from "reactstrap";
+import ReactGA from "react-ga";
 import "./Skill.css";
 
 export class Skill extends React.Component {
@@ -13,10 +14,20 @@ export class Skill extends React.Component {
 
 	handleMouseEnter() {
 		this.setState({ mouseOver: true });
+		ReactGA.event({
+			category: "skill",
+			action: "mouse-enter",
+			label: this.props.content
+		});
 	}
 
 	handleMouseLeave() {
 		this.setState({ mouseOver: false });
+		ReactGA.event({
+			category: "skill",
+			action: "mouse-leave",
+			label: this.props.content
+		});
 	}
 
 	render() {

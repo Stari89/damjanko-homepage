@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter } from "react-router-dom";
+import ReactGA from "react-ga";
 import "./App.css";
 
 import { Home } from "./components/Home/Home";
@@ -7,6 +8,8 @@ import { Experience } from "./components/Experience/Experience";
 import { Skills } from "./components/Skills";
 import { Navigation } from "./components/Navigation/Navigation";
 import { Footer } from "./components/Footer";
+
+ReactGA.initialize("UA-12737366-3");
 
 class App extends Component {
 	render() {

@@ -27,7 +27,12 @@ export class Navigation extends React.Component {
 		return (
 			<Navbar color="light" light expand="md" className="fixed-top">
 				<Link to="/" className="navbar-brand">
-					DamjanKo
+					<img
+						src="/assets/images/logo.svg"
+						className="img-fluid logo mr-3"
+						alt="logo"
+					/>
+					DamjanKo.com
 				</Link>
 				<NavbarToggler onClick={this.toggleNavbar} />
 				<Collapse isOpen={!this.state.collapsed} navbar>
@@ -36,10 +41,10 @@ export class Navigation extends React.Component {
 							<NavHashLink
 								className="nav-link"
 								activeClassName="active"
-								to="/#home"
+								to="/#introduction"
 								exact
 							>
-								Home
+								Introduction
 							</NavHashLink>
 						</NavItem>
 						<NavItem>

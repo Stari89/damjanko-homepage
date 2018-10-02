@@ -29,8 +29,8 @@ export const Footer = props => {
 					</h3>
 					<ul className="list-unstyled">
 						<li>
-							<HashLink to="/#home" className="text-light">
-								<u>Home</u>
+							<HashLink to="/#introduction" className="text-light">
+								<u>Introduction</u>
 							</HashLink>
 						</li>
 						<li>
@@ -47,7 +47,7 @@ export const Footer = props => {
 				</Col>
 				<Col xs="6" md="3">
 					<h3>
-						<small>Contact me on</small>
+						<small>Contact me</small>
 					</h3>
 					<ul className="list-unstyled">
 						<li>

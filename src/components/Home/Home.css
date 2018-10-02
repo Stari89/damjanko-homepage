@@ -1,0 +1,7 @@
+.jumbotron-home {
+	background-image: url("/assets/images/lol-ima-server.jpg");
+	background-size: cover;
+	background-position: center;
+	border-radius: 0 !important;
+	text-shadow: 0 0 5px black;
+}

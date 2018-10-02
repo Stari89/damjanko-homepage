@@ -27,6 +27,7 @@ class App extends Component {
 					</section>
 					<footer className="bg-dark text-light">
 						<Footer />
+						<p className="text-right m-0 mx-2">v1.0.0</p>
 					</footer>
 				</React.Fragment>
 			</BrowserRouter>

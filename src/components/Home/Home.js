@@ -5,7 +5,7 @@ import "./Home.css";
 
 export const Home = () => {
 	return (
-		<Jumbotron className="jumbotron-home text-white">
+		<Jumbotron className="jumbotron-home text-white m-0">
 			<Container>
 				<Row className="justify-content-center">
 					<Col xs="4" md="3" lg="2">

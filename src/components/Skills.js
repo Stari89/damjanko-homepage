@@ -28,5 +28,9 @@ const renderContent = content => {
 };
 
 export const Skills = () => {
-	return <Container>{renderContent(data.skills.content)}</Container>;
+	return (
+		<Container id="skills" className="page-section">
+			{renderContent(data.skills.content)}
+		</Container>
+	);
 };

@@ -385,14 +385,14 @@
 						"key": "skill-mssql",
 						"logoSrc": "/assets/images/logo-mssql.svg",
 						"content": "MS SQL",
-						"skillValue": "50"
+						"skillValue": "75"
 					},
 					{
 						"type": "Skill",
 						"key": "skill-mysql",
 						"logoSrc": "/assets/images/logo-mysql.svg",
 						"content": "MySQL",
-						"skillValue": "75"
+						"skillValue": "50"
 					},
 					{
 						"type": "Skill",

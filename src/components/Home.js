@@ -1,5 +1,10 @@
 import React from "react";
+import { Container } from "reactstrap";
 
 export const Home = () => {
-	return <h2>Home</h2>;
+	return (
+		<Container id="home" className="page-section">
+			<h2>Home</h2>
+		</Container>
+	);
 };

@@ -562,6 +562,13 @@
 					},
 					{
 						"type": "Skill",
+						"key": "skill-jira",
+						"logoSrc": "/assets/images/logo-jira.svg",
+						"content": "Jira",
+						"skillValue": "50"
+					},
+					{
+						"type": "Skill",
 						"key": "skill-visualstudio",
 						"logoSrc": "/assets/images/logo-visualstudio.svg",
 						"content": "Microsoft Visual Studio",

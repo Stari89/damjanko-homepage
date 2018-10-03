@@ -119,9 +119,8 @@ export class Footer extends React.Component {
 									className="text-light"
 									target="_blank"
 									rel="noopener noreferrer"
-									onClick={this.handle}
+									onClick={this.handleFacebookClick}
 								>
-									handleFacebookClick
 									<u>Facebook</u>
 								</a>
 							</li>

@@ -23,10 +23,10 @@ export const Home = () => {
 						</h1>
 						<p>
 							<span>
-								Since my introduction to programming in school I realized, I
-								want to do this for the rest of my life. Since then, I have
-								broadened my knowledge and experience to a wide spectrum of
-								technologies (see{" "}
+								Since my introduction to programming in school I realized I want
+								to do this for the rest of my life. Since then, I have broadened
+								my knowledge and experience to a wide spectrum of technologies
+								(see{" "}
 								<HashLink to="/#skills" className="text-light">
 									<u>Skills</u>
 								</HashLink>

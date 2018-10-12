@@ -604,6 +604,13 @@
 					},
 					{
 						"type": "Skill",
+						"key": "skill-heroku",
+						"logoSrc": "/assets/images/logo-heroku.svg",
+						"content": "Heroku",
+						"skillValue": "25"
+					},
+					{
+						"type": "Skill",
 						"key": "skill-jenkins",
 						"logoSrc": "/assets/images/logo-jenkins.svg",
 						"content": "Jenkins",

@@ -8,6 +8,76 @@
 			},
 			{
 				"type": "EmploymentPanel",
+				"key": "employment-panel-ineor",
+				"startedDate": "November 2018",
+				"companyName": "INEOR Information Technology and Services",
+				"companyPosition": "Software developer",
+				"companyLogoSrc": "/assets/images/logo-ineor.png",
+				"content": [
+					{
+						"type": "EmploymentTag",
+						"key": "tag-csharp",
+						"content": "C#"
+					},
+					{
+						"type": "EmploymentTag",
+						"key": "tag-mvc",
+						"content": "ASP .NET MVC"
+					},
+					{
+						"type": "EmploymentTag",
+						"key": "tag-dot-net-core",
+						"content": ".NET Core"
+					},
+					{
+						"type": "EmploymentTag",
+						"key": "tag-mssql",
+						"content": "MS SQL"
+					},
+					{
+						"type": "EmploymentTag",
+						"key": "tag-javascript",
+						"content": "Javascript"
+					},
+					{
+						"type": "EmploymentTag",
+						"key": "tag-visual-studio",
+						"content": "Microsoft Visual Studio"
+					},
+					{
+						"type": "EmploymentTag",
+						"key": "tag-ajax",
+						"content": "Ajax"
+					},
+					{
+						"type": "EmploymentTag",
+						"key": "tag-html",
+						"content": "HTML"
+					},
+					{
+						"type": "EmploymentTag",
+						"key": "tag-css",
+						"content": "CSS"
+					},
+					{
+						"type": "EmploymentTag",
+						"key": "tag-Git",
+						"content": "Git"
+					},
+					{
+						"type": "EmploymentTag",
+						"key": "tag-scrum",
+						"content": "SCRUM"
+					},
+					{
+						"type": "EmploymentTag",
+						"key": "tag-jira",
+						"content": "Jira"
+					}
+				]
+			},
+			{
+				"type": "EmploymentPanel",
 				"key": "employment-panel-agitavit",
 				"startedDate": "August 2017",
 				"companyName": "Agitavit Solutions d.o.o.",

@@ -1,721 +1,726 @@
 {
-	"experience": {
-		"content": [
-			{
-				"type": "h2",
-				"key": "h2-experience",
-				"content": "Experience"
-			},
-			{
-				"type": "EmploymentPanel",
-				"key": "employment-panel-ineor",
-				"startedDate": "November 2018",
-				"companyName": "INEOR Information Technology and Services",
-				"companyPosition": "Software developer",
-				"companyLogoSrc": "/assets/images/logo-ineor.png",
-				"content": [
-					{
-						"type": "EmploymentTag",
-						"key": "tag-csharp",
-						"content": "C#"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-mvc",
-						"content": "ASP .NET MVC"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-dot-net-core",
-						"content": ".NET Core"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-mssql",
-						"content": "MS SQL"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-javascript",
-						"content": "Javascript"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-visual-studio",
-						"content": "Microsoft Visual Studio"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-ajax",
-						"content": "Ajax"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-html",
-						"content": "HTML"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-css",
-						"content": "CSS"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Git",
-						"content": "Git"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-scrum",
-						"content": "SCRUM"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-jira",
-						"content": "Jira"
-					}
-				]
-			},
-			{
-				"type": "EmploymentPanel",
-				"key": "employment-panel-agitavit",
-				"startedDate": "August 2017",
-				"companyName": "Agitavit Solutions d.o.o.",
-				"companyPosition": "Software developer",
-				"companyLogoSrc": "/assets/images/logo-agitavit.png",
-				"content": [
-					{
-						"type": "EmploymentTag",
-						"key": "tag-csharp",
-						"content": "C#"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-web-forms",
-						"content": "ASP .NET Web Forms"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-mvc",
-						"content": "ASP .NET MVC"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-mssql",
-						"content": "MS SQL"
-					},
+    "experience": {
+        "content": [
+            {
+                "type": "h2",
+                "key": "h2-experience",
+                "content": "Experience"
+            },
+            {
+                "type": "EmploymentPanel",
+                "key": "employment-panel-ineor",
+                "startedDate": "November 2018",
+                "companyName": "INEOR Information Technology and Services",
+                "companyPosition": "Software developer",
+                "companyLogoSrc": "/assets/images/logo-ineor.png",
+                "content": [
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-angular",
+                        "content": "Angular (2+)"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-typescript",
+                        "content": "Typescript"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-javascript",
+                        "content": "Javascript"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-csharp",
+                        "content": "C#"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-mvc",
+                        "content": "ASP .NET MVC"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-dot-net-core",
+                        "content": ".NET Core"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-mssql",
+                        "content": "MS SQL"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-visual-studio",
+                        "content": "Microsoft Visual Studio"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-html",
+                        "content": "HTML"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-css",
+                        "content": "CSS"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Git",
+                        "content": "Git"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-scrum",
+                        "content": "SCRUM"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-jira",
+                        "content": "Jira"
+                    }
+                ]
+            },
+            {
+                "type": "EmploymentPanel",
+                "key": "employment-panel-agitavit",
+                "startedDate": "August 2017",
+                "companyName": "Agitavit Solutions d.o.o.",
+                "companyPosition": "Software developer",
+                "companyLogoSrc": "/assets/images/logo-agitavit.png",
+                "content": [
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-csharp",
+                        "content": "C#"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-web-forms",
+                        "content": "ASP .NET Web Forms"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-mvc",
+                        "content": "ASP .NET MVC"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-mssql",
+                        "content": "MS SQL"
+                    },
 
-					{
-						"type": "EmploymentTag",
-						"key": "tag-javascript",
-						"content": "Javascript"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-visual-studio",
-						"content": "Microsoft Visual Studio"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-tfs",
-						"content": "Microsoft TFS"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-ajax",
-						"content": "Ajax"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-html",
-						"content": "HTML"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-css",
-						"content": "CSS"
-					}
-				]
-			},
-			{
-				"type": "EmploymentPanel",
-				"key": "employment-panel-5ka",
-				"startedDate": "October 2016",
-				"companyName": "5ka digitalni svet (Aljoša Motore s.p.)",
-				"companyPosition": "Software developer",
-				"companyLogoSrc": "/assets/images/logo-5ka.png",
-				"content": [
-					{
-						"type": "EmploymentTag",
-						"key": "tag-PHP",
-						"content": "PHP"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-MySQL",
-						"content": "MySQL"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-HTML",
-						"content": "HTML"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-css",
-						"content": "CSS"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Ajax",
-						"content": "Ajax"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Magento",
-						"content": "Magento"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Joomla",
-						"content": "Joomla"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Git",
-						"content": "Git"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Linux Terminal",
-						"content": "Linux Terminal"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Apache",
-						"content": "Apache"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Sublime Text",
-						"content": "Sublime Text"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Photoshop",
-						"content": "Photoshop"
-					}
-				]
-			},
-			{
-				"type": "EmploymentPanel",
-				"key": "employment-panel-outfit7",
-				"startedDate": "October 2014",
-				"companyName": "Ekipa2 d.o.o. (Outfit7 subsidiary)",
-				"companyPosition": "Software Architect",
-				"companyLogoSrc": "/assets/images/logo-outfit7.png",
-				"content": [
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Talking Tom",
-						"content": "Talking Tom"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-csharp",
-						"content": "C#"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Windows Store Apps",
-						"content": "Windows Store Apps"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Windows Phone",
-						"content": "Windows Phone"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Unity",
-						"content": "Unity"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Marmalade",
-						"content": "Marmalade"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Jenkins",
-						"content": "Jenkins"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Powershell",
-						"content": "Powershell"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Microsoft Visual Studio",
-						"content": "Microsoft Visual Studio"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Git",
-						"content": "Git"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-SourceTree",
-						"content": "SourceTree"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Jira",
-						"content": "Jira"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Review Board",
-						"content": "Review Board"
-					}
-				]
-			},
-			{
-				"type": "EmploymentPanel",
-				"key": "employment-panel-net-informatika",
-				"startedDate": "December 2012",
-				"companyName": "NET Informatika d.o.o.",
-				"companyPosition": "Programmer / developer .NET C#",
-				"companyLogoSrc": "/assets/images/logo-net-informatika.png",
-				"content": [
-					{
-						"type": "EmploymentTag",
-						"key": "tag-csharp",
-						"content": "C#"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-ASP .NET Web Forms",
-						"content": "ASP .NET Web Forms"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-HTML",
-						"content": "HTML"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-CSS",
-						"content": "CSS"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Jira",
-						"content": "Jira"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Javascript",
-						"content": "Javascript"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Ajax",
-						"content": "Ajax"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Windows Forms",
-						"content": "Windows Forms"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-MS SQL",
-						"content": "MS SQL"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Umbraco",
-						"content": "Umbraco"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Windows Store Apps",
-						"content": "Windows Store Apps"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Android",
-						"content": "Android"
-					}
-				]
-			},
-			{
-				"type": "EmploymentPanel",
-				"key": "employment-panel-italia",
-				"startedDate": "July 2010",
-				"companyName": "Restaurant and pizzeria LaItalia d.o.o.",
-				"companyPosition": "Delivery driver (student)",
-				"companyLogoSrc": "/assets/images/logo-italia.png",
-				"content": [
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Food delivery",
-						"content": "Food delivery"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-PHP",
-						"content": "PHP"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-MySQL",
-						"content": "MySQL"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-CSS",
-						"content": "CSS"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-HTML",
-						"content": "HTML"
-					},
-					{
-						"type": "EmploymentTag",
-						"key": "tag-Apache",
-						"content": "Apache"
-					}
-				]
-			}
-		]
-	},
-	"skills": {
-		"content": [
-			{
-				"type": "h2",
-				"key": "h2-skills",
-				"content": "Skills"
-			},
-			{
-				"type": "p",
-				"key": "p-intro",
-				"content": "I am well-versed in full-stack of Microsoft's web technologies. Lately, I am pivoting my focus towards front-end web development (Javascript, Angular, React.js, etc.). In my professional career I've been introduced to the following technologies and tools:"
-			},
-			{
-				"type": "h4",
-				"key": "h4-web-development",
-				"content": "Web development"
-			},
-			{
-				"type": "Row",
-				"key": "row-web-development",
-				"content": [
-					{
-						"type": "Skill",
-						"key": "skill-asp-net",
-						"logoSrc": "/assets/images/logo-dotnet.svg",
-						"content": "ASP.NET",
-						"skillValue": "100"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-angular",
-						"logoSrc": "/assets/images/logo-angular.svg",
-						"content": "Angular",
-						"skillValue": "50"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-react",
-						"logoSrc": "/assets/images/logo-react.svg",
-						"content": "React.js",
-						"skillValue": "50"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-jquery",
-						"logoSrc": "/assets/images/logo-jquery.svg",
-						"content": "jQuery",
-						"skillValue": "25"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-nodejs",
-						"logoSrc": "/assets/images/logo-nodejs.svg",
-						"content": "Node.js",
-						"skillValue": "25"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-mssql",
-						"logoSrc": "/assets/images/logo-mssql.svg",
-						"content": "MS SQL",
-						"skillValue": "75"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-mysql",
-						"logoSrc": "/assets/images/logo-mysql.svg",
-						"content": "MySQL",
-						"skillValue": "50"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-mongodb",
-						"logoSrc": "/assets/images/logo-mongodb.svg",
-						"content": "MongoDB",
-						"skillValue": "25"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-html5",
-						"logoSrc": "/assets/images/logo-html5.svg",
-						"content": "HTML",
-						"skillValue": "100"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-bootstrap",
-						"logoSrc": "/assets/images/logo-bootstrap.svg",
-						"content": "Bootstrap",
-						"skillValue": "75"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-css3",
-						"logoSrc": "/assets/images/logo-css3.svg",
-						"content": "CSS",
-						"skillValue": "75"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-ajax",
-						"logoSrc": "/assets/images/logo-ajax.svg",
-						"content": "Ajax",
-						"skillValue": "50"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-umbraco",
-						"logoSrc": "/assets/images/logo-umbraco.svg",
-						"content": "Umbraco",
-						"skillValue": "50"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-magento",
-						"logoSrc": "/assets/images/logo-magento.svg",
-						"content": "Magento",
-						"skillValue": "25"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-joomla",
-						"logoSrc": "/assets/images/logo-joomla.svg",
-						"content": "Joomla",
-						"skillValue": "50"
-					}
-				]
-			},
-			{
-				"type": "h4",
-				"key": "h4-mobile-development",
-				"content": "Mobile development"
-			},
-			{
-				"type": "Row",
-				"key": "row-mobile-development",
-				"content": [
-					{
-						"type": "Skill",
-						"key": "skill-windows-store-apps",
-						"logoSrc": "/assets/images/logo-winrt.svg",
-						"content": "Windows Store Apps",
-						"skillValue": "75"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-android",
-						"logoSrc": "/assets/images/logo-android.svg",
-						"content": "Android",
-						"skillValue": "25"
-					}
-				]
-			},
-			{
-				"type": "h4",
-				"key": "h4-programming-and-scripting-languages",
-				"content": "Programming and scripting languages"
-			},
-			{
-				"type": "Row",
-				"key": "row-programming-and-scripting-languages",
-				"content": [
-					{
-						"type": "Skill",
-						"key": "skill-csharp",
-						"logoSrc": "/assets/images/logo-csharp.svg",
-						"content": "C#",
-						"skillValue": "100"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-php",
-						"logoSrc": "/assets/images/logo-php.svg",
-						"content": "PHP",
-						"skillValue": "75"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-javascript",
-						"logoSrc": "/assets/images/logo-javascript.svg",
-						"content": "Javascript",
-						"skillValue": "75"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-typescript",
-						"logoSrc": "/assets/images/logo-typescript.svg",
-						"content": "Typescript",
-						"skillValue": "50"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-java",
-						"logoSrc": "/assets/images/logo-java.svg",
-						"content": "Java",
-						"skillValue": "50"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-python",
-						"logoSrc": "/assets/images/logo-python.svg",
-						"content": "Python",
-						"skillValue": "25"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-cpp",
-						"logoSrc": "/assets/images/logo-cpp.svg",
-						"content": "C++",
-						"skillValue": "25"
-					}
-				]
-			},
-			{
-				"type": "h4",
-				"key": "h4-related",
-				"content": "Related"
-			},
-			{
-				"type": "Row",
-				"key": "row-related",
-				"content": [
-					{
-						"type": "Skill",
-						"key": "skill-git",
-						"logoSrc": "/assets/images/logo-git.svg",
-						"content": "Git",
-						"skillValue": "75"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-sourcetree",
-						"logoSrc": "/assets/images/logo-sourcetree.svg",
-						"content": "SourceTree",
-						"skillValue": "75"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-jira",
-						"logoSrc": "/assets/images/logo-jira.svg",
-						"content": "Jira",
-						"skillValue": "50"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-visualstudio",
-						"logoSrc": "/assets/images/logo-visualstudio.svg",
-						"content": "Microsoft Visual Studio",
-						"skillValue": "75"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-visualstudiocode",
-						"logoSrc": "/assets/images/logo-visualstudiocode.svg",
-						"content": "Visual Studio Code",
-						"skillValue": "75"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-sublime",
-						"logoSrc": "/assets/images/logo-sublime.svg",
-						"content": "Sublime Text",
-						"skillValue": "50"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-unity",
-						"logoSrc": "/assets/images/logo-unity.svg",
-						"content": "Unity",
-						"skillValue": "25"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-marmalade",
-						"logoSrc": "/assets/images/logo-marmalade.svg",
-						"content": "Marmalade",
-						"skillValue": "25"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-heroku",
-						"logoSrc": "/assets/images/logo-heroku.svg",
-						"content": "Heroku",
-						"skillValue": "25"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-jenkins",
-						"logoSrc": "/assets/images/logo-jenkins.svg",
-						"content": "Jenkins",
-						"skillValue": "75"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-powershell",
-						"logoSrc": "/assets/images/logo-powershell.svg",
-						"content": "Powershell",
-						"skillValue": "75"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-linuxterminal",
-						"logoSrc": "/assets/images/logo-linuxterminal.svg",
-						"content": "Linux terminal",
-						"skillValue": "50"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-lamp",
-						"logoSrc": "/assets/images/logo-lamp.svg",
-						"content": "LAMP stack",
-						"skillValue": "50"
-					},
-					{
-						"type": "Skill",
-						"key": "skill-mean",
-						"logoSrc": "/assets/images/logo-nodejs.svg",
-						"content": "MEAN stack",
-						"skillValue": "50"
-					}
-				]
-			}
-		]
-	}
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-javascript",
+                        "content": "Javascript"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-visual-studio",
+                        "content": "Microsoft Visual Studio"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-tfs",
+                        "content": "Microsoft TFS"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-ajax",
+                        "content": "Ajax"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-html",
+                        "content": "HTML"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-css",
+                        "content": "CSS"
+                    }
+                ]
+            },
+            {
+                "type": "EmploymentPanel",
+                "key": "employment-panel-5ka",
+                "startedDate": "October 2016",
+                "companyName": "5ka digitalni svet (Aljoša Motore s.p.)",
+                "companyPosition": "Software developer",
+                "companyLogoSrc": "/assets/images/logo-5ka.png",
+                "content": [
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-PHP",
+                        "content": "PHP"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-MySQL",
+                        "content": "MySQL"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-HTML",
+                        "content": "HTML"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-css",
+                        "content": "CSS"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Ajax",
+                        "content": "Ajax"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Magento",
+                        "content": "Magento"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Joomla",
+                        "content": "Joomla"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Git",
+                        "content": "Git"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Linux Terminal",
+                        "content": "Linux Terminal"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Apache",
+                        "content": "Apache"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Sublime Text",
+                        "content": "Sublime Text"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Photoshop",
+                        "content": "Photoshop"
+                    }
+                ]
+            },
+            {
+                "type": "EmploymentPanel",
+                "key": "employment-panel-outfit7",
+                "startedDate": "October 2014",
+                "companyName": "Ekipa2 d.o.o. (Outfit7 subsidiary)",
+                "companyPosition": "Software Architect",
+                "companyLogoSrc": "/assets/images/logo-outfit7.png",
+                "content": [
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Talking Tom",
+                        "content": "Talking Tom"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-csharp",
+                        "content": "C#"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Windows Store Apps",
+                        "content": "Windows Store Apps"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Windows Phone",
+                        "content": "Windows Phone"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Unity",
+                        "content": "Unity"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Marmalade",
+                        "content": "Marmalade"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Jenkins",
+                        "content": "Jenkins"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Powershell",
+                        "content": "Powershell"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Microsoft Visual Studio",
+                        "content": "Microsoft Visual Studio"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Git",
+                        "content": "Git"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-SourceTree",
+                        "content": "SourceTree"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Jira",
+                        "content": "Jira"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Review Board",
+                        "content": "Review Board"
+                    }
+                ]
+            },
+            {
+                "type": "EmploymentPanel",
+                "key": "employment-panel-net-informatika",
+                "startedDate": "December 2012",
+                "companyName": "NET Informatika d.o.o.",
+                "companyPosition": "Programmer / developer .NET C#",
+                "companyLogoSrc": "/assets/images/logo-net-informatika.png",
+                "content": [
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-csharp",
+                        "content": "C#"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-ASP .NET Web Forms",
+                        "content": "ASP .NET Web Forms"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-HTML",
+                        "content": "HTML"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-CSS",
+                        "content": "CSS"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Jira",
+                        "content": "Jira"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Javascript",
+                        "content": "Javascript"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Ajax",
+                        "content": "Ajax"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Windows Forms",
+                        "content": "Windows Forms"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-MS SQL",
+                        "content": "MS SQL"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Umbraco",
+                        "content": "Umbraco"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Windows Store Apps",
+                        "content": "Windows Store Apps"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Android",
+                        "content": "Android"
+                    }
+                ]
+            },
+            {
+                "type": "EmploymentPanel",
+                "key": "employment-panel-italia",
+                "startedDate": "July 2010",
+                "companyName": "Restaurant and pizzeria LaItalia d.o.o.",
+                "companyPosition": "Delivery driver (student)",
+                "companyLogoSrc": "/assets/images/logo-italia.png",
+                "content": [
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Food delivery",
+                        "content": "Food delivery"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-PHP",
+                        "content": "PHP"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-MySQL",
+                        "content": "MySQL"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-CSS",
+                        "content": "CSS"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-HTML",
+                        "content": "HTML"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-Apache",
+                        "content": "Apache"
+                    }
+                ]
+            }
+        ]
+    },
+    "skills": {
+        "content": [
+            {
+                "type": "h2",
+                "key": "h2-skills",
+                "content": "Skills"
+            },
+            {
+                "type": "p",
+                "key": "p-intro",
+                "content": "I am well-versed in full-stack of Microsoft's web technologies. Lately, I am pivoting my focus towards front-end web development (Javascript, Angular, React.js, etc.). In my professional career I've been introduced to the following technologies and tools:"
+            },
+            {
+                "type": "h4",
+                "key": "h4-web-development",
+                "content": "Web development"
+            },
+            {
+                "type": "Row",
+                "key": "row-web-development",
+                "content": [
+                    {
+                        "type": "Skill",
+                        "key": "skill-asp-net",
+                        "logoSrc": "/assets/images/logo-dotnet.svg",
+                        "content": "ASP.NET",
+                        "skillValue": "100"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-angular",
+                        "logoSrc": "/assets/images/logo-angular.svg",
+                        "content": "Angular",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-react",
+                        "logoSrc": "/assets/images/logo-react.svg",
+                        "content": "React.js",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-jquery",
+                        "logoSrc": "/assets/images/logo-jquery.svg",
+                        "content": "jQuery",
+                        "skillValue": "25"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-nodejs",
+                        "logoSrc": "/assets/images/logo-nodejs.svg",
+                        "content": "Node.js",
+                        "skillValue": "25"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-mssql",
+                        "logoSrc": "/assets/images/logo-mssql.svg",
+                        "content": "MS SQL",
+                        "skillValue": "75"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-mysql",
+                        "logoSrc": "/assets/images/logo-mysql.svg",
+                        "content": "MySQL",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-mongodb",
+                        "logoSrc": "/assets/images/logo-mongodb.svg",
+                        "content": "MongoDB",
+                        "skillValue": "25"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-html5",
+                        "logoSrc": "/assets/images/logo-html5.svg",
+                        "content": "HTML",
+                        "skillValue": "100"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-bootstrap",
+                        "logoSrc": "/assets/images/logo-bootstrap.svg",
+                        "content": "Bootstrap",
+                        "skillValue": "75"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-css3",
+                        "logoSrc": "/assets/images/logo-css3.svg",
+                        "content": "CSS",
+                        "skillValue": "75"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-ajax",
+                        "logoSrc": "/assets/images/logo-ajax.svg",
+                        "content": "Ajax",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-umbraco",
+                        "logoSrc": "/assets/images/logo-umbraco.svg",
+                        "content": "Umbraco",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-magento",
+                        "logoSrc": "/assets/images/logo-magento.svg",
+                        "content": "Magento",
+                        "skillValue": "25"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-joomla",
+                        "logoSrc": "/assets/images/logo-joomla.svg",
+                        "content": "Joomla",
+                        "skillValue": "50"
+                    }
+                ]
+            },
+            {
+                "type": "h4",
+                "key": "h4-mobile-development",
+                "content": "Mobile development"
+            },
+            {
+                "type": "Row",
+                "key": "row-mobile-development",
+                "content": [
+                    {
+                        "type": "Skill",
+                        "key": "skill-windows-store-apps",
+                        "logoSrc": "/assets/images/logo-winrt.svg",
+                        "content": "Windows Store Apps",
+                        "skillValue": "75"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-android",
+                        "logoSrc": "/assets/images/logo-android.svg",
+                        "content": "Android",
+                        "skillValue": "25"
+                    }
+                ]
+            },
+            {
+                "type": "h4",
+                "key": "h4-programming-and-scripting-languages",
+                "content": "Programming and scripting languages"
+            },
+            {
+                "type": "Row",
+                "key": "row-programming-and-scripting-languages",
+                "content": [
+                    {
+                        "type": "Skill",
+                        "key": "skill-csharp",
+                        "logoSrc": "/assets/images/logo-csharp.svg",
+                        "content": "C#",
+                        "skillValue": "100"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-php",
+                        "logoSrc": "/assets/images/logo-php.svg",
+                        "content": "PHP",
+                        "skillValue": "75"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-javascript",
+                        "logoSrc": "/assets/images/logo-javascript.svg",
+                        "content": "Javascript",
+                        "skillValue": "75"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-typescript",
+                        "logoSrc": "/assets/images/logo-typescript.svg",
+                        "content": "Typescript",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-java",
+                        "logoSrc": "/assets/images/logo-java.svg",
+                        "content": "Java",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-python",
+                        "logoSrc": "/assets/images/logo-python.svg",
+                        "content": "Python",
+                        "skillValue": "25"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-cpp",
+                        "logoSrc": "/assets/images/logo-cpp.svg",
+                        "content": "C++",
+                        "skillValue": "25"
+                    }
+                ]
+            },
+            {
+                "type": "h4",
+                "key": "h4-related",
+                "content": "Related"
+            },
+            {
+                "type": "Row",
+                "key": "row-related",
+                "content": [
+                    {
+                        "type": "Skill",
+                        "key": "skill-git",
+                        "logoSrc": "/assets/images/logo-git.svg",
+                        "content": "Git",
+                        "skillValue": "75"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-sourcetree",
+                        "logoSrc": "/assets/images/logo-sourcetree.svg",
+                        "content": "SourceTree",
+                        "skillValue": "75"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-jira",
+                        "logoSrc": "/assets/images/logo-jira.svg",
+                        "content": "Jira",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-visualstudio",
+                        "logoSrc": "/assets/images/logo-visualstudio.svg",
+                        "content": "Microsoft Visual Studio",
+                        "skillValue": "75"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-visualstudiocode",
+                        "logoSrc": "/assets/images/logo-visualstudiocode.svg",
+                        "content": "Visual Studio Code",
+                        "skillValue": "75"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-sublime",
+                        "logoSrc": "/assets/images/logo-sublime.svg",
+                        "content": "Sublime Text",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-unity",
+                        "logoSrc": "/assets/images/logo-unity.svg",
+                        "content": "Unity",
+                        "skillValue": "25"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-marmalade",
+                        "logoSrc": "/assets/images/logo-marmalade.svg",
+                        "content": "Marmalade",
+                        "skillValue": "25"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-heroku",
+                        "logoSrc": "/assets/images/logo-heroku.svg",
+                        "content": "Heroku",
+                        "skillValue": "25"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-jenkins",
+                        "logoSrc": "/assets/images/logo-jenkins.svg",
+                        "content": "Jenkins",
+                        "skillValue": "75"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-powershell",
+                        "logoSrc": "/assets/images/logo-powershell.svg",
+                        "content": "Powershell",
+                        "skillValue": "75"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-linuxterminal",
+                        "logoSrc": "/assets/images/logo-linuxterminal.svg",
+                        "content": "Linux terminal",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-lamp",
+                        "logoSrc": "/assets/images/logo-lamp.svg",
+                        "content": "LAMP stack",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-mean",
+                        "logoSrc": "/assets/images/logo-nodejs.svg",
+                        "content": "MEAN stack",
+                        "skillValue": "50"
+                    }
+                ]
+            }
+        ]
+    }
 }

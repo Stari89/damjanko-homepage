@@ -31,6 +31,16 @@
                     },
                     {
                         "type": "EmploymentTag",
+                        "key": "tag-rxjs",
+                        "content": "RxJS"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-primeng",
+                        "content": "PrimeNG"
+                    },
+                    {
+                        "type": "EmploymentTag",
                         "key": "tag-csharp",
                         "content": "C#"
                     },
@@ -78,6 +88,11 @@
                         "type": "EmploymentTag",
                         "key": "tag-jira",
                         "content": "Jira"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-unit-testing",
+                        "content": "Unit testing"
                     }
                 ]
             },
@@ -413,26 +428,19 @@
             },
             {
                 "type": "h4",
-                "key": "h4-web-development",
-                "content": "Web development"
+                "key": "h4-front-end",
+                "content": "Front-end"
             },
             {
                 "type": "Row",
-                "key": "row-web-development",
+                "key": "row-front-end",
                 "content": [
-                    {
-                        "type": "Skill",
-                        "key": "skill-asp-net",
-                        "logoSrc": "/assets/images/logo-dotnet.svg",
-                        "content": "ASP.NET",
-                        "skillValue": "100"
-                    },
                     {
                         "type": "Skill",
                         "key": "skill-angular",
                         "logoSrc": "/assets/images/logo-angular.svg",
                         "content": "Angular",
-                        "skillValue": "50"
+                        "skillValue": "75"
                     },
                     {
                         "type": "Skill",
@@ -446,6 +454,59 @@
                         "key": "skill-jquery",
                         "logoSrc": "/assets/images/logo-jquery.svg",
                         "content": "jQuery",
+                        "skillValue": "25"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-rxjs",
+                        "logoSrc": "/assets/images/logo-rxjs.svg",
+                        "content": "RxJS",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-primeng",
+                        "logoSrc": "/assets/images/logo-primeng.svg",
+                        "content": "PrimeNG",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-bootstrap",
+                        "logoSrc": "/assets/images/logo-bootstrap.svg",
+                        "content": "Bootstrap",
+                        "skillValue": "75"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-webpack",
+                        "logoSrc": "/assets/images/logo-webpack.svg",
+                        "content": "Webpack",
+                        "skillValue": "25"
+                    }
+                ]
+            },
+            {
+                "type": "h4",
+                "key": "h4-back-end",
+                "content": "Back-end frameworks, databases, stacks and CMSs"
+            },
+            {
+                "type": "Row",
+                "key": "row-back-end",
+                "content": [
+                    {
+                        "type": "Skill",
+                        "key": "skill-asp-net-mvc",
+                        "logoSrc": "/assets/images/logo-dotnet.svg",
+                        "content": "ASP.NET MVC",
+                        "skillValue": "100"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-dot-net-core",
+                        "logoSrc": "/assets/images/logo-netcore.svg",
+                        "content": ".NET Core",
                         "skillValue": "25"
                     },
                     {
@@ -478,30 +539,16 @@
                     },
                     {
                         "type": "Skill",
-                        "key": "skill-html5",
-                        "logoSrc": "/assets/images/logo-html5.svg",
-                        "content": "HTML",
-                        "skillValue": "100"
+                        "key": "skill-lamp",
+                        "logoSrc": "/assets/images/logo-lamp.svg",
+                        "content": "LAMP",
+                        "skillValue": "50"
                     },
                     {
                         "type": "Skill",
-                        "key": "skill-bootstrap",
-                        "logoSrc": "/assets/images/logo-bootstrap.svg",
-                        "content": "Bootstrap",
-                        "skillValue": "75"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-css3",
-                        "logoSrc": "/assets/images/logo-css3.svg",
-                        "content": "CSS",
-                        "skillValue": "75"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-ajax",
-                        "logoSrc": "/assets/images/logo-ajax.svg",
-                        "content": "Ajax",
+                        "key": "skill-mean",
+                        "logoSrc": "/assets/images/logo-nodejs.svg",
+                        "content": "MEAN",
                         "skillValue": "50"
                     },
                     {
@@ -541,7 +588,7 @@
                         "key": "skill-windows-store-apps",
                         "logoSrc": "/assets/images/logo-winrt.svg",
                         "content": "Windows Store Apps",
-                        "skillValue": "75"
+                        "skillValue": "50"
                     },
                     {
                         "type": "Skill",
@@ -570,13 +617,6 @@
                     },
                     {
                         "type": "Skill",
-                        "key": "skill-php",
-                        "logoSrc": "/assets/images/logo-php.svg",
-                        "content": "PHP",
-                        "skillValue": "75"
-                    },
-                    {
-                        "type": "Skill",
                         "key": "skill-javascript",
                         "logoSrc": "/assets/images/logo-javascript.svg",
                         "content": "Javascript",
@@ -587,6 +627,13 @@
                         "key": "skill-typescript",
                         "logoSrc": "/assets/images/logo-typescript.svg",
                         "content": "Typescript",
+                        "skillValue": "75"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-php",
+                        "logoSrc": "/assets/images/logo-php.svg",
+                        "content": "PHP",
                         "skillValue": "50"
                     },
                     {
@@ -644,23 +691,16 @@
                     },
                     {
                         "type": "Skill",
-                        "key": "skill-visualstudio",
-                        "logoSrc": "/assets/images/logo-visualstudio.svg",
-                        "content": "Microsoft Visual Studio",
-                        "skillValue": "75"
+                        "key": "skill-scrum",
+                        "logoSrc": "/assets/images/logo-scrum.svg",
+                        "content": "Scrum",
+                        "skillValue": "50"
                     },
                     {
                         "type": "Skill",
-                        "key": "skill-visualstudiocode",
-                        "logoSrc": "/assets/images/logo-visualstudiocode.svg",
-                        "content": "Visual Studio Code",
-                        "skillValue": "75"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-sublime",
-                        "logoSrc": "/assets/images/logo-sublime.svg",
-                        "content": "Sublime Text",
+                        "key": "skill-kanban",
+                        "logoSrc": "/assets/images/logo-kanban.svg",
+                        "content": "Kanban",
                         "skillValue": "50"
                     },
                     {
@@ -689,35 +729,14 @@
                         "key": "skill-jenkins",
                         "logoSrc": "/assets/images/logo-jenkins.svg",
                         "content": "Jenkins",
-                        "skillValue": "75"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-powershell",
-                        "logoSrc": "/assets/images/logo-powershell.svg",
-                        "content": "Powershell",
-                        "skillValue": "75"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-linuxterminal",
-                        "logoSrc": "/assets/images/logo-linuxterminal.svg",
-                        "content": "Linux terminal",
                         "skillValue": "50"
                     },
                     {
                         "type": "Skill",
-                        "key": "skill-lamp",
-                        "logoSrc": "/assets/images/logo-lamp.svg",
-                        "content": "LAMP stack",
-                        "skillValue": "50"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-mean",
-                        "logoSrc": "/assets/images/logo-nodejs.svg",
-                        "content": "MEAN stack",
-                        "skillValue": "50"
+                        "key": "skill-docker",
+                        "logoSrc": "/assets/images/logo-docker.svg",
+                        "content": "Docker",
+                        "skillValue": "25"
                     }
                 ]
             }

@@ -28,6 +28,14 @@ export class Footer extends React.Component {
         ReactGA.event({ category: 'footer', action: 'facebook-click' });
     }
 
+    handleInstagramClick() {
+        ReactGA.event({ category: 'footer', action: 'instagram-click' });
+    }
+
+    handleYoutubeClick() {
+        ReactGA.event({ category: 'footer', action: 'youtube-click' });
+    }
+
     handleGitHubClick() {
         ReactGA.event({ category: 'footer', action: 'github-click' });
     }
@@ -82,7 +90,7 @@ export class Footer extends React.Component {
                     </Col>
                     <Col xs="6" md="3">
                         <h3>
-                            <small>Contact me</small>
+                            <small>Contact and social media</small>
                         </h3>
                         <ul className="list-unstyled">
                             <li>
@@ -114,6 +122,28 @@ export class Footer extends React.Component {
                                     onClick={this.handleFacebookClick}
                                 >
                                     <u>Facebook</u>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.instagram.com/letecnez"
+                                    className="text-light"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={this.handleInstagramClick}
+                                >
+                                    <u>Instagram</u>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.youtube.com/user/Stari89"
+                                    className="text-light"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={this.handleYoutubeClick}
+                                >
+                                    <u>YouTube</u>
                                 </a>
                             </li>
                             <li>

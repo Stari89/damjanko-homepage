@@ -58,6 +58,14 @@ export class Navigation extends React.Component {
         ReactGA.event({ category: 'nav', action: 'facebook-click' });
     }
 
+    handleInstagramClick() {
+        ReactGA.event({ category: 'nav', action: 'instagram-click' });
+    }
+
+    handleYoutubeClick() {
+        ReactGA.event({ category: 'nav', action: 'youtube-click' });
+    }
+
     handleGitHubClick() {
         ReactGA.event({ category: 'nav', action: 'github-click' });
     }
@@ -137,6 +145,26 @@ export class Navigation extends React.Component {
                                 onClick={this.handleFacebookClick}
                             >
                                 <img src="/assets/images/ico-facebook.svg" alt="Facebook" />
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                href="https://www.instagram.com/letecnez"
+                                className="p-1"
+                                target="_blank"
+                                onClick={this.handleInstagramClick}
+                            >
+                                <img src="/assets/images/ico-instagram.svg" alt="Instagram" />
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink
+                                href="https://www.youtube.com/user/Stari89"
+                                className="p-1"
+                                target="_blank"
+                                onClick={this.handleYoutubeClick}
+                            >
+                                <img src="/assets/images/ico-youtube.svg" alt="YouTube" />
                             </NavLink>
                         </NavItem>
                         <NavItem>

@@ -1,4 +1,4 @@
 export default {
-    appVer: 'v1.1.9',
+    appVer: 'v1.1.10',
     gaKey: 'UA-12737366-3',
 };

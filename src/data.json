@@ -1,7 +1,6 @@
 {
     "experience": {
-        "content": [
-            {
+        "content": [{
                 "type": "h2",
                 "key": "h2-experience",
                 "content": "Experience"
@@ -13,8 +12,7 @@
                 "companyName": "INEOR Information Technology and Services",
                 "companyPosition": "Software developer",
                 "companyLogoSrc": "/assets/images/logo-ineor.png",
-                "content": [
-                    {
+                "content": [{
                         "type": "EmploymentTag",
                         "key": "tag-angular",
                         "content": "Angular (2+)"
@@ -103,8 +101,7 @@
                 "companyName": "Agitavit Solutions d.o.o.",
                 "companyPosition": "Software developer",
                 "companyLogoSrc": "/assets/images/logo-agitavit.png",
-                "content": [
-                    {
+                "content": [{
                         "type": "EmploymentTag",
                         "key": "tag-csharp",
                         "content": "C#"
@@ -164,8 +161,7 @@
                 "companyName": "5ka digitalni svet (Aljoša Motore s.p.)",
                 "companyPosition": "Software developer",
                 "companyLogoSrc": "/assets/images/logo-5ka.png",
-                "content": [
-                    {
+                "content": [{
                         "type": "EmploymentTag",
                         "key": "tag-PHP",
                         "content": "PHP"
@@ -234,8 +230,7 @@
                 "companyName": "Ekipa2 d.o.o. (Outfit7 subsidiary)",
                 "companyPosition": "Software Architect",
                 "companyLogoSrc": "/assets/images/logo-outfit7.png",
-                "content": [
-                    {
+                "content": [{
                         "type": "EmploymentTag",
                         "key": "tag-Talking Tom",
                         "content": "Talking Tom"
@@ -309,8 +304,7 @@
                 "companyName": "NET Informatika d.o.o.",
                 "companyPosition": "Programmer / developer .NET C#",
                 "companyLogoSrc": "/assets/images/logo-net-informatika.png",
-                "content": [
-                    {
+                "content": [{
                         "type": "EmploymentTag",
                         "key": "tag-csharp",
                         "content": "C#"
@@ -379,8 +373,7 @@
                 "companyName": "Restaurant and pizzeria LaItalia d.o.o.",
                 "companyPosition": "Delivery driver (student)",
                 "companyLogoSrc": "/assets/images/logo-italia.png",
-                "content": [
-                    {
+                "content": [{
                         "type": "EmploymentTag",
                         "key": "tag-Food delivery",
                         "content": "Food delivery"
@@ -415,8 +408,7 @@
         ]
     },
     "skills": {
-        "content": [
-            {
+        "content": [{
                 "type": "h2",
                 "key": "h2-skills",
                 "content": "Skills"
@@ -434,13 +426,12 @@
             {
                 "type": "Row",
                 "key": "row-front-end",
-                "content": [
-                    {
+                "content": [{
                         "type": "Skill",
                         "key": "skill-angular",
                         "logoSrc": "/assets/images/logo-angular.svg",
                         "content": "Angular",
-                        "skillValue": "75"
+                        "skillValue": "100"
                     },
                     {
                         "type": "Skill",
@@ -458,17 +449,10 @@
                     },
                     {
                         "type": "Skill",
-                        "key": "skill-rxjs",
-                        "logoSrc": "/assets/images/logo-rxjs.svg",
-                        "content": "RxJS",
-                        "skillValue": "50"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-primeng",
-                        "logoSrc": "/assets/images/logo-primeng.svg",
-                        "content": "PrimeNG",
-                        "skillValue": "50"
+                        "key": "skill-material",
+                        "logoSrc": "/assets/images/logo-material.svg",
+                        "content": "Angular Material",
+                        "skillValue": "75"
                     },
                     {
                         "type": "Skill",
@@ -479,10 +463,24 @@
                     },
                     {
                         "type": "Skill",
+                        "key": "skill-primeng",
+                        "logoSrc": "/assets/images/logo-primeng.svg",
+                        "content": "PrimeNG",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
                         "key": "skill-webpack",
                         "logoSrc": "/assets/images/logo-webpack.svg",
                         "content": "Webpack",
                         "skillValue": "25"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-rxjs",
+                        "logoSrc": "/assets/images/logo-rxjs.svg",
+                        "content": "RxJS",
+                        "skillValue": "50"
                     }
                 ]
             },
@@ -494,8 +492,7 @@
             {
                 "type": "Row",
                 "key": "row-back-end",
-                "content": [
-                    {
+                "content": [{
                         "type": "Skill",
                         "key": "skill-asp-net-mvc",
                         "logoSrc": "/assets/images/logo-dotnet.svg",
@@ -507,7 +504,7 @@
                         "key": "skill-dot-net-core",
                         "logoSrc": "/assets/images/logo-netcore.svg",
                         "content": ".NET Core",
-                        "skillValue": "25"
+                        "skillValue": "50"
                     },
                     {
                         "type": "Skill",
@@ -582,8 +579,7 @@
             {
                 "type": "Row",
                 "key": "row-mobile-development",
-                "content": [
-                    {
+                "content": [{
                         "type": "Skill",
                         "key": "skill-windows-store-apps",
                         "logoSrc": "/assets/images/logo-winrt.svg",
@@ -607,8 +603,7 @@
             {
                 "type": "Row",
                 "key": "row-programming-and-scripting-languages",
-                "content": [
-                    {
+                "content": [{
                         "type": "Skill",
                         "key": "skill-csharp",
                         "logoSrc": "/assets/images/logo-csharp.svg",
@@ -667,8 +662,7 @@
             {
                 "type": "Row",
                 "key": "row-related",
-                "content": [
-                    {
+                "content": [{
                         "type": "Skill",
                         "key": "skill-git",
                         "logoSrc": "/assets/images/logo-git.svg",

@@ -19,7 +19,7 @@ export const Home = () => {
                         </h1>
                         <h2>
                             <small>
-                                <span>Software Engineer | Metalhead | LEGO fan | Slav</span>
+                                <span>Software Engineer | Metalhead | LEGO fan</span>
                             </small>
                         </h2>
                         <p>

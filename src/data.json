@@ -7,10 +7,34 @@
             },
             {
                 "type": "EmploymentPanel",
+                "key": "employment-panel-cosylab",
+                "startedDate": "February 2021",
+                "companyName": "Cosylab d.d.",
+                "companyPosition": "Senior Software Engineer",
+                "companyLogoSrc": "/assets/images/logo-cosylab.svg",
+                "content": [{
+                        "type": "EmploymentTag",
+                        "key": "tag-react",
+                        "content": "React"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-docker",
+                        "content": "Docker"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-keycloak",
+                        "content": "Keycloak"
+                    }
+                ]
+            },
+            {
+                "type": "EmploymentPanel",
                 "key": "employment-panel-ineor",
                 "startedDate": "November 2018",
                 "companyName": "INEOR Information Technology and Services",
-                "companyPosition": "Software developer",
+                "companyPosition": "Software Engineer",
                 "companyLogoSrc": "/assets/images/logo-ineor.png",
                 "content": [{
                         "type": "EmploymentTag",
@@ -99,7 +123,7 @@
                 "key": "employment-panel-agitavit",
                 "startedDate": "August 2017",
                 "companyName": "Agitavit Solutions d.o.o.",
-                "companyPosition": "Software developer",
+                "companyPosition": "Software Engineer",
                 "companyLogoSrc": "/assets/images/logo-agitavit.png",
                 "content": [{
                         "type": "EmploymentTag",
@@ -159,7 +183,7 @@
                 "key": "employment-panel-5ka",
                 "startedDate": "October 2016",
                 "companyName": "5ka digitalni svet (Aljoša Motore s.p.)",
-                "companyPosition": "Software developer",
+                "companyPosition": "Software Engineer",
                 "companyLogoSrc": "/assets/images/logo-5ka.png",
                 "content": [{
                         "type": "EmploymentTag",

@@ -9,7 +9,11 @@ export const Home = () => {
             <Container>
                 <Row className="justify-content-center">
                     <Col xs="4" md="3" lg="2">
-                        <img src="/assets/images/portrait.jpg" alt="portrait" className="img-fluid rounded-circle" />
+                        <img
+                            src="https://www.gravatar.com/avatar/947e8f064fa08436a2584c20d6f2644d?s=400"
+                            alt="portrait"
+                            className="img-fluid rounded-circle"
+                        />
                     </Col>
                     <Col xs="12" md="9" lg="10" className="text-md-left text-center">
                         <h1>

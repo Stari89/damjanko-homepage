@@ -126,7 +126,7 @@ export class Footer extends React.Component {
                             </li>
                             <li>
                                 <a
-                                    href="https://www.instagram.com/letecnez"
+                                    href="https://www.instagram.com/damjans_workshop"
                                     className="text-light"
                                     target="_blank"
                                     rel="noopener noreferrer"

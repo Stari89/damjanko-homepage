@@ -149,7 +149,7 @@ export class Navigation extends React.Component {
                         </NavItem>
                         <NavItem>
                             <NavLink
-                                href="https://www.instagram.com/letecnez"
+                                href="https://www.instagram.com/damjans_workshop"
                                 className="p-1"
                                 target="_blank"
                                 onClick={this.handleInstagramClick}

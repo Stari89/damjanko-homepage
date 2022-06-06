@@ -7,6 +7,20 @@
             },
             {
                 "type": "EmploymentPanel",
+                "key": "employment-panel-biosistemika",
+                "startedDate": "June 2022",
+                "companyName": "Biosistemika d.o.o.",
+                "companyPosition": "Senior Software Engineer",
+                "companyLogoSrc": "/assets/images/logo-biosistemika.png",
+                "content": [{
+                        "type": "EmploymentTag",
+                        "key": "tag-react",
+                        "content": "React"
+                    }
+                ]
+            },
+            {
+                "type": "EmploymentPanel",
                 "key": "employment-panel-cosylab",
                 "startedDate": "February 2021",
                 "companyName": "Cosylab d.d.",

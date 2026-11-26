@@ -575,7 +575,7 @@
                         "key": "skill-react",
                         "logoSrc": "/assets/images/logo-react.svg",
                         "content": "React",
-                        "skillValue": "75"
+                        "skillValue": "100"
                     },
                     {
                         "type": "Skill",
@@ -600,6 +600,13 @@
                     },
                     {
                         "type": "Skill",
+                        "key": "skill-javascript",
+                        "logoSrc": "/assets/images/logo-javascript.svg",
+                        "content": "JavaScript",
+                        "skillValue": "100"
+                    },
+                    {
+                        "type": "Skill",
                         "key": "skill-typescript",
                         "logoSrc": "/assets/images/logo-typescript.svg",
                         "content": "TypeScript",
@@ -620,13 +627,6 @@
                         "key": "skill-angular",
                         "logoSrc": "/assets/images/logo-angular.svg",
                         "content": "Angular",
-                        "skillValue": "75"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-javascript",
-                        "logoSrc": "/assets/images/logo-javascript.svg",
-                        "content": "JavaScript",
                         "skillValue": "75"
                     },
                     {
@@ -669,7 +669,7 @@
                         "key": "skill-java",
                         "logoSrc": "/assets/images/logo-java.svg",
                         "content": "Java",
-                        "skillValue": "50"
+                        "skillValue": "25"
                     },
                     {
                         "type": "Skill",

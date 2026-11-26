@@ -1,6 +1,6 @@
 # Tech stack
 
-Status: draft, waiting for review. Items under "Open decisions" are not settled.
+Status: agreed on 2026-11-26.
 
 ## What the site is
 
@@ -60,9 +60,9 @@ Exact versions are pinned in `package.json` and `package-lock.json` when the pro
 - `npm run preview` serves `v2/dist` locally to check the real build.
 - Deploy is unchanged: copy the contents of `v2/dist` to the Apache document root on the NAS.
 
-## Open decisions
+## Further decisions
 
-1. **Prerendering.** A plain Vite and React build ships an almost empty `index.html` and draws the page with JavaScript. Search engines and link previews handle real HTML better. Recommendation: render the page to HTML at build time, so the content is in `index.html` and React only adds interactivity on top.
-2. **Analytics.** v1's Google Analytics property no longer collects anything. Options: none, or a privacy-friendly self-hosted tool on the NAS. Recommendation: none at launch.
-3. **Automated deploy.** Deploy is a manual copy today. A GitHub Actions workflow could build on every push, and optionally publish to the NAS. Recommendation: build and lint in CI from the start; keep the copy manual.
-4. **Tests.** The site has little logic. Recommendation: a few Vitest tests on the content data (every skill has a logo file, no duplicate keys) and one Playwright check that the page renders without console errors.
+1. **Prerendering.** A plain Vite and React build ships an almost empty `index.html` and draws the page with JavaScript. Search engines and link previews handle real HTML better. The page is therefore rendered to HTML at build time, so the content is in `index.html` and React only adds interactivity on top.
+2. **Analytics.** None at launch. v1's Google Analytics property no longer collects anything, and it is not replaced.
+3. **Automated deploy.** GitHub Actions builds and lints on every push. Publishing to the NAS stays a manual copy.
+4. **Tests.** The site has little logic, so tests are few: Vitest checks on the content data (every skill has a logo file, no duplicate keys) and one Playwright check that the page renders without console errors.

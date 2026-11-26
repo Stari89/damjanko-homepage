@@ -39,13 +39,6 @@ export class Navigation extends React.Component {
         ReactGA.event({ category: 'nav', action: 'skills-click' });
     }
 
-    handleSigninClick() {
-        ReactGA.event({
-            category: 'nav',
-            action: 'signin-click',
-        });
-    }
-
     handleEmailClick() {
         ReactGA.event({ category: 'nav', action: 'email-click' });
     }
@@ -114,11 +107,6 @@ export class Navigation extends React.Component {
                             >
                                 Skills
                             </NavHashLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="http://career.damjanko.com" target="_blank" onClick={this.handleSigninClick}>
-                                Sign in
-                            </NavLink>
                         </NavItem>
                     </Nav>
                     <Nav className="ml-auto" navbar>

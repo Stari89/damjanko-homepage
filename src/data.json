@@ -14,8 +14,93 @@
                 "companyLogoSrc": "/assets/images/logo-biosistemika.png",
                 "content": [{
                         "type": "EmploymentTag",
+                        "key": "tag-csharp",
+                        "content": "C#"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-dot-net",
+                        "content": ".NET"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-asp-net-core",
+                        "content": "ASP.NET Core"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-blazor",
+                        "content": "Blazor"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-telerik-ui",
+                        "content": "Telerik UI"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-mudblazor",
+                        "content": "MudBlazor"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-ef-core",
+                        "content": "Entity Framework Core"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-mssql",
+                        "content": "MS SQL"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-postgresql",
+                        "content": "PostgreSQL"
+                    },
+                    {
+                        "type": "EmploymentTag",
                         "key": "tag-react",
                         "content": "React"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-typescript",
+                        "content": "TypeScript"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-material-ui",
+                        "content": "Material UI"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-kotlin-android",
+                        "content": "Kotlin / Android"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-playwright",
+                        "content": "Playwright"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-xunit",
+                        "content": "xUnit"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-docker",
+                        "content": "Docker"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-github-actions",
+                        "content": "GitHub Actions"
+                    },
+                    {
+                        "type": "EmploymentTag",
+                        "key": "tag-active-directory",
+                        "content": "Active Directory / LDAP"
                     }
                 ]
             },

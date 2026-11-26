@@ -11,7 +11,7 @@ export function Sidebar() {
   return (
     <header className={styles.sidebar}>
       <div>
-        <img className={styles.portrait} src={portrait} alt="" width={96} height={96} />
+        <img className={styles.portrait} src={portrait} alt="" width={176} height={176} />
         <h1 className={styles.name}>{site.name}</h1>
         <p className={styles.title}>{site.title}</p>
         <p className={styles.tagline}>{site.tagline}</p>

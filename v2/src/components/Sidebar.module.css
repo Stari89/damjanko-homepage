@@ -1,6 +1,6 @@
 .portrait {
-  width: 6rem;
-  height: 6rem;
+  width: 8rem;
+  height: 8rem;
   margin-bottom: var(--space-4);
   border: 2px solid var(--color-border);
   border-radius: 50%;
@@ -58,6 +58,11 @@
 }
 
 @media (min-width: 64rem) {
+  .portrait {
+    width: 11rem;
+    height: 11rem;
+  }
+
   .sidebar {
     position: sticky;
     top: 0;

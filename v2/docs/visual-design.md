@@ -1,6 +1,6 @@
 # Visual design
 
-Status: direction agreed on 2026-11-26. Items under "Open decisions" are not settled.
+Status: direction and look agreed on 2026-11-26. One item under "Open decisions" is not settled.
 
 ## Direction
 
@@ -16,6 +16,7 @@ Two columns, centered, with a maximum width of about 1200 px.
 
 **Left column, fixed while the right one scrolls:**
 
+- Small round portrait
 - Name
 - Title: Senior Software Engineer
 - One-line tagline
@@ -27,7 +28,7 @@ Two columns, centered, with a maximum width of about 1200 px.
 1. About: two or three short paragraphs
 2. Experience: one card per job
 3. Skills: three groups
-4. Footer: how the site is built, version, credit
+4. Footer: how the site is built, and the version
 
 ### Phone and tablet
 
@@ -57,7 +58,7 @@ The reference site has no skills section, so this part is our own design.
 | --- | --- |
 | Background | Near-black neutral, not navy |
 | Text | Off-white for headings, muted grey for body text |
-| Accent | One color, used for links, the active navigation item, tag pills and hover states |
+| Accent | Amber, used for links, the active navigation item, tag pills and hover states |
 | Body and heading font | Inter |
 | Small labels (dates, tags, navigation) | JetBrains Mono |
 | Fonts | Served from the site, no third-party requests |
@@ -72,11 +73,17 @@ All colors, spacing and type sizes are defined once as CSS custom properties.
 - Every interactive element is reachable by keyboard and has a visible focus outline.
 - Section navigation uses real links and headings, so it works without JavaScript.
 
+## Decisions
+
+Agreed on 2026-11-26.
+
+1. **Accent color.** Amber. The exact shade is picked from a mockup.
+2. **Skill levels.** Dropped. v1's 25/50/75/100 bars are not carried over.
+3. **Portrait.** A small round portrait next to the name.
+4. **Company logos.** Dropped. Employers are shown as text.
+5. **Light theme.** None. The site is dark only.
+6. **Credit.** None. The footer does not mention the reference site.
+
 ## Open decisions
 
-1. **Accent color.** Candidates: amber (a nod to LEGO yellow), ember red (a nod to metal), steel blue (neutral). Recommendation: amber. To be chosen from a mockup, not from a description.
-2. **Skill levels.** v1 shows 25/50/75/100 bars. Recommendation: drop them, as described above.
-3. **Portrait.** v1 has a photo; the reference site does not. Recommendation: a small round portrait next to the name.
-4. **Company logos.** v1 shows a logo per employer. Recommendation: text only, which keeps the cards calm and avoids logos that look wrong on a dark background.
-5. **Light theme.** Recommendation: dark only at launch. Colors are custom properties, so a light theme can be added later without touching components.
-6. **Credit.** Recommendation: a line in the footer saying the layout is inspired by Brittany Chiang's site, with a link.
+1. **Skills or Projects.** Whether to replace the Skills section with a Projects section, as on the reference site.

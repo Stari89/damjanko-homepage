@@ -539,7 +539,7 @@
             {
                 "type": "p",
                 "key": "p-intro",
-                "content": "I am well-versed in full-stack of Microsoft's web technologies. Lately, I am pivoting my focus towards front-end web development (Javascript, Angular, React.js, etc.). In my professional career I've been introduced to the following technologies and tools:"
+                "content": "I am a full-stack developer, most at home in the .NET ecosystem. After several years focused on front-end work with Angular and React, I now build complete applications in C# — Blazor on the front, ASP.NET Core and Entity Framework on the back — mostly software for laboratories and the life sciences industry. In my professional career I've worked with the following technologies and tools:"
             },
             {
                 "type": "h4",

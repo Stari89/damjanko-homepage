@@ -54,16 +54,16 @@ The reference site has no skills section, so this part is our own design.
 
 ## Look
 
-| Element | Choice |
-| --- | --- |
-| Background | Near-black neutral, not navy |
-| Text | Off-white for headings, muted grey for body text |
-| Accent | Amber, used for links, the active navigation item, tag pills and hover states |
-| Body and heading font | Inter |
-| Small labels (dates, tags, navigation) | JetBrains Mono |
-| Fonts | Served from the site, no third-party requests |
-| Corners and borders | Slightly rounded cards, hairline borders, no drop shadows |
-| Motion | Short hover transitions only; none when the visitor's system asks for reduced motion |
+| Element                                | Choice                                                                               |
+| -------------------------------------- | ------------------------------------------------------------------------------------ |
+| Background                             | Near-black neutral, not navy                                                         |
+| Text                                   | Off-white for headings, muted grey for body text                                     |
+| Accent                                 | Amber, used for links, the active navigation item, tag pills and hover states        |
+| Body and heading font                  | Inter                                                                                |
+| Small labels (dates, tags, navigation) | JetBrains Mono                                                                       |
+| Fonts                                  | Served from the site, no third-party requests                                        |
+| Corners and borders                    | Slightly rounded cards, hairline borders, no drop shadows                            |
+| Motion                                 | Short hover transitions only; none when the visitor's system asks for reduced motion |
 
 All colors, spacing and type sizes are defined once as CSS custom properties.
 

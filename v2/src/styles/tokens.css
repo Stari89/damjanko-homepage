@@ -1,0 +1,37 @@
+/* Design tokens. Every color, font and spacing value used by components comes from here. */
+:root {
+  /* Color */
+  --color-bg: #0f1012;
+  --color-surface: #17191c;
+  --color-border: #26292e;
+  --color-text: #a3a8b0;
+  --color-text-strong: #eceef1;
+  --color-text-muted: #6f757e;
+  --color-accent: #f5b83d;
+  --color-accent-soft: rgb(245 184 61 / 12%);
+
+  /* Type */
+  --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, Consolas, monospace;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 2.75rem;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
+
+  /* Shape and motion */
+  --radius: 6px;
+  --transition: 150ms ease;
+
+  /* Layout */
+  --page-max-width: 75rem;
+}

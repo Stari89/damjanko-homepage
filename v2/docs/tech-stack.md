@@ -10,19 +10,19 @@ The stack follows from that. Everything is built ahead of time into static files
 
 ## Chosen stack
 
-| Area | Choice | Version at time of writing |
-| --- | --- | --- |
-| Runtime for building | Node.js | 24 (LTS) |
-| Package manager | npm | ships with Node |
-| Build tool and dev server | Vite | 8 |
-| UI library | React | 19 |
-| Language | TypeScript, strict mode | 7 |
-| Styling | Plain CSS with CSS Modules and custom properties | built into Vite |
-| Content | Typed TypeScript data files in the repo | n/a |
-| Linting | ESLint with the TypeScript and React rule sets | 10 |
-| Formatting | Prettier | 3 |
-| Unit tests | Vitest | 5 |
-| Browser checks | Playwright | current |
+| Area                      | Choice                                           | Version at time of writing |
+| ------------------------- | ------------------------------------------------ | -------------------------- |
+| Runtime for building      | Node.js                                          | 24 (LTS)                   |
+| Package manager           | npm                                              | ships with Node            |
+| Build tool and dev server | Vite                                             | 8                          |
+| UI library                | React                                            | 19                         |
+| Language                  | TypeScript, strict mode                          | 7                          |
+| Styling                   | Plain CSS with CSS Modules and custom properties | built into Vite            |
+| Content                   | Typed TypeScript data files in the repo          | n/a                        |
+| Linting                   | Oxlint with the TypeScript and React rule sets   | 1                          |
+| Formatting                | Prettier                                         | 3                          |
+| Unit tests                | Vitest                                           | 5                          |
+| Browser checks            | Playwright                                       | current                    |
 
 Exact versions are pinned in `package.json` and `package-lock.json` when the project is scaffolded.
 
@@ -42,16 +42,18 @@ Exact versions are pinned in `package.json` and `package-lock.json` when the pro
 
 **Self-hosted assets.** Fonts and logos are served from the site itself. No third-party requests, so no cookie banner and nothing that breaks when a CDN changes.
 
+**Oxlint instead of ESLint.** The official Vite template for React and TypeScript now ships with Oxlint, a much faster linter that needs almost no configuration. v2 follows the template.
+
 ## Dropped from v1
 
-| v1 dependency | Replaced by |
-| --- | --- |
-| `react-scripts` 1 (Create React App) | Vite |
-| Bootstrap 4, reactstrap | Plain CSS |
-| `react-router-dom`, `react-router-hash-link` | Anchor links |
-| `react-ga` (Universal Analytics, shut down by Google) | See open decisions |
-| `react-global-configuration` | A typed constants file; the version comes from `package.json` |
-| Service worker | Nothing |
+| v1 dependency                                         | Replaced by                                                   |
+| ----------------------------------------------------- | ------------------------------------------------------------- |
+| `react-scripts` 1 (Create React App)                  | Vite                                                          |
+| Bootstrap 4, reactstrap                               | Plain CSS                                                     |
+| `react-router-dom`, `react-router-hash-link`          | Anchor links                                                  |
+| `react-ga` (Universal Analytics, shut down by Google) | See open decisions                                            |
+| `react-global-configuration`                          | A typed constants file; the version comes from `package.json` |
+| Service worker                                        | Nothing                                                       |
 
 ## Build and deploy
 

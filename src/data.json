@@ -543,98 +543,46 @@
             },
             {
                 "type": "h4",
-                "key": "h4-front-end",
-                "content": "Front-end"
+                "key": "h4-core-stack",
+                "content": "Core stack"
             },
             {
                 "type": "Row",
-                "key": "row-front-end",
+                "key": "row-core-stack",
                 "content": [{
                         "type": "Skill",
-                        "key": "skill-angular",
-                        "logoSrc": "/assets/images/logo-angular.svg",
-                        "content": "Angular",
+                        "key": "skill-csharp",
+                        "logoSrc": "/assets/images/logo-csharp.svg",
+                        "content": "C#",
+                        "skillValue": "100"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-asp-net-core",
+                        "logoSrc": "/assets/images/logo-netcore.svg",
+                        "content": "ASP.NET Core",
+                        "skillValue": "100"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-blazor",
+                        "logoSrc": "/assets/images/logo-blazor.svg",
+                        "content": "Blazor",
                         "skillValue": "100"
                     },
                     {
                         "type": "Skill",
                         "key": "skill-react",
                         "logoSrc": "/assets/images/logo-react.svg",
-                        "content": "React.js",
-                        "skillValue": "50"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-jquery",
-                        "logoSrc": "/assets/images/logo-jquery.svg",
-                        "content": "jQuery",
-                        "skillValue": "25"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-material",
-                        "logoSrc": "/assets/images/logo-material.svg",
-                        "content": "Angular Material",
+                        "content": "React",
                         "skillValue": "75"
                     },
                     {
                         "type": "Skill",
-                        "key": "skill-bootstrap",
-                        "logoSrc": "/assets/images/logo-bootstrap.svg",
-                        "content": "Bootstrap",
-                        "skillValue": "75"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-primeng",
-                        "logoSrc": "/assets/images/logo-primeng.svg",
-                        "content": "PrimeNG",
-                        "skillValue": "50"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-webpack",
-                        "logoSrc": "/assets/images/logo-webpack.svg",
-                        "content": "Webpack",
-                        "skillValue": "25"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-rxjs",
-                        "logoSrc": "/assets/images/logo-rxjs.svg",
-                        "content": "RxJS",
-                        "skillValue": "50"
-                    }
-                ]
-            },
-            {
-                "type": "h4",
-                "key": "h4-back-end",
-                "content": "Back-end frameworks, databases, stacks and CMSs"
-            },
-            {
-                "type": "Row",
-                "key": "row-back-end",
-                "content": [{
-                        "type": "Skill",
-                        "key": "skill-asp-net-mvc",
+                        "key": "skill-ef-core",
                         "logoSrc": "/assets/images/logo-dotnet.svg",
-                        "content": "ASP.NET MVC",
-                        "skillValue": "100"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-dot-net-core",
-                        "logoSrc": "/assets/images/logo-netcore.svg",
-                        "content": ".NET Core",
-                        "skillValue": "50"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-nodejs",
-                        "logoSrc": "/assets/images/logo-nodejs.svg",
-                        "content": "Node.js",
-                        "skillValue": "25"
+                        "content": "Entity Framework Core",
+                        "skillValue": "75"
                     },
                     {
                         "type": "Skill",
@@ -645,114 +593,76 @@
                     },
                     {
                         "type": "Skill",
-                        "key": "skill-mysql",
-                        "logoSrc": "/assets/images/logo-mysql.svg",
-                        "content": "MySQL",
-                        "skillValue": "50"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-mongodb",
-                        "logoSrc": "/assets/images/logo-mongodb.svg",
-                        "content": "MongoDB",
-                        "skillValue": "25"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-lamp",
-                        "logoSrc": "/assets/images/logo-lamp.svg",
-                        "content": "LAMP",
-                        "skillValue": "50"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-mean",
-                        "logoSrc": "/assets/images/logo-nodejs.svg",
-                        "content": "MEAN",
-                        "skillValue": "50"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-umbraco",
-                        "logoSrc": "/assets/images/logo-umbraco.svg",
-                        "content": "Umbraco",
-                        "skillValue": "50"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-magento",
-                        "logoSrc": "/assets/images/logo-magento.svg",
-                        "content": "Magento",
-                        "skillValue": "25"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-joomla",
-                        "logoSrc": "/assets/images/logo-joomla.svg",
-                        "content": "Joomla",
-                        "skillValue": "50"
-                    }
-                ]
-            },
-            {
-                "type": "h4",
-                "key": "h4-mobile-development",
-                "content": "Mobile development"
-            },
-            {
-                "type": "Row",
-                "key": "row-mobile-development",
-                "content": [{
-                        "type": "Skill",
-                        "key": "skill-windows-store-apps",
-                        "logoSrc": "/assets/images/logo-winrt.svg",
-                        "content": "Windows Store Apps",
-                        "skillValue": "50"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-android",
-                        "logoSrc": "/assets/images/logo-android.svg",
-                        "content": "Android",
-                        "skillValue": "25"
-                    }
-                ]
-            },
-            {
-                "type": "h4",
-                "key": "h4-programming-and-scripting-languages",
-                "content": "Programming and scripting languages"
-            },
-            {
-                "type": "Row",
-                "key": "row-programming-and-scripting-languages",
-                "content": [{
-                        "type": "Skill",
-                        "key": "skill-csharp",
-                        "logoSrc": "/assets/images/logo-csharp.svg",
-                        "content": "C#",
-                        "skillValue": "100"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-javascript",
-                        "logoSrc": "/assets/images/logo-javascript.svg",
-                        "content": "Javascript",
+                        "key": "skill-telerik-ui",
+                        "logoSrc": "/assets/images/logo-telerik.svg",
+                        "content": "Telerik UI",
                         "skillValue": "75"
                     },
                     {
                         "type": "Skill",
                         "key": "skill-typescript",
                         "logoSrc": "/assets/images/logo-typescript.svg",
-                        "content": "Typescript",
+                        "content": "TypeScript",
+                        "skillValue": "75"
+                    }
+                ]
+            },
+            {
+                "type": "h4",
+                "key": "h4-also-experienced",
+                "content": "Also experienced with"
+            },
+            {
+                "type": "Row",
+                "key": "row-also-experienced",
+                "content": [{
+                        "type": "Skill",
+                        "key": "skill-angular",
+                        "logoSrc": "/assets/images/logo-angular.svg",
+                        "content": "Angular",
                         "skillValue": "75"
                     },
                     {
                         "type": "Skill",
-                        "key": "skill-php",
-                        "logoSrc": "/assets/images/logo-php.svg",
-                        "content": "PHP",
+                        "key": "skill-javascript",
+                        "logoSrc": "/assets/images/logo-javascript.svg",
+                        "content": "JavaScript",
+                        "skillValue": "75"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-material-ui",
+                        "logoSrc": "/assets/images/logo-material.svg",
+                        "content": "Material UI",
                         "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-mudblazor",
+                        "logoSrc": "/assets/images/logo-mudblazor.svg",
+                        "content": "MudBlazor",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-bootstrap",
+                        "logoSrc": "/assets/images/logo-bootstrap.svg",
+                        "content": "Bootstrap",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-postgresql",
+                        "logoSrc": "/assets/images/logo-postgresql.svg",
+                        "content": "PostgreSQL",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-kotlin-android",
+                        "logoSrc": "/assets/images/logo-kotlin.svg",
+                        "content": "Kotlin / Android",
+                        "skillValue": "25"
                     },
                     {
                         "type": "Skill",
@@ -767,37 +677,58 @@
                         "logoSrc": "/assets/images/logo-python.svg",
                         "content": "Python",
                         "skillValue": "25"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-cpp",
-                        "logoSrc": "/assets/images/logo-cpp.svg",
-                        "content": "C++",
-                        "skillValue": "25"
                     }
                 ]
             },
             {
                 "type": "h4",
-                "key": "h4-related",
-                "content": "Related"
+                "key": "h4-how-i-work",
+                "content": "How I work"
             },
             {
                 "type": "Row",
-                "key": "row-related",
+                "key": "row-how-i-work",
                 "content": [{
                         "type": "Skill",
-                        "key": "skill-git",
-                        "logoSrc": "/assets/images/logo-git.svg",
-                        "content": "Git",
+                        "key": "skill-ai-assisted-development",
+                        "logoSrc": "/assets/images/logo-ai.svg",
+                        "content": "AI-assisted development",
                         "skillValue": "75"
                     },
                     {
                         "type": "Skill",
-                        "key": "skill-sourcetree",
-                        "logoSrc": "/assets/images/logo-sourcetree.svg",
-                        "content": "SourceTree",
-                        "skillValue": "75"
+                        "key": "skill-git",
+                        "logoSrc": "/assets/images/logo-git.svg",
+                        "content": "Git",
+                        "skillValue": "100"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-docker",
+                        "logoSrc": "/assets/images/logo-docker.svg",
+                        "content": "Docker",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-github-actions",
+                        "logoSrc": "/assets/images/logo-github-actions.svg",
+                        "content": "GitHub Actions",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-playwright",
+                        "logoSrc": "/assets/images/logo-playwright.svg",
+                        "content": "Playwright",
+                        "skillValue": "50"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-xunit",
+                        "logoSrc": "/assets/images/logo-xunit.svg",
+                        "content": "xUnit",
+                        "skillValue": "50"
                     },
                     {
                         "type": "Skill",
@@ -812,48 +743,6 @@
                         "logoSrc": "/assets/images/logo-scrum.svg",
                         "content": "Scrum",
                         "skillValue": "50"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-kanban",
-                        "logoSrc": "/assets/images/logo-kanban.svg",
-                        "content": "Kanban",
-                        "skillValue": "50"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-unity",
-                        "logoSrc": "/assets/images/logo-unity.svg",
-                        "content": "Unity",
-                        "skillValue": "25"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-marmalade",
-                        "logoSrc": "/assets/images/logo-marmalade.svg",
-                        "content": "Marmalade",
-                        "skillValue": "25"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-heroku",
-                        "logoSrc": "/assets/images/logo-heroku.svg",
-                        "content": "Heroku",
-                        "skillValue": "25"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-jenkins",
-                        "logoSrc": "/assets/images/logo-jenkins.svg",
-                        "content": "Jenkins",
-                        "skillValue": "50"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-docker",
-                        "logoSrc": "/assets/images/logo-docker.svg",
-                        "content": "Docker",
-                        "skillValue": "25"
                     }
                 ]
             }

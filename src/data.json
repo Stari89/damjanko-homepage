@@ -558,9 +558,9 @@
                     },
                     {
                         "type": "Skill",
-                        "key": "skill-asp-net-core",
-                        "logoSrc": "/assets/images/logo-netcore.svg",
-                        "content": "ASP.NET Core",
+                        "key": "skill-dot-net",
+                        "logoSrc": "/assets/images/logo-net.svg",
+                        "content": ".NET",
                         "skillValue": "100"
                     },
                     {
@@ -575,6 +575,20 @@
                         "key": "skill-react",
                         "logoSrc": "/assets/images/logo-react.svg",
                         "content": "React",
+                        "skillValue": "100"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-typescript",
+                        "logoSrc": "/assets/images/logo-typescript.svg",
+                        "content": "TypeScript",
+                        "skillValue": "100"
+                    },
+                    {
+                        "type": "Skill",
+                        "key": "skill-javascript",
+                        "logoSrc": "/assets/images/logo-javascript.svg",
+                        "content": "JavaScript",
                         "skillValue": "100"
                     },
                     {
@@ -596,20 +610,6 @@
                         "key": "skill-telerik-ui",
                         "logoSrc": "/assets/images/logo-telerik.svg",
                         "content": "Telerik UI",
-                        "skillValue": "75"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-javascript",
-                        "logoSrc": "/assets/images/logo-javascript.svg",
-                        "content": "JavaScript",
-                        "skillValue": "100"
-                    },
-                    {
-                        "type": "Skill",
-                        "key": "skill-typescript",
-                        "logoSrc": "/assets/images/logo-typescript.svg",
-                        "content": "TypeScript",
                         "skillValue": "75"
                     }
                 ]

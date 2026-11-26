@@ -1,0 +1,106 @@
+.portrait {
+  width: 6rem;
+  height: 6rem;
+  margin-bottom: var(--space-4);
+  border: 2px solid var(--color-border);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.title {
+  margin-top: var(--space-2);
+  color: var(--color-text-strong);
+  font-size: var(--text-lg);
+  font-weight: 500;
+}
+
+.tagline {
+  max-width: 20rem;
+  margin-top: var(--space-3);
+}
+
+.nav {
+  display: none;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.link,
+.navLink {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.link {
+  /* Enlarges the tap target without moving the text. */
+  display: inline-block;
+  padding: var(--space-2) 0;
+  color: var(--color-text);
+}
+
+.link:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+@media (min-width: 64rem) {
+  .sidebar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: start;
+    height: 100vh;
+    padding: var(--space-7) 0;
+  }
+
+  .nav {
+    display: block;
+    margin-top: var(--space-6);
+  }
+
+  .navLink {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-2) 0;
+    color: var(--color-text-muted);
+  }
+
+  .navLine {
+    width: 2rem;
+    height: 1px;
+    background: currentcolor;
+    transition: width var(--transition);
+  }
+
+  .navLink:hover,
+  .navLink[aria-current] {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .navLink:hover .navLine,
+  .navLink[aria-current] .navLine {
+    width: 4rem;
+  }
+
+  .links {
+    margin-top: var(--space-5);
+  }
+}

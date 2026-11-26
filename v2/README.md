@@ -9,7 +9,7 @@ Decisions are written down in [`docs/`](docs):
 
 ### Commands
 
-Run these from the `v2` folder. Node 24 is required.
+Run these from the `v2` folder. Node 24 is required. The browser tests need a one-time `npx playwright install chromium`.
 
 | Command                | What it does                                                    |
 | ---------------------- | --------------------------------------------------------------- |
@@ -21,6 +21,7 @@ Run these from the `v2` folder. Node 24 is required.
 | `npm run format`       | Formats all files with Prettier                                 |
 | `npm run format:check` | Fails if any file is not formatted                              |
 | `npm test`             | Runs the unit tests                                             |
+| `npm run test:e2e`     | Runs the browser tests against `dist/`; build first             |
 
 ### Layout
 
@@ -30,6 +31,8 @@ Run these from the `v2` folder. Node 24 is required.
 | `src/styles/tokens.css` | Colors, fonts and spacing; the only place values are set |
 | `src/styles/global.css` | Base styles for the whole page                           |
 | `src/App.tsx`           | The page                                                 |
+| `src/components/`       | The parts of the page                                    |
+| `e2e/`                  | Browser tests                                            |
 | `src/entry-server.tsx`  | Renders the page to HTML at build time                   |
 | `scripts/prerender.mjs` | Writes that HTML into `dist/index.html` after the build  |
 | `public/`               | Files copied to the site root unchanged                  |

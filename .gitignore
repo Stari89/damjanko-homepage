@@ -7,6 +7,8 @@ coverage/
 /v1/build
 /v2/dist
 /v2/dist-ssr
+/v2/test-results
+/v2/playwright-report
 # misc
 .DS_Store
 .env.local

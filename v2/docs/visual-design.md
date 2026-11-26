@@ -86,4 +86,4 @@ Agreed on 2026-11-26.
 
 ## Open decisions
 
-1. **Skills or Projects.** Whether to replace the Skills section with a Projects section, as on the reference site.
+1. **Skills or Projects.** Whether to replace the Skills section with a Projects section, as on the reference site. Until this is decided, the page shows a Projects section with placeholder text, so the layout can be judged.

@@ -32,6 +32,7 @@ export default function App({ language }: { language: Language }) {
                 title={job.title}
                 subtitle={job.company}
                 description={job.description}
+                details={job.details}
                 tags={job.tags}
                 compact={job.compact}
                 aria={ui.aria}

@@ -226,7 +226,16 @@
         "en": "Full-stack web development for a pharmaceutical client.",
         "sl": "Full-stack spletni razvoj za stranko iz farmacevtske industrije."
       },
-      "tags": []
+      "details": {
+        "en": "Full-stack web development for a pharmaceutical client.",
+        "sl": "Full-stack spletni razvoj za stranko iz farmacevtske industrije."
+      },
+      "tags": [
+        "C#",
+        "ASP.NET",
+        "MS SQL",
+        "JavaScript"
+      ]
     },
     {
       "id": "5ka",
@@ -245,7 +254,17 @@
         "en": "Websites and a custom invoicing system in PHP and MySQL.",
         "sl": "Spletne strani in sistem za vodenje računov v PHP in MySQL."
       },
-      "tags": []
+      "details": {
+        "en": "Websites for customers on Joomla and Magento, and development of an in-house invoicing system with a web interface.",
+        "sl": "Razvoj spletnih strani za končne stranke na sistemih Joomla in Magento ter razvoj internega sistema za vodenje računov prek spletnega vmesnika."
+      },
+      "tags": [
+        "PHP",
+        "MySQL",
+        "JavaScript",
+        "Joomla",
+        "Magento"
+      ]
     },
     {
       "id": "ekipa2",
@@ -264,7 +283,17 @@
         "en": "Windows versions of Talking Tom and other games.",
         "sl": "Igre za Windows platforme, med drugim Talking Tom."
       },
-      "tags": []
+      "details": {
+        "en": "Games and supporting libraries for Windows platforms, including Talking Tom and the other titles released for the Windows Store. Also responsible for build automation and distribution.",
+        "sl": "Razvoj iger in pripadajočih knjižnic za Windows platforme, med drugim igre Talking Tom in drugih iger za Windows Trgovino. Odgovoren tudi za avtomatizacijo buildov in njihovo distribucijo."
+      },
+      "tags": [
+        "C#",
+        "Windows Store Apps",
+        "Windows Phone",
+        "Unity",
+        "Jenkins"
+      ]
     },
     {
       "id": "net-informatika",
@@ -283,7 +312,18 @@
         "en": "Full-stack web and desktop development in C# and .NET.",
         "sl": "Full-stack web in desktop razvoj v C# in .NET."
       },
-      "tags": []
+      "details": {
+        "en": "Full-stack web and desktop development on a range of projects.",
+        "sl": "Full-stack web in desktop razvoj na različnih projektih."
+      },
+      "tags": [
+        "C#",
+        "ASP.NET",
+        "Windows Forms",
+        "MS SQL",
+        "JavaScript",
+        "Umbraco"
+      ]
     }
   ],
   "projects": [

@@ -43,7 +43,10 @@ interface GeneratedCv {
     end?: string
     title: Localized
     company: Localized
+    /** For a compact job, the short sentence shown while its row is collapsed. */
     description?: Localized
+    /** The full description of a compact job, shown when its row is expanded. */
+    details?: Localized
     tags: string[]
   }[]
   projects: {
@@ -73,7 +76,9 @@ export interface Job {
   title: string
   company: string
   description?: string
-  /** Shown as a short row without tags. Used for the oldest jobs, which come last. */
+  /** Replaces the description of a compact job while its row is expanded. */
+  details?: string
+  /** Shown as a short row that expands under the pointer. Used for the oldest jobs, which come last. */
   compact: boolean
   tags: string[]
 }
@@ -169,6 +174,7 @@ export function getContent(language: Language): Content {
       title: job.title[language],
       company: job.company[language],
       description: job.description?.[language],
+      details: job.details?.[language],
       compact: job.compact,
       tags: job.tags,
     })),

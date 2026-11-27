@@ -54,7 +54,7 @@ Used for the older jobs, so the page stays short. How many jobs are shown as ful
 - Date range on the left, as on a card
 - Title and company on one line, in smaller text
 - One optional sentence under it
-- No technology tags
+- Under the pointer, with keyboard focus or after a tap, the row unfolds: the job's full description takes the place of the sentence and its technology tags appear. It folds again when the pointer or focus leaves.
 
 ### Project card
 

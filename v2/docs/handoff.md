@@ -10,7 +10,7 @@ Written on 2026-11-26, when work moved to another computer. It describes where t
 | `v1/`                   | Frozen. Only touched if the live site needs a fix before v2 replaces it       |
 | `v2/`                   | Working page in English and Slovenian with real content. Not deployed         |
 | Version of v2           | `2.0.0-alpha.0` in `v2/package.json`                                          |
-| Checks on v2            | Formatting, lint, 41 unit tests and 18 browser tests all pass                 |
+| Checks on v2            | Formatting, lint, 42 unit tests and 18 browser tests all pass                 |
 | CI                      | `.github/workflows/v2.yml` runs all of the above on every push touching `v2/` |
 
 ## Setting up on a new computer
@@ -46,7 +46,7 @@ These are settled; the reasons are in the linked documents.
 - **Two languages:** English and Slovenian, built as two pages from the same code.
 - **Left column:** portrait, name, title, location, tagline, section links that highlight while scrolling, GitHub, LinkedIn and email links, and a link to the other language.
 - **About:** one paragraph, the CV's summary.
-- **Experience:** seven jobs. The three newest are cards with years, a short paragraph and technology tags; the four oldest are compact rows with one sentence.
+- **Experience:** seven jobs. The three newest are cards with years, a short paragraph and technology tags; the four oldest are compact rows with one sentence, which unfold to the full description and tags under the pointer.
 - **Projects:** three personal projects with years, links, a description and tags.
 - **Footer:** how the site is built, a link to the repository, and the version.
 - **Phone layout:** one column, with section headings that stick to the top.

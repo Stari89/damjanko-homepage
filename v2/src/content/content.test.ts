@@ -54,6 +54,14 @@ describe.each(languages)('content in "%s"', (language) => {
     }
   })
 
+  test('job details, when there are any, are not empty', () => {
+    for (const job of content.jobs) {
+      if (job.details !== undefined) {
+        expectText(job.details)
+      }
+    }
+  })
+
   test('every project has a title and a description', () => {
     for (const project of content.projects) {
       expectText(project.title)
@@ -131,12 +139,6 @@ describe('jobs', () => {
   test('no job repeats a tag', () => {
     for (const job of jobs) {
       expectUnique(job.tags)
-    }
-  })
-
-  test('compact jobs have no tags', () => {
-    for (const job of jobs.filter((candidate) => candidate.compact)) {
-      expect(job.tags).toEqual([])
     }
   })
 

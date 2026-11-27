@@ -43,7 +43,7 @@ export default function App({ language }: { language: Language }) {
             </CardList>
             {ui.resume && (
               // The label says "download", so the browser saves the file and does not open it.
-              <a className={styles.resume} href={ui.resume.href} download>
+              <a className={styles.resume} href={ui.resume.href} download data-glow="">
                 {ui.resume.label} <span aria-hidden="true">↓</span>
               </a>
             )}

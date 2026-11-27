@@ -19,6 +19,9 @@
 /* The link to the CV as a PDF, under the list of jobs. It is a flat button: its
    own background keeps it readable on the dotted page background. */
 .resume {
+  /* The edge glow (see global.css) covers the border. */
+  --glow-outset: 1px;
+  --glow-size: calc(var(--glow-radius) * 0.6);
   display: inline-block;
   margin-top: var(--space-4);
   padding: var(--space-2) var(--space-3);
@@ -30,13 +33,10 @@
   font-size: var(--text-sm);
   font-weight: 500;
   letter-spacing: 0.05em;
-  transition:
-    color var(--transition),
-    border-color var(--transition);
+  transition: color var(--transition);
 }
 
 .resume:hover {
-  border-color: var(--color-accent);
   color: var(--color-accent);
   text-decoration: none;
 }

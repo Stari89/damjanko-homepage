@@ -427,6 +427,22 @@ test.describe('pointer effects', () => {
       .toBe('1')
   })
 
+  test('the download button under the mouse gets the same glow', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop', 'Pointer effects need a mouse')
+    await page.goto('/')
+    const button = page.locator('#experience a[download]')
+    await button.scrollIntoViewIfNeeded()
+    const box = (await button.boundingBox())!
+    await page.mouse.move(box.x + 20, box.y + 10)
+    await expect
+      .poll(() => button.evaluate((element) => getComputedStyle(element, '::before').opacity))
+      .toBe('1')
+    const x = await button.evaluate((element) =>
+      parseFloat((element as HTMLElement).style.getPropertyValue('--glow-x')),
+    )
+    expect(Math.round(x)).toBe(20)
+  })
+
   test('the glow follows when the page scrolls under a still mouse', async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== 'desktop', 'Pointer effects need a mouse')
     await page.goto('/')

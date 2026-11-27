@@ -8,7 +8,7 @@ interface CardProps {
   title: string
   /** Shown after the title, such as a company name. */
   subtitle?: string
-  /** The title links to the first; the others are listed under the description. */
+  /** All are listed by label under the description; the title also links to the first. */
   links?: Link[]
   description?: string
   tags?: string[]
@@ -28,7 +28,7 @@ export function Card({
   compact = false,
   aria,
 }: CardProps) {
-  const [titleLink, ...otherLinks] = links
+  const titleLink = links[0]
   const className = [styles.card, !meta && styles.noMeta, compact && styles.compact]
     .filter(Boolean)
     .join(' ')
@@ -48,9 +48,9 @@ export function Card({
           {subtitle && <span className={styles.subtitle}>{subtitle}</span>}
         </h3>
         {description && <p className={styles.description}>{description}</p>}
-        {otherLinks.length > 0 && (
+        {links.length > 0 && (
           <ul className={styles.links} aria-label={aria.links}>
-            {otherLinks.map((link) => (
+            {links.map((link) => (
               <li key={link.href}>
                 <a className={styles.link} href={link.href} target="_blank" rel="noreferrer">
                   {link.label} <span aria-hidden="true">↗</span>

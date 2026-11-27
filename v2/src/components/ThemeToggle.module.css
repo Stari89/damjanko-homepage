@@ -1,0 +1,28 @@
+/* Looks like the icon links beside it. The padding enlarges the tap target. */
+.toggle {
+  display: flex;
+  padding: var(--space-2) 0;
+  border: 0;
+  background: none;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.toggle:hover {
+  color: var(--color-accent);
+}
+
+/* The sun is shown in the dark theme, the moon in the light one. */
+.sun {
+  display: var(--show-in-dark);
+}
+
+.moon {
+  display: var(--show-in-light);
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}

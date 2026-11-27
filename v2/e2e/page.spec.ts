@@ -119,4 +119,56 @@ test.describe('theme', () => {
     await expect(page.locator('html')).not.toHaveAttribute('data-theme')
     expect(await background(page)).toBe(dark)
   })
+
+  test('the toggle switches the theme and saves it', async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'dark' })
+    await page.goto('/')
+    const toggle = page.getByTestId('theme-toggle')
+    const saved = () => page.evaluate(() => localStorage.getItem('theme'))
+
+    await toggle.click()
+    expect(await background(page)).toBe(light)
+    expect(await saved()).toBe('light')
+
+    await toggle.click()
+    expect(await background(page)).toBe(dark)
+    expect(await saved()).toBe('dark')
+  })
+
+  test('a saved choice survives a reload and a device change', async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'dark' })
+    await page.goto('/')
+    await page.getByTestId('theme-toggle').click()
+    await page.reload()
+    expect(await background(page)).toBe(light)
+    await page.emulateMedia({ colorScheme: 'dark' })
+    expect(await background(page)).toBe(light)
+  })
+
+  test('the toggle shows a sun in dark and a moon in light', async ({ page }) => {
+    const toggle = page.getByTestId('theme-toggle')
+    await page.emulateMedia({ colorScheme: 'dark' })
+    await page.goto('/')
+    await expect(toggle.locator('[data-icon="sun"]')).toBeVisible()
+    await expect(toggle.locator('[data-icon="moon"]')).toBeHidden()
+
+    await toggle.click()
+    await expect(toggle.locator('[data-icon="moon"]')).toBeVisible()
+    await expect(toggle.locator('[data-icon="sun"]')).toBeHidden()
+  })
+
+  test('the toggle works when storage is blocked', async ({ page }) => {
+    const errors: string[] = []
+    page.on('pageerror', (error) => errors.push(error.message))
+    await page.addInitScript(() => {
+      Storage.prototype.setItem = () => {
+        throw new Error('blocked')
+      }
+    })
+    await page.emulateMedia({ colorScheme: 'dark' })
+    await page.goto('/')
+    await page.getByTestId('theme-toggle').click()
+    expect(await background(page)).toBe(light)
+    expect(errors).toEqual([])
+  })
 })

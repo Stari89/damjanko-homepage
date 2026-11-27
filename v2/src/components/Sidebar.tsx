@@ -5,6 +5,7 @@ import { useActiveSection } from '../hooks/useActiveSection.ts'
 import { LinkIcon } from './LinkIcon.tsx'
 import { linkIcons } from './linkIcons.ts'
 import styles from './Sidebar.module.css'
+import { ThemeToggle } from './ThemeToggle.tsx'
 
 export function Sidebar({ content }: { content: Content }) {
   const active = useActiveSection(sectionIds)
@@ -65,6 +66,9 @@ export function Sidebar({ content }: { content: Content }) {
           >
             {other.label}
           </a>
+        </li>
+        <li>
+          <ThemeToggle />
         </li>
       </ul>
     </header>

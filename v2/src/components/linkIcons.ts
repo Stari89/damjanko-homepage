@@ -5,7 +5,7 @@ import {
   faLinkedinIn,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
 
 /** The part of a Font Awesome icon that is drawn: its width, height and path. */
 export interface IconShape {
@@ -26,3 +26,6 @@ export const linkIcons: Record<string, IconShape | undefined> = {
   youtube: faYoutube,
   email: faEnvelope,
 }
+
+/** The icons of the theme toggle. */
+export const themeIcons = { sun: faSun, moon: faMoon }

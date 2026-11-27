@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { getContent, parseFooter } from './content.ts'
+import { getContent, parseFooter, resumeLink } from './content.ts'
 import { formatRange, formatYears, yearOf } from './dates.ts'
 import { languages, sectionIds, siteUrl } from './ui.ts'
 
@@ -90,6 +90,36 @@ describe.each(languages)('content in "%s"', (language) => {
     expectText(content.ui.otherLanguage.label)
     expectText(content.ui.footer.link)
     Object.values(content.ui.aria).forEach(expectText)
+  })
+})
+
+/** The PDF files in public/, which are served from the root of the site. */
+const publicPdfs = import.meta.glob('../../public/*.pdf', { query: '?url' })
+
+describe('resumeLink', () => {
+  const resume = {
+    label: { en: 'View full résumé', sl: 'Celoten življenjepis' },
+    file: { en: 'cv-en.pdf', sl: 'cv-sl.pdf' },
+  }
+
+  test('gives each language its own label and file, from the root of the site', () => {
+    expect(resumeLink(resume, 'en')).toEqual({ label: 'View full résumé', href: '/cv-en.pdf' })
+    expect(resumeLink(resume, 'sl')).toEqual({ label: 'Celoten življenjepis', href: '/cv-sl.pdf' })
+  })
+
+  test.each(['', 'cv', 'cv.docx', '../cv.pdf', 'https://example.com/cv.pdf', 'a/b.pdf'])(
+    'refuses "%s" as a file name',
+    (file) => {
+      expect(() => resumeLink({ ...resume, file: { en: file, sl: file } }, 'en')).toThrow()
+    },
+  )
+
+  test.each(languages)('the file linked from the "%s" page exists', (language) => {
+    const link = getContent(language).ui.resume
+    if (link !== undefined) {
+      expectText(link.label)
+      expect(Object.keys(publicPdfs)).toContain(`../../public${link.href}`)
+    }
   })
 })
 

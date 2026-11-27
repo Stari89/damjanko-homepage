@@ -41,6 +41,11 @@ export default function App({ language }: { language: Language }) {
                 />
               ))}
             </CardList>
+            {ui.resume && (
+              <a className={styles.resume} href={ui.resume.href} target="_blank" rel="noreferrer">
+                {ui.resume.label} <span aria-hidden="true">↗</span>
+              </a>
+            )}
           </Section>
 
           <Section id="projects" label={ui.sections.projects}>

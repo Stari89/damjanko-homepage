@@ -16,6 +16,23 @@
   gap: inherit;
 }
 
+/* The link to the CV as a PDF, under the list of jobs. */
+.resume {
+  display: inline-block;
+  margin-top: var(--space-4);
+  padding: var(--space-2) 0;
+  color: var(--color-text-strong);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.resume:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
 .prose {
   display: grid;
   gap: var(--space-3);

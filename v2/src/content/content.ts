@@ -10,6 +10,11 @@ interface GeneratedLink {
   href: string
 }
 
+interface GeneratedResume {
+  label: Localized
+  file: Localized
+}
+
 /** The shape of cv.generated.json. */
 interface GeneratedCv {
   person: {
@@ -32,6 +37,8 @@ interface GeneratedCv {
     /** A sentence with the text of the repository link in square brackets. */
     footer: Localized
     aria: Record<keyof Ui['aria'], Localized>
+    /** The CV as a PDF: the link's text, and the name of each language's file in public/. */
+    resume?: GeneratedResume
   }
   about: Localized[]
   jobs: {
@@ -121,6 +128,18 @@ export function parseFooter(sentence: string): Ui['footer'] {
   return { before: match[1], link: match[2], after: match[3] }
 }
 
+/**
+ * The link to the CV in one language. The file is served from the site's root
+ * folder, which both domains share, so its address starts at the root.
+ */
+export function resumeLink(resume: GeneratedResume, language: Language): NonNullable<Ui['resume']> {
+  const file = resume.file[language]
+  if (!/^[\w-]+\.pdf$/.test(file)) {
+    throw new Error(`Expected the CV's file to be a plain PDF file name, got "${file}"`)
+  }
+  return { label: resume.label[language], href: `/${file}` }
+}
+
 function getUi(language: Language): Ui {
   const { web } = cv
   const other = languages.find((candidate) => candidate !== language)!
@@ -132,6 +151,7 @@ function getUi(language: Language): Ui {
     },
     present: web.present[language],
     otherLanguage: { language: other, label: web.languageName[other] },
+    resume: web.resume && resumeLink(web.resume, language),
     footer: parseFooter(web.footer[language]),
     aria: {
       sections: web.aria.sections[language],

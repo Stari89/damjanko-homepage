@@ -25,6 +25,8 @@ export interface Ui {
   present: string
   /** The link to the page in the other language, named in that language. */
   otherLanguage: { language: Language; label: string }
+  /** The link to the CV as a PDF, under the list of jobs. Left out while the CV build sends none. */
+  resume?: { label: string; href: string }
   /** One sentence around a link to the repository. */
   footer: { before: string; link: string; after: string }
   /** Names read out by screen readers. */

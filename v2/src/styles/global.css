@@ -19,6 +19,42 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* The background is a grid of faint dots that scrolls with the page. A second,
+   amber copy of the grid shows only in a patch around the mouse pointer.
+   pointerEffects.ts sets the patch's position and marks that a pointer is there. */
+body {
+  position: relative;
+}
+
+body::before,
+body::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-size: var(--dot-gap) var(--dot-gap);
+  content: '';
+  pointer-events: none;
+}
+
+body::before {
+  background-image: radial-gradient(circle, var(--color-border) 1px, transparent 1.5px);
+}
+
+body::after {
+  background-image: radial-gradient(circle, var(--color-accent) 1.25px, transparent 1.75px);
+  mask-image: radial-gradient(
+    circle var(--dot-patch-radius) at var(--pointer-x, 0) var(--pointer-y, 0),
+    black,
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+:root[data-pointer] body::after {
+  opacity: 1;
+}
+
 h1,
 h2,
 h3,

@@ -210,3 +210,77 @@ test.describe('theme', () => {
     expect(difference).toBeLessThan(4)
   })
 })
+
+test.describe('pointer effects', () => {
+  const patch = (page: Page) =>
+    page.evaluate(() => ({
+      x: parseFloat(document.body.style.getPropertyValue('--pointer-x')),
+      y: parseFloat(document.body.style.getPropertyValue('--pointer-y')),
+      opacity: getComputedStyle(document.body, '::after').opacity,
+    }))
+
+  test('the background has a dot grid, with no patch before a pointer moves', async ({ page }) => {
+    await page.goto('/')
+    const layers = await page.evaluate(() => ({
+      grid: getComputedStyle(document.body, '::before').backgroundImage,
+      patchOpacity: getComputedStyle(document.body, '::after').opacity,
+    }))
+    expect(layers.grid).toContain('radial-gradient')
+    expect(layers.patchOpacity).toBe('0')
+    await expect(page.locator('html')).not.toHaveAttribute('data-pointer')
+  })
+
+  test('the patch of amber dots follows the mouse and the scroll position', async ({
+    page,
+  }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop', 'Pointer effects need a mouse')
+    await page.goto('/')
+    await page.mouse.move(300, 200)
+    await page.mouse.move(400, 250)
+    await expect(page.locator('html')).toHaveAttribute('data-pointer', '')
+    await expect.poll(async () => (await patch(page)).opacity).toBe('1')
+    await expect.poll(async () => Math.round((await patch(page)).x)).toBe(400)
+    await expect.poll(async () => Math.round((await patch(page)).y)).toBe(250)
+
+    await page.evaluate(() => window.scrollTo({ top: 300, behavior: 'instant' }))
+    await expect.poll(async () => Math.round((await patch(page)).y)).toBe(550)
+  })
+
+  test('the patch does not trail when reduced motion is asked for', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop', 'Pointer effects need a mouse')
+    await page.emulateMedia({ reducedMotion: 'reduce' })
+    await page.goto('/')
+    await page.mouse.move(300, 200)
+    await page.mouse.move(700, 500)
+    // One frame is enough to arrive.
+    await page.evaluate(() => new Promise((done) => requestAnimationFrame(() => done(null))))
+    const at = await patch(page)
+    expect(Math.round(at.x)).toBe(700)
+    expect(Math.round(at.y)).toBe(500)
+  })
+
+  test('the card under the mouse knows where the pointer is on it', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop', 'Pointer effects need a mouse')
+    await page.goto('/')
+    const card = page.locator('[data-card]').first()
+    await card.scrollIntoViewIfNeeded()
+    const box = (await card.boundingBox())!
+    await page.mouse.move(box.x + 50, box.y + 20)
+    const onCard = await card.evaluate((element) => ({
+      x: parseFloat((element as HTMLElement).style.getPropertyValue('--card-pointer-x')),
+      y: parseFloat((element as HTMLElement).style.getPropertyValue('--card-pointer-y')),
+    }))
+    expect(Math.round(onCard.x)).toBe(50)
+    expect(Math.round(onCard.y)).toBe(20)
+    await expect
+      .poll(() => card.evaluate((element) => getComputedStyle(element, '::before').opacity))
+      .toBe('1')
+  })
+
+  test('touch does not start the effects', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'phone', 'Needs a touch screen')
+    await page.goto('/')
+    await page.getByRole('heading', { level: 1 }).tap()
+    await expect(page.locator('html')).not.toHaveAttribute('data-pointer')
+  })
+})

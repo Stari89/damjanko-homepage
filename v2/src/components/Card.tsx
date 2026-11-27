@@ -82,6 +82,8 @@ export function Card({
     // An expandable card takes focus so that it also opens by keyboard and by tap.
     <li
       className={className}
+      // Lets the pointer effects find the card (see pointerEffects.ts).
+      data-card=""
       tabIndex={expandable ? 0 : undefined}
       {...(expandable
         ? {

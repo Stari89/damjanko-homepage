@@ -190,6 +190,37 @@
   .card:hover .title {
     color: var(--color-accent);
   }
+
+  /* The part of the border nearest the pointer glows. This is a ring the size
+     of the border, painted with a glow centred on the pointer; the mask cuts
+     away everything inside the border. pointerEffects.ts sets the position. */
+  .card {
+    position: relative;
+  }
+
+  .card::before {
+    position: absolute;
+    inset: -1px;
+    padding: 1px;
+    border-radius: inherit;
+    background: radial-gradient(
+      circle var(--glow-radius) at var(--card-pointer-x, 50%) var(--card-pointer-y, 50%),
+      var(--color-accent),
+      transparent
+    );
+    content: '';
+    mask:
+      linear-gradient(black 0 0) content-box exclude,
+      linear-gradient(black 0 0);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition);
+  }
+
+  /* Only once the pointer's position is known, so the glow never starts in the middle. */
+  :global(:root[data-pointer]) .card:hover::before {
+    opacity: 1;
+  }
 }
 
 @media (min-width: 64rem) and (hover: none) {

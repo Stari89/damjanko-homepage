@@ -43,6 +43,11 @@
   --radius: 6px;
   --transition: 150ms ease;
 
+  /* Pointer effects: the dot grid in the background and the glow on a card's edge */
+  --dot-gap: 1.5rem;
+  --dot-patch-radius: 11rem;
+  --glow-radius: 9rem;
+
   /* Layout */
   --page-max-width: 75rem;
 }

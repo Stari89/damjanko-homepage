@@ -7,6 +7,7 @@ import './styles/global.css'
 import App from './App.tsx'
 import { getContent } from './content/content.ts'
 import type { Language } from './content/ui.ts'
+import { startPointerEffects } from './pointerEffects.ts'
 
 /**
  * The language of a built page is the one its HTML was prerendered in.
@@ -40,3 +41,5 @@ if (root.firstElementChild) {
 } else {
   createRoot(root).render(app)
 }
+
+startPointerEffects()

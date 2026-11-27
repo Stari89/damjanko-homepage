@@ -4,7 +4,6 @@ node_modules/
 # testing
 coverage/
 # production
-/v1/build
 /v2/dist
 /v2/dist-ssr
 /v2/test-results

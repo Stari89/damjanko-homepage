@@ -1,16 +1,7 @@
 ## damjanko-homepage
 
-Live page: [damjanko.com](https://damjanko.com)
+Live page: [damjanko.com](https://damjanko.com) in English, [damjanko.si](https://damjanko.si) in Slovenian.
 
-- [`v1/`](v1): the current site (Create React App). This is what is deployed.
-- [`v2/`](v2): the rewrite, in progress.
+The site is in [`v2/`](v2); see its [README](v2/README.md).
 
-### Running v1
-
-```
-cd v1
-npm install
-npm run build
-```
-
-`npm start` does not work on current Node versions; the old dev server crashes. Build instead and serve the `v1/build` folder with any static server.
+The first version of the site (Create React App) was removed from the repository at the release of 2.0.0. Its last state is under the tag `v1.1.14`.

@@ -1,6 +1,6 @@
 ## damjanko-homepage v2
 
-Rewrite of the site, in progress. The live site is still built from [`../v1`](../v1).
+The site, live at [damjanko.com](https://damjanko.com) and [damjanko.si](https://damjanko.si).
 
 Decisions are written down in [`docs/`](docs):
 

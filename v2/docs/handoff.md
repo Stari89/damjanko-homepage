@@ -4,14 +4,14 @@ Written on 2026-11-26, when work moved to another computer. It describes where t
 
 ## Where things stand
 
-| Part                    | State                                                                                   |
-| ----------------------- | --------------------------------------------------------------------------------------- |
-| Live site, damjanko.com | v1.1.14, built from `v1/`, deployed by hand over FTP to shared hosting                  |
-| `v1/`                   | Frozen. Only touched if the live site needs a fix before v2 replaces it                 |
-| `v2/`                   | Working page in English and Slovenian with real content. Not deployed                   |
-| Version of v2           | `2.0.0-alpha.0` in `v2/package.json`                                                    |
-| Checks on v2            | Formatting, lint, 60 unit tests and 77 browser tests pass; 19 browser tests are skipped |
-| CI                      | `.github/workflows/v2.yml` runs all of the above on every push touching `v2/`           |
+| Part          | State                                                                                            |
+| ------------- | ------------------------------------------------------------------------------------------------ |
+| Live site     | v2, built from `v2/`, copied by hand over FTP to shared hosting; see [Deployment](deployment.md) |
+| `v1/`         | Removed from the repository at the release of 2.0.0. Its last state is under the tag `v1.1.14`   |
+| `v2/`         | The page in English and Slovenian                                                                |
+| Version of v2 | `2.0.0` in `v2/package.json`, tagged `v2.0.0`                                                    |
+| Checks on v2  | Formatting, lint, 60 unit tests and 77 browser tests pass; 19 browser tests are skipped          |
+| CI            | `.github/workflows/v2.yml` runs all of the above on every push touching `v2/`                    |
 
 ## Setting up on a new computer
 
@@ -68,16 +68,14 @@ The page shares its text with a generic CV, which is written elsewhere in Englis
 
 ### Release
 
-5. Set the version to `2.0.0`, build, and copy the contents of `v2/dist` into the folder of each domain, replacing v1. The steps and the checks are in [Deployment](deployment.md).
-6. Tag the commit `v2.0.0`.
-7. Remove `v1/` from the repository in the release commit. Decided on 2026-11-27: v1 goes away when v2 is deployed. It stays in the git history and under the tag `v1.1.14`, if that tag exists; otherwise tag its last commit first.
+5. Done on 2026-11-27: the version is `2.0.0` and the commit is tagged `v2.0.0`. Copying the build to the host is the owner's step; the steps and the checks are in [Deployment](deployment.md).
+6. Done: `v1/` was removed from the repository in the release commit. It stays in the git history and under the tag `v1.1.14`.
 
 ## Things worth knowing
 
 - **The browser tests build first.** `npm run test:e2e` runs the build and then tests the contents of `v2/dist`, not the source. It uses port 4317 and fails if that port is taken.
 - **Low desktop windows.** The left column does not scroll. Below 48rem of window height it gets tighter in two steps, and below 36rem it scrolls with the page. The heights are in `Sidebar.module.css`; a new line of text in the column means measuring again.
-- **v1 cannot run its dev server** on current Node. `npm run build` in `v1/` still works; serve `v1/build` with any static server to look at it.
 - **The portrait is a file in the repository,** `v2/src/assets/portrait.jpg`, scaled down from the original photo. Replacing the photo means replacing that file.
-- **Line endings.** Files in `v2/` use LF (`v2/.gitattributes`). The root `.gitignore` and the files in `v1/` use CRLF.
+- **Line endings.** Files in `v2/` use LF (`v2/.gitattributes`). The root `.gitignore` uses CRLF.
 - **Conventions.** Commits go straight to `master` with short past-tense messages ("Added…", "Changed…"). A release is a commit named after the version plus a tag of the same name. All project documents are Markdown files in this folder.
 - **No client names** anywhere on the site or in this repository.

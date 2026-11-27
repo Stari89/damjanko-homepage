@@ -34,16 +34,16 @@ The CV is also published as a PDF, which is light so that it prints well. The pa
 
 The values as built. `tokens.css` is the source of truth:
 
-| Token                 | Dark                    | Light                 |
-| --------------------- | ----------------------- | --------------------- |
-| `--color-bg`          | `#0f1012`               | `#f7f7f5`             |
-| `--color-surface`     | `#17191c`               | `#ffffff`             |
-| `--color-border`      | `#26292e`               | `#dfe1e4`             |
-| `--color-text`        | `#a3a8b0`               | `#4b5159`             |
-| `--color-text-strong` | `#eceef1`               | `#16181b`             |
-| `--color-text-muted`  | `#868c96`               | `#646a73`             |
-| `--color-accent`      | `#f5b83d`               | `#8a5a00`             |
-| `--color-accent-soft` | `rgb(245 184 61 / 12%)` | `rgb(138 90 0 / 10%)` |
+| Token                 | Dark                    | Light                   |
+| --------------------- | ----------------------- | ----------------------- |
+| `--color-bg`          | `#0f1012`               | `#f7f7f5`               |
+| `--color-surface`     | `#17191c`               | `#ffffff`               |
+| `--color-border`      | `#26292e`               | `#dfe1e4`               |
+| `--color-text`        | `#a3a8b0`               | `#4b5159`               |
+| `--color-text-strong` | `#eceef1`               | `#16181b`               |
+| `--color-text-muted`  | `#868c96`               | `#646a73`               |
+| `--color-accent`      | `#f5b83d`               | `#a85100`               |
+| `--color-accent-soft` | `rgb(245 184 61 / 12%)` | `rgb(245 184 61 / 18%)` |
 
 Text contrast stays at WCAG AA or better in both themes.
 

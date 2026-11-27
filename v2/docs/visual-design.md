@@ -75,7 +75,7 @@ The page shares its text with the CV but is shorter. It has no skills list, no b
 | Background                             | Dark: near-black neutral `#0f1012`, not navy. Light: warm off-white `#f7f7f5`                                        |
 | Cards                                  | Dark: `#17191c`. Light: white                                                                                        |
 | Text                                   | Headings `#eceef1` on dark, `#16181b` on light; body text muted grey in both                                         |
-| Accent                                 | Amber: `#f5b83d` on dark, `#8a5a00` on light. Used for links, the active navigation item, tag pills and hover states |
+| Accent                                 | Amber: `#f5b83d` on dark, `#a85100` on light. Used for links, the active navigation item, tag pills and hover states |
 | Body and heading font                  | Inter                                                                                                                |
 | Small labels (dates, tags, navigation) | JetBrains Mono                                                                                                       |
 | Fonts                                  | Served from the site, no third-party requests                                                                        |

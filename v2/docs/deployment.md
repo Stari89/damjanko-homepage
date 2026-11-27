@@ -88,8 +88,8 @@ No password or key of the host is stored at GitHub.
 
 Set up once, on 2026-11-27.
 
-- The script is a copy of `v2/scripts/server-deploy.sh`, in the account's home folder as `deploy/server-deploy.sh`. When the script changes in the repository, copy it there again. It must keep its Unix line endings; WinSCP's default binary transfer does that.
-- The cron job, set in the hosting panel under Cron Jobs, runs every five minutes: `/bin/bash "$HOME/deploy/server-deploy.sh"`.
+- The script is a copy of `v2/scripts/server-deploy.sh`, on the host as `domains/deploy/server-deploy.sh`, beside the folders of the domains and outside every website. When the script changes in the repository, copy it there again. It must keep its Unix line endings; WinSCP's default binary transfer does that.
+- The cron job, set in the hosting panel under Cron Jobs, runs every five minutes: `/bin/bash "$HOME/domains/deploy/server-deploy.sh"`.
 - The script keeps its state in `~/.damjanko-deploy/`: `version` holds the installed version and `deploy.log` what it did, including why a run failed. It prints nothing, so cron sends no mail.
 - To install a release again, delete `~/.damjanko-deploy/version`; the next run installs the newest release.
 - To stop automatic releases, delete the cron job.

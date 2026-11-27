@@ -10,9 +10,9 @@ How v2 is published. The site's owner copies the files over FTP by hand.
 
 The same build goes into both folders. `.htaccess` makes the .si domain show the Slovenian page at its root address and sends plain HTTP to HTTPS.
 
-## What is in the two folders before the first v2 deploy
+## What was in the two folders before the first v2 deploy
 
-Checked on 2026-11-27.
+Checked on 2026-11-27. v2.0.0 was deployed to both folders the same day, so the v1 files listed here are gone.
 
 | Folder       | Contents                                                                                                                                                                                  |
 | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

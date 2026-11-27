@@ -68,7 +68,7 @@ The page shares its text with a generic CV, which is written elsewhere in Englis
 
 ### Release
 
-5. Done on 2026-11-27: the version is `2.0.0` and the commit is tagged `v2.0.0`. Copying the build to the host is the owner's step; the steps and the checks are in [Deployment](deployment.md).
+5. Done on 2026-11-27: the version is `2.0.0` and the commit is tagged `v2.0.0`. The owner copied the build to both domains the same day, and the checks in [Deployment](deployment.md) passed.
 6. Done: `v1/` was removed from the repository in the release commit. It stays in the git history and under the tag `v1.1.14`.
 
 ## Things worth knowing

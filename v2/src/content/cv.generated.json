@@ -23,6 +23,18 @@
       {
         "kind": "linkedin",
         "href": "https://www.linkedin.com/in/damjanko/"
+      },
+      {
+        "kind": "facebook",
+        "href": "https://www.facebook.com/letecnez"
+      },
+      {
+        "kind": "instagram",
+        "href": "https://www.instagram.com/damjans_workshop"
+      },
+      {
+        "kind": "youtube",
+        "href": "https://www.youtube.com/@DamjansWorkshop"
       }
     ]
   },
@@ -49,6 +61,18 @@
       "linkedin": {
         "en": "LinkedIn",
         "sl": "LinkedIn"
+      },
+      "facebook": {
+        "en": "Facebook",
+        "sl": "Facebook"
+      },
+      "instagram": {
+        "en": "Instagram",
+        "sl": "Instagram"
+      },
+      "youtube": {
+        "en": "YouTube",
+        "sl": "YouTube"
       },
       "email": {
         "en": "Email",

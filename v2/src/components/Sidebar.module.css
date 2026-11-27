@@ -39,6 +39,7 @@
 }
 
 .links {
+  container-type: inline-size;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -79,8 +80,11 @@
   height: 1.25rem;
 }
 
-/* The link to the other language is set apart from the contact links by a hairline. */
+/* The other language and the theme toggle stay together. A hairline sets them apart from the contact links. */
 .language {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
   padding-left: var(--space-4);
   border-left: 1px solid var(--color-border);
 }
@@ -88,6 +92,19 @@
 .link:hover {
   color: var(--color-accent);
   text-decoration: none;
+}
+
+/*
+ * When the contact row is too narrow to hold the group beside the icons, the
+ * group takes its own row, without the hairline. The row's own width is
+ * measured, not the screen's, because the desktop sidebar is narrow too.
+ */
+@container (max-width: 27rem) {
+  .language {
+    flex-basis: 100%;
+    padding-left: 0;
+    border-left: 0;
+  }
 }
 
 @media (min-width: 64rem) {

@@ -1,4 +1,4 @@
-import { expect, test, type Page } from '@playwright/test'
+import { expect, test, type Locator, type Page } from '@playwright/test'
 
 // The built site has one page per language. On the live site each is the root
 // of its own domain; here both are reached by path.
@@ -170,5 +170,18 @@ test.describe('theme', () => {
     await page.getByTestId('theme-toggle').click()
     expect(await background(page)).toBe(light)
     expect(errors).toEqual([])
+  })
+
+  test('the toggle sits on the same row as the language link', async ({ page }) => {
+    await page.goto('/')
+    const centre = async (locator: Locator) => {
+      const box = await locator.boundingBox()
+      return box!.y + box!.height / 2
+    }
+    const link = page.locator('header').getByRole('link', { name: 'Slovenščina' })
+    const difference = Math.abs(
+      (await centre(page.getByTestId('theme-toggle'))) - (await centre(link)),
+    )
+    expect(difference).toBeLessThan(4)
   })
 })

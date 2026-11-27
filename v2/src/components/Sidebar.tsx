@@ -66,8 +66,6 @@ export function Sidebar({ content }: { content: Content }) {
           >
             {other.label}
           </a>
-        </li>
-        <li>
           <ThemeToggle />
         </li>
       </ul>

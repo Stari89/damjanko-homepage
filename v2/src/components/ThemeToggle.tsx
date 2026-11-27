@@ -1,7 +1,7 @@
+import { toggleTheme } from '../theme.ts'
 import { LinkIcon } from './LinkIcon.tsx'
 import { themeIcons } from './linkIcons.ts'
 import styles from './ThemeToggle.module.css'
-import { toggleTheme } from '../theme.ts'
 
 /**
  * Switches between the light and dark theme. It has no state so that the server

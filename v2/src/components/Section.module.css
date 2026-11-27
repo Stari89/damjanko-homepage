@@ -14,21 +14,18 @@
   text-transform: uppercase;
 }
 
-/* On wide screens the sidebar navigation names the section, so the heading is
-   kept for screen readers only. */
+/* On wide screens the heading scrolls with its section: the sidebar navigation
+   already shows which section is in view. */
 @media (min-width: 64rem) {
   .section {
     scroll-margin-top: var(--space-7);
   }
 
   .heading {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
+    position: static;
+    margin: 0 0 var(--space-4);
     padding: 0;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
+    background: none;
+    backdrop-filter: none;
   }
 }

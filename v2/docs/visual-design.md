@@ -31,9 +31,11 @@ Two columns, centered, with a maximum width of about 1200 px.
 3. Projects: one card per personal project
 4. Footer: how the site is built, and the version
 
+Each section starts with its name as a small heading.
+
 ### Phone and tablet
 
-One column. The left column's content becomes the top of the page, the section navigation is dropped, and each section gets a heading that sticks to the top of the screen while its section scrolls.
+One column. The left column's content becomes the top of the page, the section navigation is dropped, and each section's heading sticks to the top of the screen while its section scrolls.
 
 ## Sections
 
@@ -59,7 +61,7 @@ Used for the older jobs, so the page stays short. How many jobs are shown as ful
 - Years on the left, in the same style as a job's date range
 - Title as the heading, linking to the project's first link
 - Description of two or three sentences
-- Any further links as small labels under the description
+- All links as small labels under the description
 - Two to four technology tags
 
 ### What the page leaves out

@@ -10,7 +10,7 @@ Written on 2026-11-26, when work moved to another computer. It describes where t
 | `v1/`                   | Frozen. Only touched if the live site needs a fix before v2 replaces it                |
 | `v2/`                   | Working page in English and Slovenian with real content. Not deployed                  |
 | Version of v2           | `2.0.0-alpha.0` in `v2/package.json`                                                   |
-| Checks on v2            | Formatting, lint, 51 unit tests and 46 browser tests pass; 6 browser tests are skipped |
+| Checks on v2            | Formatting, lint, 51 unit tests and 47 browser tests pass; 7 browser tests are skipped |
 | CI                      | `.github/workflows/v2.yml` runs all of the above on every push touching `v2/`          |
 
 ## Setting up on a new computer

@@ -15,7 +15,10 @@ export function Sidebar({ content }: { content: Content }) {
   return (
     <header className={styles.sidebar}>
       <div>
-        <img className={styles.portrait} src={portrait} alt="" width={176} height={176} />
+        {/* The frame carries the edge glow, which an image cannot (see pointerEffects.ts). */}
+        <div className={styles.portrait} data-glow="">
+          <img src={portrait} alt="" width={176} height={176} />
+        </div>
         <h1 className={styles.name}>{content.name}</h1>
         <p className={styles.title}>{content.title}</p>
         <p className={styles.location}>{content.location}</p>

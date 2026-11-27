@@ -1,7 +1,7 @@
 /**
  * Tells the styles where the mouse pointer is. Two effects use it: the patch of
  * amber dots in the page background (global.css) and the glow on the edge of
- * the card under the pointer (Card.module.css).
+ * the card or the portrait under the pointer (Card.module.css, Sidebar.module.css).
  */
 
 /** Share of the remaining distance the patch of dots covers per frame. */
@@ -63,11 +63,11 @@ export function startPointerEffects(): void {
     root.dataset.pointer = ''
     follow()
 
-    const card = event.target instanceof Element ? event.target.closest('[data-card]') : null
-    if (card instanceof HTMLElement) {
-      const box = card.getBoundingClientRect()
-      card.style.setProperty('--card-pointer-x', `${at.x - box.left}px`)
-      card.style.setProperty('--card-pointer-y', `${at.y - box.top}px`)
+    const lit = event.target instanceof Element ? event.target.closest('[data-glow]') : null
+    if (lit instanceof HTMLElement) {
+      const box = lit.getBoundingClientRect()
+      lit.style.setProperty('--glow-x', `${at.x - box.left}px`)
+      lit.style.setProperty('--glow-y', `${at.y - box.top}px`)
     }
   })
 

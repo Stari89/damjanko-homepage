@@ -262,18 +262,35 @@ test.describe('pointer effects', () => {
   test('the card under the mouse knows where the pointer is on it', async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== 'desktop', 'Pointer effects need a mouse')
     await page.goto('/')
-    const card = page.locator('[data-card]').first()
+    const card = page.locator('[data-glow]').first()
     await card.scrollIntoViewIfNeeded()
     const box = (await card.boundingBox())!
     await page.mouse.move(box.x + 50, box.y + 20)
     const onCard = await card.evaluate((element) => ({
-      x: parseFloat((element as HTMLElement).style.getPropertyValue('--card-pointer-x')),
-      y: parseFloat((element as HTMLElement).style.getPropertyValue('--card-pointer-y')),
+      x: parseFloat((element as HTMLElement).style.getPropertyValue('--glow-x')),
+      y: parseFloat((element as HTMLElement).style.getPropertyValue('--glow-y')),
     }))
     expect(Math.round(onCard.x)).toBe(50)
     expect(Math.round(onCard.y)).toBe(20)
     await expect
       .poll(() => card.evaluate((element) => getComputedStyle(element, '::before').opacity))
+      .toBe('1')
+  })
+
+  test('the portrait under the mouse gets the same glow', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop', 'Pointer effects need a mouse')
+    await page.goto('/')
+    const frame = page.locator('header [data-glow]')
+    const box = (await frame.boundingBox())!
+    await page.mouse.move(box.x + 30, box.y + 40)
+    const onFrame = await frame.evaluate((element) => ({
+      x: parseFloat((element as HTMLElement).style.getPropertyValue('--glow-x')),
+      y: parseFloat((element as HTMLElement).style.getPropertyValue('--glow-y')),
+    }))
+    expect(Math.round(onFrame.x)).toBe(30)
+    expect(Math.round(onFrame.y)).toBe(40)
+    await expect
+      .poll(() => frame.evaluate((element) => getComputedStyle(element, '::before').opacity))
       .toBe('1')
   })
 

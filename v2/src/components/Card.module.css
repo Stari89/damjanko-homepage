@@ -204,7 +204,7 @@
     padding: 1px;
     border-radius: inherit;
     background: radial-gradient(
-      circle var(--glow-radius) at var(--card-pointer-x, 50%) var(--card-pointer-y, 50%),
+      circle var(--glow-radius) at var(--glow-x, 50%) var(--glow-y, 50%),
       var(--color-accent),
       transparent
     );

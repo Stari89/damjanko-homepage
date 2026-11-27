@@ -2,6 +2,8 @@ import portrait from '../assets/portrait.jpg'
 import type { Content } from '../content/content.ts'
 import { sectionIds, siteUrl } from '../content/ui.ts'
 import { useActiveSection } from '../hooks/useActiveSection.ts'
+import { LinkIcon } from './LinkIcon.tsx'
+import { linkIcons } from './linkIcons.ts'
 import styles from './Sidebar.module.css'
 
 export function Sidebar({ content }: { content: Content }) {
@@ -37,17 +39,23 @@ export function Sidebar({ content }: { content: Content }) {
       </div>
 
       <ul className={styles.links} aria-label={ui.aria.contact}>
-        {content.links.map((link) => (
-          <li key={link.href}>
-            <a
-              href={link.href}
-              className={styles.link}
-              {...(link.href.startsWith('https://') ? { target: '_blank', rel: 'noreferrer' } : {})}
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
+        {content.links.map((link) => {
+          const shape = Object.hasOwn(linkIcons, link.kind) ? linkIcons[link.kind] : undefined
+          return (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                className={shape ? styles.iconLink : styles.link}
+                {...(link.href.startsWith('https://')
+                  ? { target: '_blank', rel: 'noreferrer' }
+                  : {})}
+                {...(shape ? { 'aria-label': link.label, title: link.label } : {})}
+              >
+                {shape ? <LinkIcon shape={shape} className={styles.icon} /> : link.label}
+              </a>
+            </li>
+          )
+        })}
         <li className={styles.language}>
           <a
             href={siteUrl[other.language]}

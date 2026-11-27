@@ -22,7 +22,7 @@ Two columns, centered, with a maximum width of about 1200 px.
 - Location, as a small label
 - One-line tagline
 - Section navigation: About, Experience, Projects. The section currently in view is highlighted.
-- Social links (GitHub, LinkedIn, email) at the bottom, followed by a link to the page in the other language
+- Contact links at the bottom, shown as small icons (Font Awesome Free), followed by a text link to the page in the other language. A link's name is its tooltip and what screen readers read; a kind of link without an icon shows its name as text.
 
 **Right column, scrolling:**
 

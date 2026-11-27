@@ -60,6 +60,8 @@ interface GeneratedCv {
 }
 
 export interface Link {
+  /** What the link leads to, such as "github". Used to pick an icon. */
+  kind: string
   label: string
   href: string
 }
@@ -143,7 +145,11 @@ export function getContent(language: Language): Content {
     return cv.web.linkLabels[kind][language]
   }
 
-  const toLink = ({ kind, href }: GeneratedLink): Link => ({ label: labelOf(kind), href })
+  const toLink = ({ kind, href }: GeneratedLink): Link => ({
+    kind,
+    label: labelOf(kind),
+    href,
+  })
 
   return {
     language,
@@ -153,7 +159,7 @@ export function getContent(language: Language): Content {
     tagline: cv.person.tagline?.[language],
     links: [
       ...cv.person.links.map(toLink),
-      { label: labelOf('email'), href: `mailto:${cv.person.email}` },
+      { kind: 'email', label: labelOf('email'), href: `mailto:${cv.person.email}` },
     ],
     about: cv.about.map((paragraph) => paragraph[language]),
     jobs: cv.jobs.map((job) => ({

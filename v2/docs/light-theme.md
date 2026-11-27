@@ -34,24 +34,26 @@ The CV is also published as a PDF, which is light so that it prints well. The pa
 
 The values as built. `tokens.css` is the source of truth:
 
-| Token                 | Dark                    | Light                   |
-| --------------------- | ----------------------- | ----------------------- |
-| `--color-bg`          | `#0f1012`               | `#f7f7f5`               |
-| `--color-surface`     | `#17191c`               | `#ffffff`               |
-| `--color-border`      | `#26292e`               | `#dfe1e4`               |
-| `--color-text`        | `#a3a8b0`               | `#4b5159`               |
-| `--color-text-strong` | `#eceef1`               | `#16181b`               |
-| `--color-text-muted`  | `#868c96`               | `#646a73`               |
-| `--color-accent`      | `#f5b83d`               | `#a85100`               |
-| `--color-accent-soft` | `rgb(245 184 61 / 12%)` | `rgb(245 184 61 / 30%)` |
-| `--color-accent-fill` | `#f5b83d`               | `#f5b83d`               |
-| `#9a4a00`             |
+| Token                    | Dark                    | Light                    |
+| ------------------------ | ----------------------- | ------------------------ |
+| `--color-bg`             | `#0f1012`               | `#f7f7f5`                |
+| `--color-surface`        | `#17191c`               | `#ffffff`                |
+| `--color-border`         | `#26292e`               | `#dfe1e4`                |
+| `--color-text`           | `#a3a8b0`               | `#4b5159`                |
+| `--color-text-strong`    | `#eceef1`               | `#16181b`                |
+| `--color-text-muted`     | `#868c96`               | `#646a73`                |
+| `--color-accent`         | `#f5b83d`               | `#a85100`                |
+| `--color-accent-soft`    | `rgb(245 184 61 / 12%)` | `rgb(245 184 61 / 30%)`  |
+| `--color-accent-fill`    | `#f5b83d`               | `#f5b83d`                |
+| `--color-on-accent-fill` | `#0f1012`               | `#0f1012`                |
+| `--color-tag-text`       | `#f5b83d` (the accent)  | `#9a4a00`                |
+| `--color-bg-veil`        | `rgb(15 16 18 / 85%)`   | `rgb(247 247 245 / 85%)` |
 
 Bright amber cannot be read as text on a light background. In the light theme it is therefore used for fills only: the tag backgrounds and the text selection. Links and other amber text use the darker accent, and tag text is a shade darker still so that it stays readable on its amber tint.
 
 Text contrast stays at WCAG AA or better in both themes.
 
-The sticky section heading on phones has the dark background written in directly. It gets a token of its own, `--color-bg-veil`, with a value per theme.
+The sticky section heading on phones has a see-through background. It has a token of its own, `--color-bg-veil`, with a value per theme.
 
 ### Saved choice
 

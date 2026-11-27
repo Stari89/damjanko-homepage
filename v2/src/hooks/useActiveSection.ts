@@ -48,7 +48,11 @@ export function useActiveSection<Id extends string>(ids: readonly Id[]): Id {
     update()
     window.addEventListener('scroll', schedule, { passive: true })
     window.addEventListener('resize', schedule)
+    // The page also changes height without a scroll: a card unfolds, a font loads.
+    const heightWatcher = new ResizeObserver(schedule)
+    heightWatcher.observe(document.body)
     return () => {
+      heightWatcher.disconnect()
       cancelAnimationFrame(frame)
       window.removeEventListener('scroll', schedule)
       window.removeEventListener('resize', schedule)

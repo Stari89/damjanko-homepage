@@ -4,14 +4,14 @@ Written on 2026-11-26, when work moved to another computer. It describes where t
 
 ## Where things stand
 
-| Part                    | State                                                                                  |
-| ----------------------- | -------------------------------------------------------------------------------------- |
-| Live site, damjanko.com | v1.1.14, built from `v1/`, deployed by hand to Apache on the NAS                       |
-| `v1/`                   | Frozen. Only touched if the live site needs a fix before v2 replaces it                |
-| `v2/`                   | Working page in English and Slovenian with real content. Not deployed                  |
-| Version of v2           | `2.0.0-alpha.0` in `v2/package.json`                                                   |
-| Checks on v2            | Formatting, lint, 51 unit tests and 47 browser tests pass; 7 browser tests are skipped |
-| CI                      | `.github/workflows/v2.yml` runs all of the above on every push touching `v2/`          |
+| Part                    | State                                                                                   |
+| ----------------------- | --------------------------------------------------------------------------------------- |
+| Live site, damjanko.com | v1.1.14, built from `v1/`, deployed by hand to Apache on the NAS                        |
+| `v1/`                   | Frozen. Only touched if the live site needs a fix before v2 replaces it                 |
+| `v2/`                   | Working page in English and Slovenian with real content. Not deployed                   |
+| Version of v2           | `2.0.0-alpha.0` in `v2/package.json`                                                    |
+| Checks on v2            | Formatting, lint, 51 unit tests and 69 browser tests pass; 19 browser tests are skipped |
+| CI                      | `.github/workflows/v2.yml` runs all of the above on every push touching `v2/`           |
 
 ## Setting up on a new computer
 
@@ -44,7 +44,7 @@ These are settled; the reasons are in the linked documents.
 ## What is built in v2
 
 - **Two languages:** English and Slovenian, built as two pages from the same code.
-- **Left column:** portrait, name, title, location, tagline, section links that highlight while scrolling, GitHub, LinkedIn and email links, a link to the other language, and the theme toggle (a sun or a moon, saved in local storage per domain).
+- **Left column:** portrait, name, title, location, tagline, section links that highlight while scrolling, six contact links shown as icons, a link to the other language, and the theme toggle (a sun or a moon, saved in local storage per domain).
 - **About:** one paragraph, the CV's summary.
 - **Experience:** seven jobs. The three newest are cards with years, a short paragraph and technology tags; the four oldest are compact rows with one sentence, which unfold to the full description and tags under the pointer.
 - **Projects:** three personal projects with years, links, a description and tags.
@@ -74,7 +74,8 @@ The page shares its text with a generic CV, which is written elsewhere in Englis
 
 ## Things worth knowing
 
-- **Run the build before the browser tests.** `npm run test:e2e` tests the contents of `v2/dist`, not the source.
+- **The browser tests build first.** `npm run test:e2e` runs the build and then tests the contents of `v2/dist`, not the source. It uses port 4317 and fails if that port is taken.
+- **Low desktop windows.** The left column does not scroll. Below 48rem of window height it gets tighter in two steps, and below 36rem it scrolls with the page. The heights are in `Sidebar.module.css`; a new line of text in the column means measuring again.
 - **v1 cannot run its dev server** on current Node. `npm run build` in `v1/` still works; serve `v1/build` with any static server to look at it.
 - **The portrait is a file in the repository,** `v2/src/assets/portrait.jpg`, scaled down from the original photo. Replacing the photo means replacing that file.
 - **Line endings.** Files in `v2/` use LF (`v2/.gitattributes`). The root `.gitignore` and the files in `v1/` use CRLF.

@@ -10,6 +10,12 @@
   margin-top: var(--space-6);
 }
 
+/* The sections keep the same distance from each other as from the footer. */
+.sections {
+  display: grid;
+  gap: inherit;
+}
+
 .prose {
   display: grid;
   gap: var(--space-3);

@@ -55,6 +55,43 @@ body::after {
   opacity: 1;
 }
 
+/* The edge glow. On an element marked data-glow, the part of the edge nearest
+   the mouse pointer glows while the pointer is on it. This is a ring as wide as
+   the border, painted with a glow centred on the pointer; the mask cuts away
+   everything inside the ring. An image cannot have such a ring, so its frame
+   carries it. pointerEffects.ts sets the position. The element can set:
+   --glow-on (0 turns it off), --glow-width, --glow-outset (how far the ring
+   reaches out, to cover a border) and --glow-size. */
+@media (hover: hover) {
+  [data-glow] {
+    position: relative;
+  }
+
+  [data-glow]::before {
+    position: absolute;
+    inset: calc(-1 * var(--glow-outset, 0px));
+    padding: var(--glow-width, 1px);
+    border-radius: inherit;
+    background: radial-gradient(
+      circle var(--glow-size, var(--glow-radius)) at var(--glow-x, 50%) var(--glow-y, 50%),
+      var(--color-accent),
+      transparent
+    );
+    content: '';
+    mask:
+      linear-gradient(black 0 0) content-box exclude,
+      linear-gradient(black 0 0);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition);
+  }
+
+  /* Only once the pointer's position is known, so the glow never starts in the middle. */
+  :root[data-pointer] [data-glow]:hover::before {
+    opacity: var(--glow-on, 1);
+  }
+}
+
 h1,
 h2,
 h3,

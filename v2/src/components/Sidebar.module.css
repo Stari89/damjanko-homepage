@@ -1,7 +1,9 @@
 .portrait {
+  /* The edge glow (see global.css) covers the image's border. */
+  --glow-width: 2px;
+  --glow-size: calc(var(--glow-radius) * 0.6);
   width: 8rem;
   height: 8rem;
-  position: relative;
   margin-bottom: var(--space-4);
   border-radius: 50%;
 }
@@ -12,33 +14,6 @@
   border: 2px solid var(--color-border);
   border-radius: 50%;
   object-fit: cover;
-}
-
-/* With a mouse, the part of the portrait's border nearest the pointer glows,
-   as on the cards (see Card.module.css for how the ring is made). */
-@media (hover: hover) {
-  .portrait::before {
-    position: absolute;
-    inset: 0;
-    padding: 2px;
-    border-radius: inherit;
-    background: radial-gradient(
-      circle calc(var(--glow-radius) * 0.6) at var(--glow-x, 50%) var(--glow-y, 50%),
-      var(--color-accent),
-      transparent
-    );
-    content: '';
-    mask:
-      linear-gradient(black 0 0) content-box exclude,
-      linear-gradient(black 0 0);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity var(--transition);
-  }
-
-  :global(:root[data-pointer]) .portrait:hover::before {
-    opacity: 1;
-  }
 }
 
 .name {
@@ -194,5 +169,32 @@
 
   .links {
     margin-top: var(--space-5);
+  }
+}
+
+/* The sidebar is as tall as the window and does not scroll, so on a low window
+   it first gets tighter, and below that it scrolls away with the page. The
+   heights are what its contents need, measured in English and Slovenian. */
+@media (min-width: 64rem) and (max-height: 48rem) {
+  .sidebar {
+    padding: var(--space-5) 0;
+  }
+}
+
+@media (min-width: 64rem) and (max-height: 41rem) {
+  .portrait {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .sidebar {
+    padding: var(--space-4) 0;
+  }
+}
+
+@media (min-width: 64rem) and (max-height: 36rem) {
+  .sidebar {
+    position: static;
+    height: auto;
   }
 }

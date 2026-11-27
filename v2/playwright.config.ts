@@ -1,8 +1,9 @@
 import { defineConfig, devices } from '@playwright/test'
 
-const port = 4173
+// Not Vite's default preview port, so that a preview of something else is never tested by mistake.
+const port = 4317
 
-// Runs against the real production build, so `npm run build` has to come first.
+// Runs against the real production build, which is made first.
 export default defineConfig({
   testDir: 'e2e',
   forbidOnly: !!process.env.CI,
@@ -15,8 +16,9 @@ export default defineConfig({
     { name: 'phone', use: { ...devices['Pixel 7'] } },
   ],
   webServer: {
-    command: `npx vite preview --host 127.0.0.1 --port ${port} --strictPort`,
+    command: `npm run build && npx vite preview --host 127.0.0.1 --port ${port} --strictPort`,
     url: `http://127.0.0.1:${port}`,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: false,
+    timeout: 120_000,
   },
 })

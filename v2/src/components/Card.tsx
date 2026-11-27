@@ -1,4 +1,11 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react'
+import {
+  useEffect,
+  useRef,
+  useState,
+  type FocusEvent,
+  type MouseEvent,
+  type ReactNode,
+} from 'react'
 import type { Link } from '../content/content.ts'
 import styles from './Card.module.css'
 
@@ -87,10 +94,15 @@ export function Card({
       tabIndex={expandable ? 0 : undefined}
       {...(expandable
         ? {
+            // The card stays open while either the pointer or the focus is on it.
             onMouseEnter: openSoon,
-            onMouseLeave: closeLater,
+            onMouseLeave: (event: MouseEvent<HTMLLIElement>) => {
+              if (!event.currentTarget.contains(document.activeElement)) closeLater()
+            },
             onFocus: () => setOpenAfter(true, 0),
-            onBlur: closeLater,
+            onBlur: (event: FocusEvent<HTMLLIElement>) => {
+              if (!event.currentTarget.matches(':hover')) closeLater()
+            },
           }
         : {})}
     >

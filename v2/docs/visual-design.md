@@ -89,6 +89,8 @@ The choice made with the toggle is saved in the browser's local storage under `t
 ## Accessibility
 
 - Text contrast meets WCAG AA on both the dark and the light background.
+- The folded part of a compact job row is clipped, not hidden, so a screen reader reads it without opening the row.
+- The footer is a landmark of its own, beside the main content.
 - Every interactive element is reachable by keyboard and has a visible focus outline. The theme toggle has no accessible name and is announced as "button"; every other link and button has a name.
 - Section navigation uses real links and headings, so it works without JavaScript.
 
@@ -106,7 +108,7 @@ Agreed on 2026-11-26.
 Agreed on 2026-11-27.
 
 7. **Projects, not Skills.** The third section shows personal projects. v1's skills grid is not carried over.
-8. **Older jobs.** The four oldest jobs are compact rows without tags. The student delivery job is dropped.
+8. **Older jobs.** The four oldest jobs are compact rows. Their tags show only while a row is unfolded. The student delivery job is dropped.
 9. **Current job.** Shown as "Present".
 10. **Languages.** The page is published in English and in Slovenian; the .com and the .si domain are both available.
 11. **Shared text with the CV.** The page and the CV use nearly the same text. The CV's print layout follows the look of this page.
@@ -114,7 +116,7 @@ Agreed on 2026-11-27.
 12. **How the two languages are served.** The .com domain shows English and the .si domain shows Slovenian, each at its root address. A link next to the contact links leads to the other language.
 13. **Tagline.** "Programmer. Metalhead. LEGO fan." It is on the page only, not in the CV.
 14. **Light and dark, following the device, with a toggle.** Replaces decision 5. The CV is also published as a light PDF for printing, so the page gets a light theme and the PDF takes its look from the page. A first-time visitor sees the theme of their device, and the page follows if the device switches while it is open. The toggle sits after the link to the other language, shows only an icon, and has no name for screen readers; the site's owner decided this. The choice is saved per domain. Amber is the accent in both themes. Details: [Light theme](light-theme.md).
-15. **Pointer effects.** Added on 2026-11-27. The background is a grid of faint dots that scrolls with the page; around the mouse pointer a patch of them turns amber and trails the pointer slightly. On the card under the pointer, and on the portrait, the part of the border nearest the pointer glows amber. Both need a mouse: touch screens show only the plain grid. There is no switch to turn them off; the site's owner decided this. With reduced motion asked for they stay, but without trailing or fading. The code is in `pointerEffects.ts`, the sizes are tokens in `tokens.css`.
+15. **Pointer effects.** Added on 2026-11-27. The background is a grid of faint dots that scrolls with the page; around the mouse pointer a patch of them turns amber and trails the pointer slightly. On the card under the pointer, and on the portrait, the part of the border nearest the pointer glows amber. Both need a mouse: touch screens show only the plain grid. There is no switch to turn them off; the site's owner decided this. With reduced motion asked for they stay, but without trailing or fading. A pen counts as a mouse; a touch ends them until the mouse moves again. The code is in `pointerEffects.ts`, the sizes are tokens in `tokens.css`.
 
 ## Open decisions
 

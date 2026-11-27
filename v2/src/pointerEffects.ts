@@ -1,7 +1,7 @@
 /**
  * Tells the styles where the mouse pointer is. Two effects use it: the patch of
  * amber dots in the page background (global.css) and the glow on the edge of
- * the card or the portrait under the pointer (Card.module.css, Sidebar.module.css).
+ * the card or the portrait under the pointer (global.css).
  */
 
 /** Share of the remaining distance the patch of dots covers per frame. */
@@ -46,6 +46,22 @@ export function startPointerEffects(): void {
     if (moving) requestAnimationFrame(step)
   }
 
+  const forget = () => {
+    pointer = undefined
+    delete root.dataset.pointer
+  }
+
+  // Tells the card or portrait under the pointer where on it the pointer is.
+  const lightEdge = () => {
+    if (!pointer) return
+    const lit = document.elementFromPoint(pointer.x, pointer.y)?.closest('[data-glow]')
+    if (lit instanceof HTMLElement) {
+      const box = lit.getBoundingClientRect()
+      lit.style.setProperty('--glow-x', `${pointer.x - box.left}px`)
+      lit.style.setProperty('--glow-y', `${pointer.y - box.top}px`)
+    }
+  }
+
   const follow = () => {
     if (!moving) {
       moving = true
@@ -54,28 +70,38 @@ export function startPointerEffects(): void {
   }
 
   window.addEventListener('pointermove', (event) => {
-    // A finger has no resting place, so touch gets no patch and no glow.
-    if (event.pointerType !== 'mouse') return
+    // A finger has no resting place, so touch gets no patch and no glow. A pen
+    // hovers like a mouse.
+    if (event.pointerType === 'touch') {
+      forget()
+      return
+    }
     const at = { x: event.clientX, y: event.clientY }
     // The patch appears under the pointer; it does not fly in from a corner.
     if (!pointer) patch = target(at)
     pointer = at
     root.dataset.pointer = ''
     follow()
+    lightEdge()
+  })
 
-    const lit = event.target instanceof Element ? event.target.closest('[data-glow]') : null
-    if (lit instanceof HTMLElement) {
-      const box = lit.getBoundingClientRect()
-      lit.style.setProperty('--glow-x', `${at.x - box.left}px`)
-      lit.style.setProperty('--glow-y', `${at.y - box.top}px`)
-    }
+  // On a device with both, a touch ends what the mouse started: a tapped card
+  // would otherwise glow where the mouse last was.
+  window.addEventListener('pointerdown', (event) => {
+    if (event.pointerType === 'touch') forget()
   })
 
   // Scrolling moves the page under a pointer that stays still.
-  window.addEventListener('scroll', follow, { passive: true })
+  // It also moves another card under it, and so does a card that folds.
+  window.addEventListener(
+    'scroll',
+    () => {
+      follow()
+      lightEdge()
+    },
+    { passive: true },
+  )
+  document.addEventListener('transitionend', lightEdge)
 
-  root.addEventListener('pointerleave', () => {
-    pointer = undefined
-    delete root.dataset.pointer
-  })
+  root.addEventListener('pointerleave', forget)
 }

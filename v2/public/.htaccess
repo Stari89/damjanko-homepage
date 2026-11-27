@@ -3,5 +3,5 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteCond %{HTTP_HOST} \.si$ [NC]
-  RewriteRule ^$ /sl/index.html [L]
+  RewriteRule ^(index\.html)?$ /sl/index.html [L]
 </IfModule>

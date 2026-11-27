@@ -15,7 +15,7 @@ export function Sidebar({ content }: { content: Content }) {
   return (
     <header className={styles.sidebar}>
       <div>
-        {/* The frame carries the edge glow, which an image cannot (see pointerEffects.ts). */}
+        {/* The frame carries the edge glow, which an image cannot (see global.css). */}
         <div className={styles.portrait} data-glow="">
           <img src={portrait} alt="" width={176} height={176} />
         </div>

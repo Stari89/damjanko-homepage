@@ -4,6 +4,8 @@
 }
 
 .card {
+  /* No edge glow where the card has no border: on narrow and touch screens. */
+  --glow-on: 0;
   display: grid;
   gap: var(--space-2);
   border-radius: var(--radius);
@@ -83,9 +85,10 @@
     visibility var(--transition);
 }
 
+/* The folded part is clipped, not hidden, so that screen readers can read it
+   without opening the card. It holds text only, nothing that takes focus. */
 .more {
   grid-template-rows: 0fr;
-  visibility: hidden;
 }
 
 .less {
@@ -99,7 +102,6 @@
 
 .open .more {
   grid-template-rows: 1fr;
-  visibility: visible;
 }
 
 .open .less {
@@ -169,6 +171,9 @@
   }
 
   .card {
+    /* The edge glow (see global.css) covers the border. */
+    --glow-on: 1;
+    --glow-outset: 1px;
     padding: var(--space-3);
     border: 1px solid transparent;
   }
@@ -178,7 +183,8 @@
     padding-bottom: var(--space-2);
   }
 
-  .list:hover .card:not(:hover) {
+  /* A card that has the keyboard focus stays at full strength. */
+  .list:has(.card:hover) .card:not(:hover, :focus-within) {
     opacity: 0.5;
   }
 
@@ -189,42 +195,5 @@
 
   .card:hover .title {
     color: var(--color-accent);
-  }
-
-  /* The part of the border nearest the pointer glows. This is a ring the size
-     of the border, painted with a glow centred on the pointer; the mask cuts
-     away everything inside the border. pointerEffects.ts sets the position. */
-  .card {
-    position: relative;
-  }
-
-  .card::before {
-    position: absolute;
-    inset: -1px;
-    padding: 1px;
-    border-radius: inherit;
-    background: radial-gradient(
-      circle var(--glow-radius) at var(--glow-x, 50%) var(--glow-y, 50%),
-      var(--color-accent),
-      transparent
-    );
-    content: '';
-    mask:
-      linear-gradient(black 0 0) content-box exclude,
-      linear-gradient(black 0 0);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity var(--transition);
-  }
-
-  /* Only once the pointer's position is known, so the glow never starts in the middle. */
-  :global(:root[data-pointer]) .card:hover::before {
-    opacity: 1;
-  }
-}
-
-@media (min-width: 64rem) and (hover: none) {
-  .list {
-    gap: var(--space-5);
   }
 }

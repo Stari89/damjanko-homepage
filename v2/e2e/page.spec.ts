@@ -105,6 +105,8 @@ test.describe('theme', () => {
   })
 
   test('applies a saved choice before the device setting', async ({ page }) => {
+    // Without the app's script, only the inline script in the page can set the theme.
+    await page.route('**/assets/*.js', (route) => route.abort())
     await page.addInitScript(() => localStorage.setItem('theme', 'light'))
     await page.emulateMedia({ colorScheme: 'dark' })
     await page.goto('/')
@@ -136,13 +138,36 @@ test.describe('theme', () => {
   })
 
   test('a saved choice survives a reload and a device change', async ({ page }) => {
-    await page.emulateMedia({ colorScheme: 'dark' })
+    await page.emulateMedia({ colorScheme: 'light' })
     await page.goto('/')
     await page.getByTestId('theme-toggle').click()
+    expect(await background(page)).toBe(dark)
     await page.reload()
-    expect(await background(page)).toBe(light)
+    expect(await background(page)).toBe(dark)
     await page.emulateMedia({ colorScheme: 'dark' })
+    expect(await background(page)).toBe(dark)
+    await page.emulateMedia({ colorScheme: 'light' })
+    expect(await background(page)).toBe(dark)
+  })
+
+  test('the page and the toggle work when storage cannot be read', async ({ page }) => {
+    const errors: string[] = []
+    page.on('pageerror', (error) => errors.push(error.message))
+    await page.addInitScript(() => {
+      Object.defineProperty(window, 'localStorage', {
+        get() {
+          throw new DOMException('denied', 'SecurityError')
+        },
+      })
+    })
+    await page.emulateMedia({ colorScheme: 'dark' })
+    await page.goto('/')
+    expect(await background(page)).toBe(dark)
+    expect(errors).toEqual([])
+
+    await page.getByTestId('theme-toggle').click()
     expect(await background(page)).toBe(light)
+    expect(errors).toEqual([])
   })
 
   test('the toggle shows a sun in dark and a moon in light', async ({ page }) => {

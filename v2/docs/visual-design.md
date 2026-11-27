@@ -82,7 +82,7 @@ The page shares its text with the CV but is shorter. It has no skills list, no b
 | Corners and borders                    | Slightly rounded cards, hairline borders, no drop shadows                                                            |
 | Motion                                 | Short hover transitions only; none when the visitor's system asks for reduced motion                                 |
 
-All colors, spacing and type sizes are defined once as CSS custom properties. The full list of values for both themes is in `tokens.css` and in [Light theme](light-theme.md).
+All colors, spacing and type sizes are defined once as CSS custom properties. The values for both themes are in `tokens.css`, and the main ones are in [Light theme](light-theme.md).
 
 The choice made with the toggle is saved in the browser's local storage under `theme` and wins over the device setting from then on. There is no way back to following the device. The .com and the .si domain each remember the choice separately, because browser storage is per domain.
 

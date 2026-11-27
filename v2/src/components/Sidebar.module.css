@@ -98,6 +98,9 @@
  * When the contact row is too narrow to hold the group beside the icons, the
  * group takes its own row, without the hairline. The row's own width is
  * measured, not the screen's, because the desktop sidebar is narrow too.
+ * 27rem assumes the row of six contact icons plus the language link and the
+ * toggle needs about 26.6rem (measured with the label "Slovenščina"), so
+ * adding a contact link or a longer label means measuring again.
  */
 @container (max-width: 27rem) {
   .language {

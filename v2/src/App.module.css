@@ -16,19 +16,27 @@
   gap: inherit;
 }
 
-/* The link to the CV as a PDF, under the list of jobs. */
+/* The link to the CV as a PDF, under the list of jobs. It is a flat button: its
+   own background keeps it readable on the dotted page background. */
 .resume {
   display: inline-block;
   margin-top: var(--space-4);
-  padding: var(--space-2) 0;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
   color: var(--color-text-strong);
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   font-weight: 500;
   letter-spacing: 0.05em;
+  transition:
+    color var(--transition),
+    border-color var(--transition);
 }
 
 .resume:hover {
+  border-color: var(--color-accent);
   color: var(--color-accent);
   text-decoration: none;
 }

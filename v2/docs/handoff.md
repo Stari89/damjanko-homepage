@@ -8,9 +8,9 @@ Written on 2026-11-26, when work moved to another computer. It describes where t
 | ----------------------- | ----------------------------------------------------------------------------- |
 | Live site, damjanko.com | v1.1.14, built from `v1/`, deployed by hand to Apache on the NAS              |
 | `v1/`                   | Frozen. Only touched if the live site needs a fix before v2 replaces it       |
-| `v2/`                   | Working page with real layout and partly placeholder content. Not deployed    |
+| `v2/`                   | Working page in English and Slovenian with real content. Not deployed         |
 | Version of v2           | `2.0.0-alpha.0` in `v2/package.json`                                          |
-| Checks on v2            | Formatting, lint, 14 unit tests and 7 browser tests all pass                  |
+| Checks on v2            | Formatting, lint, 37 unit tests and 18 browser tests all pass                 |
 | CI                      | `.github/workflows/v2.yml` runs all of the above on every push touching `v2/` |
 
 ## Setting up on a new computer
@@ -43,10 +43,11 @@ These are settled; the reasons are in the linked documents.
 
 ## What is built in v2
 
-- **Left column:** portrait, name, title, tagline, section links that highlight while scrolling, and GitHub, LinkedIn and email links.
-- **About:** one real paragraph and two filler paragraphs.
-- **Experience:** all eight jobs from v1, as cards with years and technology tags.
-- **Projects:** three filler cards, to show the layout.
+- **Two languages:** English and Slovenian, built as two pages from the same code.
+- **Left column:** portrait, name, title, location, tagline, section links that highlight while scrolling, GitHub, LinkedIn and email links, and a link to the other language.
+- **About:** one paragraph, the CV's summary.
+- **Experience:** seven jobs. The three newest are cards with years, a short paragraph and technology tags; the four oldest are compact rows with one sentence.
+- **Projects:** three personal projects with years, links, a description and tags.
 - **Footer:** how the site is built, a link to the repository, and the version.
 - **Phone layout:** one column, with section headings that stick to the top.
 
@@ -54,24 +55,22 @@ These are settled; the reasons are in the linked documents.
 
 ### Content
 
-Every placeholder is marked with the word `PLACEHOLDER` in `v2/src/content/`.
+The page shares its text with a generic CV, which is written elsewhere in English and Slovenian. The text is written and approved there and reaches this repository as a generated file; see "Content and languages" in [Tech stack](tech-stack.md). No placeholder text is left on the page.
 
-1. **Skills or Projects.** The one open design decision. The current lean is to drop the v1 skills grid and show projects. If so, choose three or four projects and describe them without naming clients.
-2. **About text.** Replace the two filler paragraphs. AI-assisted development should be mentioned here, since it no longer has a skills tile.
-3. **Tagline.** The current one is a stand-in. Decide whether "Metalhead | LEGO fan" from v1 comes back.
-4. **Experience clean-up.** The older jobs still carry v1's tags unchanged, such as "Sublime Text", "Photoshop" and "Food delivery", and spell "Typescript" and "Javascript" differently from the newest job.
-5. **Job end dates.** v1 stored only start dates, so each job's end is set to the next job's start. Correct any job that was followed by a gap.
+1. **About text.** It is the summary of the CVs already sent, which leads with frontend work. It is to be replaced at the source when the generic CV text is written.
+2. **Company names.** Which companies carry "d.o.o." may be revisited.
+3. **Slovenian page text.** The section names, link labels and footer in `v2/src/content/ui.ts` have not been reviewed.
 
 ### Design
 
-6. **Portrait.** The full square photo is shown in a circle, 176 px on desktop and 128 px on phones, so the corners of the frame are clipped. Still open: larger, or a rounded square that shows the whole frame.
-7. **Final look.** Tune the amber shade, spacing and type sizes once the real content is in.
+4. **Portrait.** The full square photo is shown in a circle, 176 px on desktop and 128 px on phones, so the corners of the frame are clipped. Still open: larger, or a rounded square that shows the whole frame.
+5. **Final look.** Tune the amber shade, spacing and type sizes now that the real content is in.
 
 ### Release
 
-8. Set the version to `2.0.0`, build, and copy the contents of `v2/dist` to the Apache document root on the NAS, replacing v1.
-9. Tag the commit `v2.0.0`.
-10. Afterwards, decide whether `v1/` stays in the repository.
+6. Set the version to `2.0.0`, build, and copy the contents of `v2/dist` to the Apache document root that serves both domains, replacing v1. Check that the .si domain shows the Slovenian page.
+7. Tag the commit `v2.0.0`.
+8. Afterwards, decide whether `v1/` stays in the repository.
 
 ## Things worth knowing
 

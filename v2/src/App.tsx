@@ -3,63 +3,60 @@ import { Card, CardList } from './components/Card.tsx'
 import { Footer } from './components/Footer.tsx'
 import { Section } from './components/Section.tsx'
 import { Sidebar } from './components/Sidebar.tsx'
-import { about } from './content/about.ts'
-import { formatRange } from './content/dates.ts'
-import { jobs } from './content/experience.ts'
-import { projects } from './content/projects.ts'
-import { site, type SectionId } from './content/site.ts'
+import { getContent } from './content/content.ts'
+import { formatRange, formatYears } from './content/dates.ts'
+import type { Language } from './content/ui.ts'
 
-function labelOf(id: SectionId): string {
-  const section = site.sections.find((candidate) => candidate.id === id)
-  if (!section) {
-    throw new Error(`Section "${id}" is not listed in site.sections`)
-  }
-  return section.label
-}
+export default function App({ language }: { language: Language }) {
+  const content = getContent(language)
+  const { ui } = content
 
-export default function App() {
   return (
     <div className={styles.page}>
-      <Sidebar />
+      <Sidebar content={content} />
       <main className={styles.content}>
-        <Section id="about" label={labelOf('about')}>
+        <Section id="about" label={ui.sections.about}>
           <div className={styles.prose}>
-            {about.map((paragraph) => (
+            {content.about.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
         </Section>
 
-        <Section id="experience" label={labelOf('experience')}>
+        <Section id="experience" label={ui.sections.experience}>
           <CardList>
-            {jobs.map((job) => (
+            {content.jobs.map((job) => (
               <Card
                 key={job.id}
-                meta={formatRange(job.start, job.end)}
+                meta={formatRange(job.start, job.end, ui.present)}
                 title={job.title}
                 subtitle={job.company}
                 description={job.description}
                 tags={job.tags}
+                compact={job.compact}
+                aria={ui.aria}
               />
             ))}
           </CardList>
         </Section>
 
-        <Section id="projects" label={labelOf('projects')}>
+        <Section id="projects" label={ui.sections.projects}>
           <CardList>
-            {projects.map((project) => (
+            {content.projects.map((project) => (
               <Card
                 key={project.id}
+                meta={formatYears(project.from, project.to)}
                 title={project.title}
-                href={project.href}
+                links={project.links}
                 description={project.description}
                 tags={project.tags}
+                aria={ui.aria}
               />
             ))}
           </CardList>
         </Section>
 
-        <Footer />
+        <Footer ui={ui} />
       </main>
     </div>
   )

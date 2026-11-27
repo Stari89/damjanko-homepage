@@ -1,6 +1,6 @@
 # Visual design
 
-Status: direction and look agreed on 2026-11-26. One item under "Open decisions" is not settled.
+Status: direction and look agreed on 2026-11-26, sections and languages on 2026-11-27.
 
 ## Direction
 
@@ -19,15 +19,16 @@ Two columns, centered, with a maximum width of about 1200 px.
 - Small round portrait
 - Name
 - Title: Senior Software Engineer
+- Location, as a small label
 - One-line tagline
-- Section navigation: About, Experience, Skills. The section currently in view is highlighted.
-- Social links (GitHub, LinkedIn, email) at the bottom
+- Section navigation: About, Experience, Projects. The section currently in view is highlighted.
+- Social links (GitHub, LinkedIn, email) at the bottom, followed by a link to the page in the other language
 
 **Right column, scrolling:**
 
 1. About: two or three short paragraphs
-2. Experience: one card per job
-3. Skills: three groups
+2. Experience: one card per recent job, one compact row per older job
+3. Projects: one card per personal project
 4. Footer: how the site is built, and the version
 
 ### Phone and tablet
@@ -44,13 +45,26 @@ One column. The left column's content becomes the top of the page, the section n
 - Description text only where the entry has one
 - The whole card highlights on hover; the other cards dim slightly
 
-### Skills
+### Compact job row
 
-The reference site has no skills section, so this part is our own design.
+Used for the older jobs, so the page stays short. How many jobs are shown as full cards is set in the CV source; it is three at present.
 
-- Three groups, as in v1: Core stack, Also experienced with, How I work
-- Each skill is a compact chip: logo and name
-- No percentage bars. The group a skill sits in says how strong it is.
+- Date range on the left, as on a card
+- Title and company on one line, in smaller text
+- One optional sentence under it
+- No technology tags
+
+### Project card
+
+- Years on the left, in the same style as a job's date range
+- Title as the heading, linking to the project's first link
+- Description of two or three sentences
+- Any further links as small labels under the description
+- Two to four technology tags
+
+### What the page leaves out
+
+The page shares its text with the CV but is shorter. It has no skills list, no bullet points per job, no education, no languages, no references and no phone number, and it shows years, not months.
 
 ## Look
 
@@ -84,6 +98,17 @@ Agreed on 2026-11-26.
 5. **Light theme.** None. The site is dark only.
 6. **Credit.** None. The footer does not mention the reference site.
 
+Agreed on 2026-11-27.
+
+7. **Projects, not Skills.** The third section shows personal projects. v1's skills grid is not carried over.
+8. **Older jobs.** The four oldest jobs are compact rows without tags. The student delivery job is dropped.
+9. **Current job.** Shown as "Present".
+10. **Languages.** The page is published in English and in Slovenian; the .com and the .si domain are both available.
+11. **Shared text with the CV.** The page and the CV use nearly the same text. The CV's print layout follows the look of this page.
+
+12. **How the two languages are served.** The .com domain shows English and the .si domain shows Slovenian, each at its root address. A link next to the contact links leads to the other language.
+13. **Tagline.** "Programmer. Metalhead. LEGO fan." It is on the page only, not in the CV.
+
 ## Open decisions
 
-1. **Skills or Projects.** Whether to replace the Skills section with a Projects section, as on the reference site. Until this is decided, the page shows a Projects section with placeholder text, so the layout can be judged.
+None.

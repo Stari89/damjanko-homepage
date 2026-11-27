@@ -9,12 +9,19 @@ export function yearOf(value: string): number {
   return Number(match[1])
 }
 
-/** "2021 — 2022", "2022 — Present", or "2017" when both ends fall in one year. */
-export function formatRange(start: string, end?: string): string {
+/** "2020 — 2023", or "2022" when there is no end year or both are the same. */
+export function formatYears(from: number, to?: number): string {
+  return to === undefined || to === from ? `${from}` : `${from} — ${to}`
+}
+
+/**
+ * "2021 — 2022", or "2017" when both ends fall in one year. Without an end it
+ * is "2022 — Present", with the given word for "Present".
+ */
+export function formatRange(start: string, end: string | undefined, present: string): string {
   const from = yearOf(start)
   if (end === undefined) {
-    return `${from} — Present`
+    return `${from} — ${present}`
   }
-  const to = yearOf(end)
-  return from === to ? `${from}` : `${from} — ${to}`
+  return formatYears(from, yearOf(end))
 }

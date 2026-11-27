@@ -20,6 +20,15 @@
   font-weight: 500;
 }
 
+.location {
+  margin-top: var(--space-1);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
 .tagline {
   max-width: 20rem;
   margin-top: var(--space-3);
@@ -50,6 +59,12 @@
   display: inline-block;
   padding: var(--space-2) 0;
   color: var(--color-text);
+}
+
+/* The link to the other language is set apart from the contact links by a hairline. */
+.language {
+  padding-left: var(--space-4);
+  border-left: 1px solid var(--color-border);
 }
 
 .link:hover {

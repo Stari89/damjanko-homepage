@@ -44,6 +44,20 @@ Exact versions are pinned in `package.json` and `package-lock.json` when the pro
 
 **Oxlint instead of ESLint.** The official Vite template for React and TypeScript now ships with Oxlint, a much faster linter that needs almost no configuration. v2 follows the template.
 
+## Content and languages
+
+Added on 2026-11-27.
+
+**The text comes from the CV.** The page shares its text with a CV that is kept outside this repository. The CV's build writes the public part of that text to `src/content/cv.generated.json`, in English and Slovenian. That file is never edited here: a change is made at the source and arrives with the next CV build, and the changed file is then committed. Prettier skips it.
+
+**What stays in this repository.** `src/content/ui.ts` holds the text that belongs to the page and not to the CV: section names, link labels, the footer and the two site addresses. `src/content/content.ts` joins the two into the content of the page in one language.
+
+**Two pages, one build.** `npm run build` writes the English page to `dist/index.html` and the Slovenian page to `dist/sl/index.html`. Both use the same scripts, styles and images. A page's language is the `lang` attribute of its HTML, so there is still no router.
+
+**One folder, two domains.** Both domains are served from the same folder. `public/.htaccess` makes the .si domain show the Slovenian page at its root address; it needs Apache's `mod_rewrite` and `AllowOverride`. Each page names the other as its translation, with `hreflang` links.
+
+**Trying Slovenian locally.** `npm run dev` shows English; add `?lang=sl` to the address for Slovenian. `npm run preview` serves the built pages at `/` and `/sl/`.
+
 ## Dropped from v1
 
 | v1 dependency                                         | Replaced by                                                   |

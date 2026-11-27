@@ -1,0 +1,270 @@
+{
+  "_note": "GENERATED from the CV source. Do not edit: changes here are overwritten. Ask for the text to be changed at the source.",
+  "person": {
+    "name": "Damjan Kovačič",
+    "title": {
+      "en": "Senior Software Engineer",
+      "sl": "Višji razvijalec programske opreme"
+    },
+    "tagline": {
+      "en": "Programmer. Metalhead. LEGO fan.",
+      "sl": "Programer. Metalc. LEGO fan."
+    },
+    "location": {
+      "en": "Ljubljana, Slovenia",
+      "sl": "Ljubljana"
+    },
+    "email": "letecnez@gmail.com",
+    "links": [
+      {
+        "kind": "github",
+        "href": "https://github.com/Stari89"
+      },
+      {
+        "kind": "linkedin",
+        "href": "https://www.linkedin.com/in/damjanko/"
+      }
+    ]
+  },
+  "about": [
+    {
+      "en": "Software engineer with nearly 14 years of experience, eight of them building single-page applications in TypeScript, first with Angular and then with React. I am comfortable across the stack, with .NET, Node.js and SQL behind the front end and React Native on mobile, and I work with AI-assisted development daily. I like to own a piece of work end to end: understand the need, build it properly, and stay responsible for it afterwards. I am at my best in a small team that skips the fluff and gets things done.",
+      "sl": "Višji razvijalec programske opreme s skoraj 14 leti izkušenj, od tega 8 let frontend razvoja, večinoma SPA aplikacij v TypeScriptu (Angular od leta 2018, React od leta 2021). Full-stack izkušnje: .NET, Node.js in SQL na backendu, React Native za mobilne aplikacije. Pri razvoju vsak dan uporabljam AI orodja. Naloge prevzemam v celoti, od zahtev do produkcije in vzdrževanja. Najraje delam v manjših ekipah."
+    }
+  ],
+  "jobs": [
+    {
+      "id": "biosistemika",
+      "compact": false,
+      "start": "2022-06",
+      "title": {
+        "en": "Senior Software Engineer",
+        "sl": "višji razvijalec programske opreme"
+      },
+      "company": {
+        "en": "BioSistemika d.o.o.",
+        "sl": "BioSistemika d.o.o."
+      },
+      "description": {
+        "en": "Software for laboratories and the life sciences industry. React and TypeScript front ends at first, full-stack Blazor and .NET since 2023. Most recently full-stack development of an experiment and sample management system for a pharmaceutical customer, with instrument integrations, audit trail and reporting.",
+        "sl": "Razvoj programske opreme za laboratorije in farmacevtsko industrijo. Sprva frontend v Reactu in TypeScriptu, od leta 2023 full-stack razvoj v Blazorju in .NET. Nazadnje full-stack razvoj sistema za vodenje poskusov in vzorcev za stranko iz farmacevtske industrije, z integracijami instrumentov, revizijsko sledljivostjo in poročili."
+      },
+      "tags": [
+        "C#",
+        ".NET",
+        "ASP.NET Core",
+        "Blazor",
+        "Entity Framework Core",
+        "MS SQL",
+        "React",
+        "TypeScript",
+        "Kotlin",
+        "Playwright"
+      ]
+    },
+    {
+      "id": "cosylab",
+      "compact": false,
+      "start": "2021-02",
+      "end": "2022-05",
+      "title": {
+        "en": "Senior Software Engineer",
+        "sl": "višji razvijalec programske opreme"
+      },
+      "company": {
+        "en": "Cosylab d.d.",
+        "sl": "Cosylab d.d."
+      },
+      "description": {
+        "en": "Front-end development of a resource management system for oncology hospitals (main front-end developer).",
+        "sl": "Frontend razvoj sistema za upravljanje virov v onkoloških bolnišnicah (glavni frontend razvijalec)."
+      },
+      "tags": [
+        "React",
+        "TypeScript",
+        "Webpack",
+        "Keycloak",
+        "Docker"
+      ]
+    },
+    {
+      "id": "ineor",
+      "compact": false,
+      "start": "2018-11",
+      "end": "2021-02",
+      "title": {
+        "en": "Software Engineer",
+        "sl": "razvijalec programske opreme"
+      },
+      "company": {
+        "en": "INEOR",
+        "sl": "INEOR"
+      },
+      "description": {
+        "en": "Full-stack development of back-office tools for the online gambling industry.",
+        "sl": "Full-stack razvoj back-office orodij za igralniško industrijo."
+      },
+      "tags": [
+        "Angular",
+        "TypeScript",
+        "RxJS",
+        "C#",
+        "ASP.NET",
+        "MS SQL"
+      ]
+    },
+    {
+      "id": "agitavit",
+      "compact": true,
+      "start": "2017-08",
+      "end": "2018-11",
+      "title": {
+        "en": "Software Engineer",
+        "sl": "razvijalec programske opreme"
+      },
+      "company": {
+        "en": "Agitavit Solutions",
+        "sl": "Agitavit Solutions"
+      },
+      "description": {
+        "en": "Full-stack web development for a pharmaceutical client.",
+        "sl": "Full-stack spletni razvoj za stranko iz farmacevtske industrije."
+      },
+      "tags": []
+    },
+    {
+      "id": "5ka",
+      "compact": true,
+      "start": "2016-10",
+      "end": "2017-07",
+      "title": {
+        "en": "Software Engineer",
+        "sl": "razvijalec programske opreme"
+      },
+      "company": {
+        "en": "5ka digitalni svet",
+        "sl": "5ka digitalni svet"
+      },
+      "description": {
+        "en": "Websites and a custom invoicing system in PHP and MySQL.",
+        "sl": "Spletne strani in sistem za vodenje računov v PHP in MySQL."
+      },
+      "tags": []
+    },
+    {
+      "id": "ekipa2",
+      "compact": true,
+      "start": "2014-10",
+      "end": "2016-08",
+      "title": {
+        "en": "Software Architect",
+        "sl": "razvijalec informacijskih tehnologij II"
+      },
+      "company": {
+        "en": "Outfit7 (Ekipa2 subsidiary)",
+        "sl": "Ekipa2 d.o.o. (Outfit7)"
+      },
+      "description": {
+        "en": "Windows versions of Talking Tom and other games.",
+        "sl": "Igre za Windows platforme, med drugim Talking Tom."
+      },
+      "tags": []
+    },
+    {
+      "id": "net-informatika",
+      "compact": true,
+      "start": "2012-12",
+      "end": "2014-10",
+      "title": {
+        "en": "C# Developer",
+        "sl": "programer / razvijalec .NET C#"
+      },
+      "company": {
+        "en": "NET Informatika d.o.o.",
+        "sl": "NET Informatika d.o.o."
+      },
+      "description": {
+        "en": "Full-stack web and desktop development in C# and .NET.",
+        "sl": "Full-stack web in desktop razvoj v C# in .NET."
+      },
+      "tags": []
+    }
+  ],
+  "projects": [
+    {
+      "id": "izi-crawler",
+      "title": {
+        "en": "Izi Crawler",
+        "sl": "Izi Crawler"
+      },
+      "from": 2024,
+      "to": 2025,
+      "description": {
+        "en": "A pub crawl app built in React 19 and React Native (Expo), with one TypeScript codebase for Android, iOS and the web. On hiatus.",
+        "sl": "Aplikacija za pub crawl, napisana v Reactu 19 in ogrodju React Native (Expo), s skupno kodo v TypeScriptu za Android, iOS in splet. Začasno ustavljen."
+      },
+      "links": [
+        {
+          "kind": "source",
+          "href": "https://github.com/Stari89/izi-crawler"
+        }
+      ],
+      "tags": [
+        "React",
+        "React Native",
+        "Expo",
+        "TypeScript"
+      ]
+    },
+    {
+      "id": "music-game",
+      "title": {
+        "en": "The Music Game",
+        "sl": "The Music Game"
+      },
+      "from": 2022,
+      "description": {
+        "en": "A simple music quiz built in React and TypeScript. A song plays and you guess which film it is from. I play it with friends and coworkers.",
+        "sl": "Preprost glasbeni kviz v Reactu in TypeScriptu. Predvaja pesem, igralci pa ugibajo, iz katerega filma je. Igramo ga s prijatelji in sodelavci."
+      },
+      "links": [
+        {
+          "kind": "website",
+          "href": "https://tmg.dko.si/"
+        },
+        {
+          "kind": "source",
+          "href": "https://github.com/Stari89/music-game"
+        }
+      ],
+      "tags": [
+        "React",
+        "TypeScript"
+      ]
+    },
+    {
+      "id": "lego-pc-case",
+      "title": {
+        "en": "LEGO PC Case",
+        "sl": "Računalniško ohišje iz LEGO kock"
+      },
+      "from": 2020,
+      "to": 2023,
+      "description": {
+        "en": "A PC case built mostly out of LEGO bricks, published as a video series. It combined LEGO building, PC building, 3D modelling and printing, and video capture and editing.",
+        "sl": "Gradnja ohišja, sestavljanje računalnika, 3D modeliranje in 3D tisk, snemanje in montaža."
+      },
+      "links": [
+        {
+          "kind": "video",
+          "href": "https://www.youtube.com/@DamjansWorkshop"
+        }
+      ],
+      "tags": [
+        "3D modelling",
+        "3D printing",
+        "Video editing"
+      ]
+    }
+  ]
+}

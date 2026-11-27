@@ -3,3 +3,4 @@ dist-ssr
 package-lock.json
 test-results
 playwright-report
+src/content/cv.generated.json

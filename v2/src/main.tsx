@@ -5,11 +5,23 @@ import '@fontsource-variable/jetbrains-mono'
 import './styles/tokens.css'
 import './styles/global.css'
 import App from './App.tsx'
+import type { Language } from './content/ui.ts'
+
+/**
+ * The language of a built page is the one its HTML was prerendered in.
+ * The dev server has one page, so there `?lang=sl` switches it to Slovenian.
+ */
+function pageLanguage(): Language {
+  if (import.meta.env.DEV && new URLSearchParams(location.search).get('lang') === 'sl') {
+    document.documentElement.lang = 'sl'
+  }
+  return document.documentElement.lang === 'sl' ? 'sl' : 'en'
+}
 
 const root = document.getElementById('root')!
 const app = (
   <StrictMode>
-    <App />
+    <App language={pageLanguage()} />
   </StrictMode>
 )
 

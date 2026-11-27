@@ -1,0 +1,7 @@
+# Both domains are served from this one folder. The .si domain shows the
+# Slovenian page, which is built into sl/index.html, at its root address.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} \.si$ [NC]
+  RewriteRule ^$ /sl/index.html [L]
+</IfModule>

@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import type { Link } from '../content/content.ts'
 import styles from './Card.module.css'
 
 interface CardProps {
@@ -7,20 +8,38 @@ interface CardProps {
   title: string
   /** Shown after the title, such as a company name. */
   subtitle?: string
-  /** When present, the title links to it. */
-  href?: string
+  /** The title links to the first; the others are listed under the description. */
+  links?: Link[]
   description?: string
-  tags: string[]
+  tags?: string[]
+  /** A short row: title and subtitle on one line, less space around it. */
+  compact?: boolean
+  /** Names of the link and tag lists, read out by screen readers. */
+  aria: { technologies: string; links: string }
 }
 
-export function Card({ meta, title, subtitle, href, description, tags }: CardProps) {
+export function Card({
+  meta,
+  title,
+  subtitle,
+  links = [],
+  description,
+  tags = [],
+  compact = false,
+  aria,
+}: CardProps) {
+  const [titleLink, ...otherLinks] = links
+  const className = [styles.card, !meta && styles.noMeta, compact && styles.compact]
+    .filter(Boolean)
+    .join(' ')
+
   return (
-    <li className={meta ? styles.card : `${styles.card} ${styles.noMeta}`}>
+    <li className={className}>
       {meta && <p className={styles.meta}>{meta}</p>}
       <div>
         <h3 className={styles.title}>
-          {href ? (
-            <a href={href} target="_blank" rel="noreferrer">
+          {titleLink ? (
+            <a href={titleLink.href} target="_blank" rel="noreferrer">
               {title} <span aria-hidden="true">↗</span>
             </a>
           ) : (
@@ -29,8 +48,19 @@ export function Card({ meta, title, subtitle, href, description, tags }: CardPro
           {subtitle && <span className={styles.subtitle}>{subtitle}</span>}
         </h3>
         {description && <p className={styles.description}>{description}</p>}
+        {otherLinks.length > 0 && (
+          <ul className={styles.links} aria-label={aria.links}>
+            {otherLinks.map((link) => (
+              <li key={link.href}>
+                <a className={styles.link} href={link.href} target="_blank" rel="noreferrer">
+                  {link.label} <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
         {tags.length > 0 && (
-          <ul className={styles.tags} aria-label="Technologies">
+          <ul className={styles.tags} aria-label={aria.technologies}>
             {tags.map((tag) => (
               <li key={tag} className={styles.tag}>
                 {tag}

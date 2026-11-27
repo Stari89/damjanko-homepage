@@ -1,14 +1,16 @@
+import type { Ui } from '../content/ui.ts'
 import styles from './Footer.module.css'
 
-export function Footer() {
+export function Footer({ ui }: { ui: Ui }) {
+  const { built, sourcePrefix, sourceLink, sourceSuffix } = ui.footer
   return (
     <footer className={styles.footer}>
       <p>
-        Built with React, TypeScript and Vite. Served by Apache from a NAS at home. The source is on{' '}
+        {built} {sourcePrefix}
         <a href="https://github.com/Stari89/damjanko-homepage" target="_blank" rel="noreferrer">
-          GitHub
+          {sourceLink}
         </a>
-        .
+        {sourceSuffix}
       </p>
       <p className={styles.version}>v{__APP_VERSION__}</p>
     </footer>

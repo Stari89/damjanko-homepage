@@ -5,7 +5,8 @@ const ACTIVATION_LINE = 0.35
 
 /**
  * Returns the id of the section the visitor is currently reading: the last one
- * whose top has passed the activation line, or the last section at the bottom of the page.
+ * whose top has passed the activation line. At the very top of the page it is
+ * the first section, and at the bottom the last.
  */
 export function useActiveSection<Id extends string>(ids: readonly Id[]): Id {
   const [active, setActive] = useState<Id>(ids[0])
@@ -15,6 +16,12 @@ export function useActiveSection<Id extends string>(ids: readonly Id[]): Id {
 
     const update = () => {
       frame = 0
+      // The first section can be so short that the next one already starts
+      // above the activation line when the page has not been scrolled at all.
+      if (window.scrollY <= 2) {
+        setActive(ids[0])
+        return
+      }
       const atBottom =
         window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2
       if (atBottom) {

@@ -1,23 +1,26 @@
 name: release
 
-# Pushing a tag such as v2.0.1 checks, builds and publishes the site to both
-# domains over FTP. The steps by hand are in v2/docs/deployment.md.
+# Pushing a tag such as v2.0.2 checks and builds the site and publishes the
+# build as a release on GitHub. The web host does not accept uploads from
+# GitHub, so a script on the host fetches the newest release every few minutes
+# and installs it: v2/scripts/server-deploy.sh. See v2/docs/deployment.md.
 on:
   push:
     tags:
       - "v*"
 
-# Two releases never upload at the same time.
 concurrency:
   group: release
   cancel-in-progress: false
 
 permissions:
-  contents: read
+  # To create the release.
+  contents: write
 
 jobs:
   release:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     defaults:
       run:
         working-directory: v2
@@ -45,67 +48,38 @@ jobs:
       # Builds first, so dist/ is the tested build.
       - run: npm run test:e2e
 
-      - name: Check that secrets are set
+      - name: Publish the build as a release
         env:
-          FTP_HOST: ${{ secrets.FTP_HOST }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          GH_TOKEN: ${{ github.token }}
         run: |
-          for name in FTP_HOST FTP_USERNAME LFTP_PASSWORD; do
-            if [ -z "${!name}" ]; then
-              echo "::error::A repository secret is missing. FTP_HOST, FTP_USERNAME and FTP_PASSWORD are needed."
-              exit 1
-            fi
-          done
+          # The three files the host's script downloads. Their names are fixed.
+          mkdir "$RUNNER_TEMP/release"
+          tar --owner=0 --group=0 --create --gzip --file "$RUNNER_TEMP/release/site.tar.gz" --directory dist .
+          cd "$RUNNER_TEMP/release"
+          sha256sum site.tar.gz > site.tar.gz.sha256
+          echo "$GITHUB_REF_NAME" > version.txt
+          gh release create "$GITHUB_REF_NAME" site.tar.gz site.tar.gz.sha256 version.txt \
+            --repo "$GITHUB_REPOSITORY" --verify-tag --title "$GITHUB_REF_NAME" \
+            --notes "The built site. The web host fetches it from here and installs it."
 
-      - name: Upload to both domains
-        env:
-          FTP_HOST: ${{ secrets.FTP_HOST }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          # lftp reads the password from this variable, so it is never on a command line.
-          LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          # Each domain's folder, as seen after logging in over FTP. A repository
-          # variable of the same name replaces the default.
-          FOLDER_COM: ${{ vars.FTP_FOLDER_COM || 'domains/damjanko.com/public_html' }}
-          FOLDER_SI: ${{ vars.FTP_FOLDER_SI || 'domains/damjanko.si/public_html' }}
-        run: |
-          sudo apt-get update > /dev/null
-          sudo apt-get install --yes --no-install-recommends lftp > /dev/null
-          for folder in "$FOLDER_COM" "$FOLDER_SI"; do
-            echo "Uploading to $folder"
-            # The connection is encrypted and the server's certificate is checked.
-            # Nothing outside assets/ is ever deleted: other folders live beside the site.
-            # Order: the new assets, then the pages that use them, then the old assets go.
-            lftp --env-password -u "$FTP_USERNAME" "$FTP_HOST" <<EOF
-          set cmd:fail-exit yes
-          set net:max-retries 3
-          set net:timeout 30
-          set ftp:ssl-force yes
-          set ftp:ssl-protect-data yes
-          set ssl:verify-certificate yes
-          set ftp:list-options -a
-          cd "$folder"
-          mirror --reverse --verbose dist/assets assets
-          mirror --reverse --verbose --exclude-glob assets/ dist .
-          mirror --reverse --verbose --delete dist/assets assets
-          bye
-          EOF
-          done
-
-      - name: Check the live site
+      - name: Wait until both domains show the new version
         run: |
           version="${GITHUB_REF_NAME#v}"
-          check() {
-            # $1 address, $2 text the page must contain
-            if ! curl --silent --show-error --fail --max-time 30 "$1" | grep --quiet --fixed-strings "$2"; then
-              echo "::error::$1 does not contain \"$2\"."
-              exit 1
-            fi
-            echo "ok: $1 contains \"$2\""
+          shows() {
+            # $1 address, $2 the language the page must be in
+            page="$(curl --silent --max-time 30 "$1" || true)"
+            grep --quiet --fixed-strings "$version" <<< "$page" &&
+              grep --quiet --fixed-strings "<html lang=\"$2\">" <<< "$page"
           }
-          check https://damjanko.com/ "$version"
-          check https://damjanko.com/ '<html lang="en">'
-          check https://damjanko.si/ "$version"
-          check https://damjanko.si/ '<html lang="sl">'
-          curl --silent --show-error --fail --max-time 30 --output /dev/null https://damjanko.com/cv-en.pdf
-          curl --silent --show-error --fail --max-time 30 --output /dev/null https://damjanko.si/cv-sl.pdf
+          # The host looks for a new release every few minutes.
+          for attempt in $(seq 1 40); do
+            if shows https://damjanko.com/ en && shows https://damjanko.si/ sl; then
+              echo "Both domains show $version."
+              curl --silent --show-error --fail --max-time 30 --output /dev/null https://damjanko.com/cv-en.pdf
+              curl --silent --show-error --fail --max-time 30 --output /dev/null https://damjanko.si/cv-sl.pdf
+              exit 0
+            fi
+            sleep 30
+          done
+          echo "::error::The release is published, but after 20 minutes the live site does not show $version. Look at ~/.damjanko-deploy/deploy.log on the host."
+          exit 1

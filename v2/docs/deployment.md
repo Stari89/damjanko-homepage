@@ -1,6 +1,6 @@
 # Deployment
 
-How v2 is published. A pushed version tag publishes it through GitHub Actions; see [Release](#release). The first deploy was done by hand, and the manual steps remain as a fallback.
+How v2 is published. A pushed version tag publishes it: GitHub Actions builds the site and the host fetches it; see [Release](#release). The first deploy was done by hand, and the manual steps remain as a fallback.
 
 ## Where the site is hosted
 
@@ -67,27 +67,31 @@ If the page shows a server error (500) right after the upload, the server does n
 
 ## Release
 
-A release is published by GitHub Actions when a version tag is pushed.
+A release is published when a version tag is pushed.
 
-1. Set the version in `v2/package.json` to the release number, for example `2.0.1` (`npm version 2.0.1 --no-git-tag-version` also updates the lock file). The footer shows it.
-2. Commit with the version as the message, for example `v2.0.1`, and tag the commit with the same name.
+1. Set the version in `v2/package.json` to the release number, for example `2.0.2` (`npm version 2.0.2 --no-git-tag-version` also updates the lock file). The footer shows it.
+2. Commit with the version as the message, for example `v2.0.2`, and tag the commit with the same name.
 3. Push the commit and the tag.
 
-The workflow `.github/workflows/release.yml` then:
+### What happens then
 
-1. Stops if the tag is not the version in `package.json`.
-2. Runs the formatting check, the lint, the unit tests and the browser tests, which build the site.
-3. Uploads the build to the folder of each domain over FTP with TLS. It never deletes anything outside the site's `assets/` folder, so `planets/` and `plex/` are safe.
-4. Checks that both live pages show the new version and that both PDFs can be fetched.
+The host does not accept connections from GitHub: FTP and SSH do not answer GitHub's machines, the panel answers them with a bot check, and login keys are switched off. So nothing is pushed to the host. The host fetches the release itself.
 
-It needs three repository secrets, set under Settings, Secrets and variables, Actions:
+1. The workflow `.github/workflows/release.yml` stops if the tag is not the version in `package.json`, then runs the formatting check, the lint, the unit tests and the browser tests, which build the site.
+2. It publishes the build as a release on GitHub with three files: `site.tar.gz`, `site.tar.gz.sha256` and `version.txt`.
+3. On the host, cron runs `v2/scripts/server-deploy.sh` every five minutes. It reads `version.txt` of the newest release. If that is not the installed version, it downloads the build, checks it against its checksum, and copies it into the folder of each domain. It never deletes anything outside the site's `assets/` folder, so `planets/` and `plex/` are safe.
+4. The workflow waits up to 20 minutes until both live pages show the new version and both PDFs can be fetched. If they do not, it fails and says so.
 
-| Secret         | Value                                                                                                                                            |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `FTP_HOST`     | The hosting server's own name, the one in the address of the hosting panel. Not `ftp.damjanko.com`: the server's certificate is not valid for it |
-| `FTP_USERNAME` | The FTP user                                                                                                                                     |
-| `FTP_PASSWORD` | Its password                                                                                                                                     |
+No password or key of the host is stored at GitHub.
 
-The workflow expects the two folders at `domains/damjanko.com/public_html` and `domains/damjanko.si/public_html` after logging in. If the FTP user starts somewhere else, set the repository variables `FTP_FOLDER_COM` and `FTP_FOLDER_SI`.
+### The script on the host
+
+Set up once, on 2026-11-27.
+
+- The script is a copy of `v2/scripts/server-deploy.sh`, in the account's home folder as `deploy/server-deploy.sh`. When the script changes in the repository, copy it there again. It must keep its Unix line endings; WinSCP's default binary transfer does that.
+- The cron job, set in the hosting panel under Cron Jobs, runs every five minutes: `/bin/bash "$HOME/deploy/server-deploy.sh"`.
+- The script keeps its state in `~/.damjanko-deploy/`: `version` holds the installed version and `deploy.log` what it did, including why a run failed. It prints nothing, so cron sends no mail.
+- To install a release again, delete `~/.damjanko-deploy/version`; the next run installs the newest release.
+- To stop automatic releases, delete the cron job.
 
 The manual steps above stay valid as a fallback.

@@ -5,6 +5,9 @@ import styles from './Card.module.css'
 /** How long the pointer has to rest on a compact card before it opens. */
 const OPEN_DELAY_MS = 120
 
+/** How long a compact card stays open after the pointer or focus has left it. */
+const CLOSE_DELAY_MS = 500
+
 interface CardProps {
   /** Small label in the left column, such as a date range. */
   meta?: string
@@ -19,8 +22,7 @@ interface CardProps {
   tags?: string[]
   /**
    * A short row: title and subtitle on one line, less space around it. Its
-   * details and tags are hidden until the pointer rests on it or it gets focus;
-   * after that it stays open.
+   * details and tags are shown while the pointer rests on it or it has focus.
    */
   compact?: boolean
   /** Names of the link and tag lists, read out by screen readers. */
@@ -42,17 +44,19 @@ export function Card({
   // Details that only repeat the description would swap a text for itself.
   const details = givenDetails === description ? undefined : givenDetails
   const expandable = compact && (details !== undefined || tags.length > 0)
-  // An opened card stays open. Closing it again would move the cards below it
-  // while the pointer is on them.
   const [open, setOpen] = useState(false)
-  const openTimer = useRef<number | undefined>(undefined)
-  useEffect(() => () => window.clearTimeout(openTimer.current), [])
+  const timer = useRef<number | undefined>(undefined)
+  useEffect(() => () => window.clearTimeout(timer.current), [])
 
-  // The short wait keeps cards from opening while the pointer only passes over them.
-  const openSoon = () => {
-    openTimer.current = window.setTimeout(() => setOpen(true), OPEN_DELAY_MS)
+  // Opening and closing both wait, and each cancels the other. The pointer can
+  // then pass over a card without opening it, and the cards below an open one
+  // do not move the moment the pointer leaves it.
+  const setOpenAfter = (next: boolean, delay: number) => {
+    window.clearTimeout(timer.current)
+    timer.current = window.setTimeout(() => setOpen(next), delay)
   }
-  const cancelOpen = () => window.clearTimeout(openTimer.current)
+  const openSoon = () => setOpenAfter(true, OPEN_DELAY_MS)
+  const closeLater = () => setOpenAfter(false, CLOSE_DELAY_MS)
 
   const className = [
     styles.card,
@@ -79,8 +83,13 @@ export function Card({
     <li
       className={className}
       tabIndex={expandable ? 0 : undefined}
-      {...(expandable && !open
-        ? { onMouseEnter: openSoon, onMouseLeave: cancelOpen, onFocus: () => setOpen(true) }
+      {...(expandable
+        ? {
+            onMouseEnter: openSoon,
+            onMouseLeave: closeLater,
+            onFocus: () => setOpenAfter(true, 0),
+            onBlur: closeLater,
+          }
         : {})}
     >
       {meta && <p className={styles.meta}>{meta}</p>}

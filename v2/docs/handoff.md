@@ -46,7 +46,7 @@ These are settled; the reasons are in the linked documents.
 - **Two languages:** English and Slovenian, built as two pages from the same code.
 - **Left column:** portrait, name, title, location, tagline, section links that highlight while scrolling, GitHub, LinkedIn and email links, and a link to the other language.
 - **About:** one paragraph, the CV's summary.
-- **Experience:** seven jobs. The three newest are cards with years, a short paragraph and technology tags; the four oldest are compact rows with one sentence, which unfold to the full description and tags under the pointer and then stay open.
+- **Experience:** seven jobs. The three newest are cards with years, a short paragraph and technology tags; the four oldest are compact rows with one sentence, which unfold to the full description and tags under the pointer.
 - **Projects:** three personal projects with years, links, a description and tags.
 - **Footer:** how the site is built, a link to the repository, and the version.
 - **Phone layout:** one column, with section headings that stick to the top.

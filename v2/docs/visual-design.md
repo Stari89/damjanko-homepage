@@ -54,7 +54,7 @@ Used for the older jobs, so the page stays short. How many jobs are shown as ful
 - Date range on the left, as on a card
 - Title and company on one line, in smaller text
 - One optional sentence under it
-- When the pointer rests on the row, or it gets keyboard focus or a tap, the row unfolds: the job's full description takes the place of the sentence and its technology tags appear. It then stays open, because folding it again would move the rows below it under the pointer.
+- When the pointer rests on the row, or it gets keyboard focus or a tap, the row unfolds: the job's full description takes the place of the sentence and its technology tags appear. It folds again half a second after the pointer or focus has left it, so that the rows below it do not move the moment the pointer reaches them.
 
 ### Project card
 

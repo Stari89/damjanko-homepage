@@ -4,9 +4,9 @@ Status: agreed on 2026-11-26.
 
 ## What the site is
 
-A personal developer portfolio: one page of mostly static content (introduction, experience, projects), served as plain files by Apache on a personal NAS. There is no backend, no database and no login.
+A personal developer portfolio: one page of mostly static content (introduction, experience, projects), served as plain files by a shared hosting account. There is no backend, no database and no login.
 
-The stack follows from that. Everything is built ahead of time into static files, and the browser needs no server other than Apache.
+The stack follows from that. Everything is built ahead of time into static files, and the browser needs nothing from the server but those files.
 
 ## Chosen stack
 
@@ -38,7 +38,7 @@ Exact versions are pinned in `package.json` and `package-lock.json` when the pro
 
 **No router.** The site is one page. Navigation is anchor links and native smooth scrolling, which replaces `react-router-dom` and `react-router-hash-link`.
 
-**No service worker.** v1's service worker serves stale versions after a deploy. v2 relies on hashed file names and normal HTTP caching.
+**No service worker.** v1's service worker serves stale versions after a deploy. v2 relies on hashed file names and normal HTTP caching. It ships one small `service-worker.js` whose only job is to remove v1's from the browsers of returning visitors.
 
 **Self-hosted assets.** Fonts and logos are served from the site itself. No third-party requests, so no cookie banner and nothing that breaks when a CDN changes.
 
@@ -54,7 +54,7 @@ Added on 2026-11-27.
 
 **Two pages, one build.** `npm run build` writes the English page to `dist/index.html` and the Slovenian page to `dist/sl/index.html`. Both use the same scripts, styles and images. A page's language is the `lang` attribute of its HTML, so there is still no router.
 
-**One folder, two domains.** Both domains are served from the same folder. `public/.htaccess` makes the .si domain show the Slovenian page at its root address; it needs Apache's `mod_rewrite` and `AllowOverride`. Each page names the other as its translation, with `hreflang` links.
+**One build, two domains.** Each domain has its own folder on the host, and the same build is copied into both. `public/.htaccess` makes the .si domain show the Slovenian page at its root address and sends plain HTTP to HTTPS; it needs the server's `mod_rewrite` and `AllowOverride`. Each page names the other as its translation, with `hreflang` links.
 
 **Trying Slovenian locally.** `npm run dev` shows English; add `?lang=sl` to the address for Slovenian. `npm run preview` serves the built pages at `/` and `/sl/`.
 
@@ -74,11 +74,11 @@ Added on 2026-11-27.
 - `npm run dev` starts the local dev server.
 - `npm run build` type-checks and writes the static site to `v2/dist`.
 - `npm run preview` serves `v2/dist` locally to check the real build.
-- Deploy is unchanged: copy the contents of `v2/dist` to the Apache document root on the NAS.
+- Deploy is a manual copy over FTP: the contents of `v2/dist` go into the folder of each domain. See [Deployment](deployment.md).
 
 ## Further decisions
 
 1. **Prerendering.** A plain Vite and React build ships an almost empty `index.html` and draws the page with JavaScript. Search engines and link previews handle real HTML better. The page is therefore rendered to HTML at build time, so the content is in `index.html` and React only adds interactivity on top.
 2. **Analytics.** None at launch. v1's Google Analytics property no longer collects anything, and it is not replaced.
-3. **Automated deploy.** GitHub Actions builds and lints on every push. Publishing to the NAS stays a manual copy.
+3. **Automated deploy.** GitHub Actions builds and lints on every push. Publishing to the host stays a manual copy.
 4. **Tests.** The site has little logic, so tests are few: Vitest checks on the content data and on the small helper functions, and Playwright checks on the built site, on a desktop and a phone screen: the page renders without console errors, the content is in the HTML before JavaScript runs, nothing scrolls sideways, and the theme, the job rows and the pointer effects behave as described.

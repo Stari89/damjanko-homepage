@@ -1,7 +1,13 @@
-# Both domains are served from this one folder. The .si domain shows the
-# Slovenian page, which is built into sl/index.html, at its root address.
+# The same build is copied into the folder of each domain. The .si domain shows
+# the Slovenian page, which is built into sl/index.html, at its root address.
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # Visitors who arrive over plain HTTP are sent to HTTPS. This file sits in the
+  # domain's root folder, so the rule also covers other folders kept there.
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
   RewriteCond %{HTTP_HOST} \.si$ [NC]
   RewriteRule ^(index\.html)?$ /sl/index.html [L]
 </IfModule>

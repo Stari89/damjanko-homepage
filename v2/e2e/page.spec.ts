@@ -192,6 +192,25 @@ for (const { language, path, experience, sections, otherLabel, otherUrl } of pag
   })
 }
 
+test.describe('leftovers of v1', () => {
+  test("the build ships a file that removes v1's service worker", async ({ request }) => {
+    const file = await request.get('/service-worker.js')
+    expect(file.status()).toBe(200)
+    const script = await file.text()
+    expect(script).toContain('registration.unregister()')
+    expect(script).toContain('caches.delete')
+  })
+
+  test('the page itself installs no service worker', async ({ page }) => {
+    await page.goto('/')
+    await page.waitForLoadState('load')
+    const count = await page.evaluate(
+      async () => (await navigator.serviceWorker.getRegistrations()).length,
+    )
+    expect(count).toBe(0)
+  })
+})
+
 test.describe('theme', () => {
   const light = 'rgb(247, 247, 245)'
   const dark = 'rgb(15, 16, 18)'

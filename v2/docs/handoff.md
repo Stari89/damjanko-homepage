@@ -6,11 +6,11 @@ Written on 2026-11-26, when work moved to another computer. It describes where t
 
 | Part                    | State                                                                                   |
 | ----------------------- | --------------------------------------------------------------------------------------- |
-| Live site, damjanko.com | v1.1.14, built from `v1/`, deployed by hand to Apache on the NAS                        |
+| Live site, damjanko.com | v1.1.14, built from `v1/`, deployed by hand over FTP to shared hosting                  |
 | `v1/`                   | Frozen. Only touched if the live site needs a fix before v2 replaces it                 |
 | `v2/`                   | Working page in English and Slovenian with real content. Not deployed                   |
 | Version of v2           | `2.0.0-alpha.0` in `v2/package.json`                                                    |
-| Checks on v2            | Formatting, lint, 60 unit tests and 73 browser tests pass; 19 browser tests are skipped |
+| Checks on v2            | Formatting, lint, 60 unit tests and 77 browser tests pass; 19 browser tests are skipped |
 | CI                      | `.github/workflows/v2.yml` runs all of the above on every push touching `v2/`           |
 
 ## Setting up on a new computer
@@ -68,7 +68,7 @@ The page shares its text with a generic CV, which is written elsewhere in Englis
 
 ### Release
 
-5. Set the version to `2.0.0`, build, and copy the contents of `v2/dist` to the Apache document root that serves both domains, replacing v1. Check that the .si domain shows the Slovenian page.
+5. Set the version to `2.0.0`, build, and copy the contents of `v2/dist` into the folder of each domain, replacing v1. The steps and the checks are in [Deployment](deployment.md).
 6. Tag the commit `v2.0.0`.
 7. Afterwards, decide whether `v1/` stays in the repository.
 

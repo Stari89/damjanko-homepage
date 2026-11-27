@@ -6,6 +6,7 @@ Decisions are written down in [`docs/`](docs):
 
 - [Tech stack](docs/tech-stack.md)
 - [Visual design](docs/visual-design.md)
+- [Deployment](docs/deployment.md)
 - [Handoff](docs/handoff.md): where the work stands and what is left
 
 ### Commands

@@ -10,7 +10,12 @@
   --color-text-strong: #16181b;
   --color-text-muted: #646a73;
   --color-accent: #a85100;
-  --color-accent-soft: rgb(245 184 61 / 18%);
+  --color-accent-soft: rgb(245 184 61 / 45%);
+  /* Bright amber cannot be read as text on a light background, so there it is
+     used for fills only: tag backgrounds, the active section line, selection. */
+  --color-accent-fill: #f5b83d;
+  --color-on-accent-fill: #0f1012;
+  --color-tag-text: var(--color-text-strong);
   --color-bg-veil: rgb(247 247 245 / 85%);
   --show-in-light: block;
   --show-in-dark: none;
@@ -54,6 +59,7 @@
     --color-text-muted: #868c96;
     --color-accent: #f5b83d;
     --color-accent-soft: rgb(245 184 61 / 12%);
+    --color-tag-text: var(--color-accent);
     --color-bg-veil: rgb(15 16 18 / 85%);
     --show-in-light: none;
     --show-in-dark: block;
@@ -70,6 +76,7 @@
   --color-text-muted: #868c96;
   --color-accent: #f5b83d;
   --color-accent-soft: rgb(245 184 61 / 12%);
+  --color-tag-text: var(--color-accent);
   --color-bg-veil: rgb(15 16 18 / 85%);
   --show-in-light: none;
   --show-in-dark: block;

@@ -43,7 +43,11 @@ The values as built. `tokens.css` is the source of truth:
 | `--color-text-strong` | `#eceef1`               | `#16181b`               |
 | `--color-text-muted`  | `#868c96`               | `#646a73`               |
 | `--color-accent`      | `#f5b83d`               | `#a85100`               |
-| `--color-accent-soft` | `rgb(245 184 61 / 12%)` | `rgb(245 184 61 / 18%)` |
+| `--color-accent-soft` | `rgb(245 184 61 / 12%)` | `rgb(245 184 61 / 45%)` |
+| `--color-accent-fill` | `#f5b83d`               | `#f5b83d`               |
+| `--color-tag-text`    | the accent              | `#16181b`               |
+
+Bright amber cannot be read as text on a light background. In the light theme it is therefore used for fills only: the tag backgrounds (with near-black text), the line next to the active section link and the text selection. Links and other amber text use the darker accent.
 
 Text contrast stays at WCAG AA or better in both themes.
 

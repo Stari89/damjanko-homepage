@@ -64,8 +64,8 @@ svg {
 }
 
 ::selection {
-  background: var(--color-accent);
-  color: var(--color-bg);
+  background: var(--color-accent-fill);
+  color: var(--color-on-accent-fill);
 }
 
 @media (prefers-reduced-motion: reduce) {

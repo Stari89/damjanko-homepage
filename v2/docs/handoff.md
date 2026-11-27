@@ -70,7 +70,7 @@ The page shares its text with a generic CV, which is written elsewhere in Englis
 
 5. Set the version to `2.0.0`, build, and copy the contents of `v2/dist` into the folder of each domain, replacing v1. The steps and the checks are in [Deployment](deployment.md).
 6. Tag the commit `v2.0.0`.
-7. Afterwards, decide whether `v1/` stays in the repository.
+7. Remove `v1/` from the repository in the release commit. Decided on 2026-11-27: v1 goes away when v2 is deployed. It stays in the git history and under the tag `v1.1.14`, if that tag exists; otherwise tag its last commit first.
 
 ## Things worth knowing
 

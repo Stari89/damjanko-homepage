@@ -68,5 +68,6 @@ If the page shows a server error (500) right after the upload, the server does n
 ## Release
 
 1. Set the version in `v2/package.json` to the release number, for example `2.0.0`. The footer shows it.
-2. Commit with the version as the message and tag the commit `v2.0.0`.
-3. Build, deploy and run the checks above.
+2. For the first release, remove the `v1/` folder from the repository in the same commit, and the mentions of it in the root `README.md` and in `.github/workflows`. v1 stays in the git history.
+3. Commit with the version as the message and tag the commit `v2.0.0`.
+4. Build, deploy and run the checks above.

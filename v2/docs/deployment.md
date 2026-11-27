@@ -1,6 +1,6 @@
 # Deployment
 
-How v2 is published. The site's owner copies the files over FTP by hand.
+How v2 is published. A pushed version tag publishes it through GitHub Actions; see [Release](#release). The first deploy was done by hand, and the manual steps remain as a fallback.
 
 ## Where the site is hosted
 
@@ -67,7 +67,27 @@ If the page shows a server error (500) right after the upload, the server does n
 
 ## Release
 
-1. Set the version in `v2/package.json` to the release number, for example `2.0.0`. The footer shows it.
-2. For the first release, remove the `v1/` folder from the repository in the same commit, and the mentions of it in the root `README.md` and in `.github/workflows`. v1 stays in the git history.
-3. Commit with the version as the message and tag the commit `v2.0.0`.
-4. Build, deploy and run the checks above.
+A release is published by GitHub Actions when a version tag is pushed.
+
+1. Set the version in `v2/package.json` to the release number, for example `2.0.1` (`npm version 2.0.1 --no-git-tag-version` also updates the lock file). The footer shows it.
+2. Commit with the version as the message, for example `v2.0.1`, and tag the commit with the same name.
+3. Push the commit and the tag.
+
+The workflow `.github/workflows/release.yml` then:
+
+1. Stops if the tag is not the version in `package.json`.
+2. Runs the formatting check, the lint, the unit tests and the browser tests, which build the site.
+3. Uploads the build to the folder of each domain over FTP with TLS. It never deletes anything outside the site's `assets/` folder, so `planets/` and `plex/` are safe.
+4. Checks that both live pages show the new version and that both PDFs can be fetched.
+
+It needs three repository secrets, set under Settings, Secrets and variables, Actions:
+
+| Secret         | Value                                                                                                                                            |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `FTP_HOST`     | The hosting server's own name, the one in the address of the hosting panel. Not `ftp.damjanko.com`: the server's certificate is not valid for it |
+| `FTP_USERNAME` | The FTP user                                                                                                                                     |
+| `FTP_PASSWORD` | Its password                                                                                                                                     |
+
+The workflow expects the two folders at `domains/damjanko.com/public_html` and `domains/damjanko.si/public_html` after logging in. If the FTP user starts somewhere else, set the repository variables `FTP_FOLDER_COM` and `FTP_FOLDER_SI`.
+
+The manual steps above stay valid as a fallback.

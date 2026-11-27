@@ -74,11 +74,11 @@ Added on 2026-11-27.
 - `npm run dev` starts the local dev server.
 - `npm run build` type-checks and writes the static site to `v2/dist`.
 - `npm run preview` serves `v2/dist` locally to check the real build.
-- Deploy is a manual copy over FTP: the contents of `v2/dist` go into the folder of each domain. See [Deployment](deployment.md).
+- Deploy: pushing a version tag makes GitHub Actions copy the contents of `v2/dist` into the folder of each domain over FTP. See [Deployment](deployment.md).
 
 ## Further decisions
 
 1. **Prerendering.** A plain Vite and React build ships an almost empty `index.html` and draws the page with JavaScript. Search engines and link previews handle real HTML better. The page is therefore rendered to HTML at build time, so the content is in `index.html` and React only adds interactivity on top.
 2. **Analytics.** None at launch. v1's Google Analytics property no longer collects anything, and it is not replaced.
-3. **Automated deploy.** GitHub Actions builds and lints on every push. Publishing to the host stays a manual copy.
+3. **Automated deploy.** GitHub Actions checks every push. Since 2026-11-27 a pushed version tag also publishes the site over FTP; see [Deployment](deployment.md).
 4. **Tests.** The site has little logic, so tests are few: Vitest checks on the content data and on the small helper functions, and Playwright checks on the built site, on a desktop and a phone screen: the page renders without console errors, the content is in the HTML before JavaScript runs, nothing scrolls sideways, and the theme, the job rows and the pointer effects behave as described.

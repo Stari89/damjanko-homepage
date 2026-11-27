@@ -4,14 +4,14 @@ Written on 2026-11-26, when work moved to another computer. It describes where t
 
 ## Where things stand
 
-| Part          | State                                                                                            |
-| ------------- | ------------------------------------------------------------------------------------------------ |
-| Live site     | v2, built from `v2/`, copied by hand over FTP to shared hosting; see [Deployment](deployment.md) |
-| `v1/`         | Removed from the repository at the release of 2.0.0. Its last state is under the tag `v1.1.14`   |
-| `v2/`         | The page in English and Slovenian                                                                |
-| Version of v2 | `2.0.0` in `v2/package.json`, tagged `v2.0.0`                                                    |
-| Checks on v2  | Formatting, lint, 60 unit tests and 78 browser tests pass; 20 browser tests are skipped          |
-| CI            | `.github/workflows/v2.yml` runs all of the above on every push touching `v2/`                    |
+| Part          | State                                                                                                                                        |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Live site     | v2, built from `v2/`, copied by hand over FTP to shared hosting; see [Deployment](deployment.md)                                             |
+| `v1/`         | Removed from the repository at the release of 2.0.0. Its last state is under the tag `v1.1.14`                                               |
+| `v2/`         | The page in English and Slovenian                                                                                                            |
+| Version of v2 | `2.0.0` in `v2/package.json`, tagged `v2.0.0`                                                                                                |
+| Checks on v2  | Formatting, lint, 60 unit tests and 78 browser tests pass; 20 browser tests are skipped                                                      |
+| CI            | `.github/workflows/v2.yml` runs all of the above on every push touching `v2/`; `release.yml` publishes the site when a version tag is pushed |
 
 ## Setting up on a new computer
 

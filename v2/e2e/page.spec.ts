@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test'
+import { expect, test, type Page } from '@playwright/test'
 
 // The built site has one page per language. On the live site each is the root
 // of its own domain; here both are reached by path.
@@ -77,3 +77,46 @@ for (const { language, path, experience, sections, otherLabel, otherUrl } of pag
     })
   })
 }
+
+test.describe('theme', () => {
+  const light = 'rgb(247, 247, 245)'
+  const dark = 'rgb(15, 16, 18)'
+  const background = (page: Page) =>
+    page.evaluate(() => getComputedStyle(document.body).backgroundColor)
+
+  test('is light on a light device', async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'light' })
+    await page.goto('/')
+    expect(await background(page)).toBe(light)
+  })
+
+  test('is dark on a dark device', async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'dark' })
+    await page.goto('/')
+    expect(await background(page)).toBe(dark)
+  })
+
+  test('follows the device while open', async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'light' })
+    await page.goto('/')
+    expect(await background(page)).toBe(light)
+    await page.emulateMedia({ colorScheme: 'dark' })
+    expect(await background(page)).toBe(dark)
+  })
+
+  test('applies a saved choice before the device setting', async ({ page }) => {
+    await page.addInitScript(() => localStorage.setItem('theme', 'light'))
+    await page.emulateMedia({ colorScheme: 'dark' })
+    await page.goto('/')
+    await expect(page.locator('html')).toHaveAttribute('data-theme', 'light')
+    expect(await background(page)).toBe(light)
+  })
+
+  test('ignores a saved value it does not know', async ({ page }) => {
+    await page.addInitScript(() => localStorage.setItem('theme', 'blue'))
+    await page.emulateMedia({ colorScheme: 'dark' })
+    await page.goto('/')
+    await expect(page.locator('html')).not.toHaveAttribute('data-theme')
+    expect(await background(page)).toBe(dark)
+  })
+})

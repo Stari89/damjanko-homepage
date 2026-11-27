@@ -1,14 +1,19 @@
 /* Design tokens. Every color, font and spacing value used by components comes from here. */
 :root {
-  /* Color */
-  --color-bg: #0f1012;
-  --color-surface: #17191c;
-  --color-border: #26292e;
-  --color-text: #a3a8b0;
-  --color-text-strong: #eceef1;
-  --color-text-muted: #868c96;
-  --color-accent: #f5b83d;
-  --color-accent-soft: rgb(245 184 61 / 12%);
+  /* Color: the light theme. The dark values below apply when the device prefers
+     dark and no light choice is saved, or when data-theme="dark" is set. */
+  color-scheme: light;
+  --color-bg: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-border: #dfe1e4;
+  --color-text: #4b5159;
+  --color-text-strong: #16181b;
+  --color-text-muted: #646a73;
+  --color-accent: #8a5a00;
+  --color-accent-soft: rgb(138 90 0 / 10%);
+  --color-bg-veil: rgb(247 247 245 / 85%);
+  --show-in-light: block;
+  --show-in-dark: none;
 
   /* Type */
   --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -34,4 +39,38 @@
 
   /* Layout */
   --page-max-width: 75rem;
+}
+
+/* The two dark blocks must stay identical: CSS cannot share one rule between a
+   media query and an attribute selector. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --color-bg: #0f1012;
+    --color-surface: #17191c;
+    --color-border: #26292e;
+    --color-text: #a3a8b0;
+    --color-text-strong: #eceef1;
+    --color-text-muted: #868c96;
+    --color-accent: #f5b83d;
+    --color-accent-soft: rgb(245 184 61 / 12%);
+    --color-bg-veil: rgb(15 16 18 / 85%);
+    --show-in-light: none;
+    --show-in-dark: block;
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-bg: #0f1012;
+  --color-surface: #17191c;
+  --color-border: #26292e;
+  --color-text: #a3a8b0;
+  --color-text-strong: #eceef1;
+  --color-text-muted: #868c96;
+  --color-accent: #f5b83d;
+  --color-accent-soft: rgb(245 184 61 / 12%);
+  --color-bg-veil: rgb(15 16 18 / 85%);
+  --show-in-light: none;
+  --show-in-dark: block;
 }

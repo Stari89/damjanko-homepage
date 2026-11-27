@@ -10,7 +10,7 @@ Written on 2026-11-26, when work moved to another computer. It describes where t
 | `v1/`                   | Frozen. Only touched if the live site needs a fix before v2 replaces it       |
 | `v2/`                   | Working page in English and Slovenian with real content. Not deployed         |
 | Version of v2           | `2.0.0-alpha.0` in `v2/package.json`                                          |
-| Checks on v2            | Formatting, lint, 37 unit tests and 18 browser tests all pass                 |
+| Checks on v2            | Formatting, lint, 41 unit tests and 18 browser tests all pass                 |
 | CI                      | `.github/workflows/v2.yml` runs all of the above on every push touching `v2/` |
 
 ## Setting up on a new computer
@@ -59,18 +59,17 @@ The page shares its text with a generic CV, which is written elsewhere in Englis
 
 1. **About text.** It is the summary of the CVs already sent, which leads with frontend work. It is to be replaced at the source when the generic CV text is written.
 2. **Company names.** Which companies carry "d.o.o." may be revisited.
-3. **Slovenian page text.** The section names, link labels and footer in `v2/src/content/ui.ts` have not been reviewed.
 
 ### Design
 
-4. **Portrait.** The full square photo is shown in a circle, 176 px on desktop and 128 px on phones, so the corners of the frame are clipped. Still open: larger, or a rounded square that shows the whole frame.
-5. **Final look.** Tune the amber shade, spacing and type sizes now that the real content is in.
+3. **Portrait.** The full square photo is shown in a circle, 176 px on desktop and 128 px on phones, so the corners of the frame are clipped. Still open: larger, or a rounded square that shows the whole frame.
+4. **Final look.** Tune the amber shade, spacing and type sizes now that the real content is in.
 
 ### Release
 
-6. Set the version to `2.0.0`, build, and copy the contents of `v2/dist` to the Apache document root that serves both domains, replacing v1. Check that the .si domain shows the Slovenian page.
-7. Tag the commit `v2.0.0`.
-8. Afterwards, decide whether `v1/` stays in the repository.
+5. Set the version to `2.0.0`, build, and copy the contents of `v2/dist` to the Apache document root that serves both domains, replacing v1. Check that the .si domain shows the Slovenian page.
+6. Tag the commit `v2.0.0`.
+7. Afterwards, decide whether `v1/` stays in the repository.
 
 ## Things worth knowing
 

@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest'
-import { getContent } from './content.ts'
+import { getContent, parseFooter } from './content.ts'
 import { formatRange, formatYears, yearOf } from './dates.ts'
-import { languages, sectionIds, siteUrl, ui } from './ui.ts'
+import { languages, sectionIds, siteUrl } from './ui.ts'
 
 function expectUnique(values: string[]) {
   expect(new Set(values).size).toBe(values.length)
@@ -75,6 +75,29 @@ describe.each(languages)('content in "%s"', (language) => {
     for (const id of sectionIds) {
       expectText(content.ui.sections[id])
     }
+  })
+
+  test('the page has its own text', () => {
+    expectText(content.ui.present)
+    expectText(content.ui.otherLanguage.label)
+    expectText(content.ui.footer.link)
+    Object.values(content.ui.aria).forEach(expectText)
+  })
+})
+
+describe('parseFooter', () => {
+  test('splits the sentence around the bracketed link text', () => {
+    expect(parseFooter('The source is on [GitHub].')).toEqual({
+      before: 'The source is on ',
+      link: 'GitHub',
+      after: '.',
+    })
+  })
+
+  test('rejects a sentence without exactly one bracketed part', () => {
+    expect(() => parseFooter('The source is on GitHub.')).toThrow()
+    expect(() => parseFooter('[One] and [two].')).toThrow()
+    expect(() => parseFooter('Empty [].')).toThrow()
   })
 })
 
@@ -151,9 +174,9 @@ describe('projects', () => {
 describe('languages', () => {
   test('each language links to the other one', () => {
     for (const language of languages) {
-      const other = ui[language].otherLanguage.language
+      const other = getContent(language).ui.otherLanguage.language
       expect(other).not.toBe(language)
-      expect(ui[other].otherLanguage.language).toBe(language)
+      expect(getContent(other).ui.otherLanguage.language).toBe(language)
     }
   })
 

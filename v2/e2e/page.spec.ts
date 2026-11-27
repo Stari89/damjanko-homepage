@@ -8,7 +8,7 @@ const pages = [
     path: '/',
     experience: 'Experience',
     sections: 'Sections',
-    otherLabel: 'Slovensko',
+    otherLabel: 'Slovenščina',
     otherUrl: 'https://damjanko.si/',
   },
   {
@@ -35,6 +35,7 @@ for (const { language, path, experience, sections, otherLabel, otherUrl } of pag
       await page.goto(path)
 
       await expect(page.locator('html')).toHaveAttribute('lang', language)
+      await expect(page).toHaveTitle('Damjan Kovačič')
       await expect(page.getByRole('heading', { level: 1 })).toHaveText('Damjan Kovačič')
       for (const id of ['about', 'experience', 'projects']) {
         await expect(page.locator(`section#${id}`)).toBeAttached()

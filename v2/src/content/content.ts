@@ -1,7 +1,7 @@
 // Turns the generated CV file into the content of the page in one language.
 // cv.generated.json is written by the CV build and is never edited here.
 import generated from './cv.generated.json'
-import { ui, type Language, type LinkKind, type Ui } from './ui.ts'
+import { languages, type Language, type SectionId, type Ui } from './ui.ts'
 
 type Localized = Record<Language, string>
 
@@ -20,6 +20,18 @@ interface GeneratedCv {
     tagline?: Localized
     email: string
     links: GeneratedLink[]
+  }
+  /** The page's own text, which the CV does not use. */
+  web: {
+    sections: Record<SectionId, Localized>
+    /** One label for every kind of link in the file, and one for "email". */
+    linkLabels: Record<string, Localized>
+    present: Localized
+    /** Not a translation: each value is that language's name in that language. */
+    languageName: Localized
+    /** A sentence with the text of the repository link in square brackets. */
+    footer: Localized
+    aria: Record<keyof Ui['aria'], Localized>
   }
   about: Localized[]
   jobs: {
@@ -93,19 +105,45 @@ export interface Content {
 
 const cv: GeneratedCv = generated
 
-function isLinkKind(kind: string, labels: Record<LinkKind, string>): kind is LinkKind {
-  return Object.hasOwn(labels, kind)
+/** Splits "The source is on [GitHub]." into the text before, inside and after the brackets. */
+export function parseFooter(sentence: string): Ui['footer'] {
+  const match = /^([^[\]]*)\[([^[\]]+)\]([^[\]]*)$/.exec(sentence)
+  if (!match) {
+    throw new Error(`Expected exactly one [bracketed] link text in the footer, got "${sentence}"`)
+  }
+  return { before: match[1], link: match[2], after: match[3] }
+}
+
+function getUi(language: Language): Ui {
+  const { web } = cv
+  const other = languages.find((candidate) => candidate !== language)!
+  return {
+    sections: {
+      about: web.sections.about[language],
+      experience: web.sections.experience[language],
+      projects: web.sections.projects[language],
+    },
+    present: web.present[language],
+    otherLanguage: { language: other, label: web.languageName[other] },
+    footer: parseFooter(web.footer[language]),
+    aria: {
+      sections: web.aria.sections[language],
+      contact: web.aria.contact[language],
+      technologies: web.aria.technologies[language],
+      links: web.aria.links[language],
+    },
+  }
 }
 
 export function getContent(language: Language): Content {
-  const text = ui[language]
-
-  const toLink = ({ kind, href }: GeneratedLink): Link => {
-    if (!isLinkKind(kind, text.links)) {
-      throw new Error(`cv.generated.json has a link of unknown kind "${kind}"`)
+  const labelOf = (kind: string): string => {
+    if (!Object.hasOwn(cv.web.linkLabels, kind)) {
+      throw new Error(`cv.generated.json has no label for links of kind "${kind}"`)
     }
-    return { label: text.links[kind], href }
+    return cv.web.linkLabels[kind][language]
   }
+
+  const toLink = ({ kind, href }: GeneratedLink): Link => ({ label: labelOf(kind), href })
 
   return {
     language,
@@ -115,7 +153,7 @@ export function getContent(language: Language): Content {
     tagline: cv.person.tagline?.[language],
     links: [
       ...cv.person.links.map(toLink),
-      { label: text.links.email, href: `mailto:${cv.person.email}` },
+      { label: labelOf('email'), href: `mailto:${cv.person.email}` },
     ],
     about: cv.about.map((paragraph) => paragraph[language]),
     jobs: cv.jobs.map((job) => ({
@@ -137,6 +175,6 @@ export function getContent(language: Language): Content {
       links: project.links.map(toLink),
       tags: project.tags,
     })),
-    ui: text,
+    ui: getUi(language),
   }
 }

@@ -26,6 +26,78 @@
       }
     ]
   },
+  "web": {
+    "sections": {
+      "about": {
+        "en": "About",
+        "sl": "O meni"
+      },
+      "experience": {
+        "en": "Experience",
+        "sl": "Izkušnje"
+      },
+      "projects": {
+        "en": "Projects",
+        "sl": "Projekti"
+      }
+    },
+    "linkLabels": {
+      "github": {
+        "en": "GitHub",
+        "sl": "GitHub"
+      },
+      "linkedin": {
+        "en": "LinkedIn",
+        "sl": "LinkedIn"
+      },
+      "email": {
+        "en": "Email",
+        "sl": "E-pošta"
+      },
+      "source": {
+        "en": "Source",
+        "sl": "Izvorna koda"
+      },
+      "website": {
+        "en": "Website",
+        "sl": "Spletna stran"
+      },
+      "video": {
+        "en": "Video",
+        "sl": "Video"
+      }
+    },
+    "present": {
+      "en": "Present",
+      "sl": "danes"
+    },
+    "languageName": {
+      "en": "English",
+      "sl": "Slovenščina"
+    },
+    "footer": {
+      "en": "Built with React, TypeScript and Vite. The source is on [GitHub].",
+      "sl": "Narejeno z Reactom, TypeScriptom in Vitom. Izvorna koda je na [GitHubu]."
+    },
+    "aria": {
+      "sections": {
+        "en": "Sections",
+        "sl": "Razdelki"
+      },
+      "contact": {
+        "en": "Contact",
+        "sl": "Kontakt"
+      },
+      "technologies": {
+        "en": "Technologies",
+        "sl": "Tehnologije"
+      },
+      "links": {
+        "en": "Links",
+        "sl": "Povezave"
+      }
+    }
+  },
   "about": [
     {
       "en": "Software engineer with nearly 14 years of experience, eight of them building single-page applications in TypeScript, first with Angular and then with React. I am comfortable across the stack, with .NET, Node.js and SQL behind the front end and React Native on mobile, and I work with AI-assisted development daily. I like to own a piece of work end to end: understand the need, build it properly, and stay responsible for it afterwards. I am at my best in a small team that skips the fluff and gets things done.",

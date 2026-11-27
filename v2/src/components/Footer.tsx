@@ -1,16 +1,16 @@
-import type { Ui } from '../content/ui.ts'
+import { repositoryUrl, type Ui } from '../content/ui.ts'
 import styles from './Footer.module.css'
 
 export function Footer({ ui }: { ui: Ui }) {
-  const { built, sourcePrefix, sourceLink, sourceSuffix } = ui.footer
+  const { before, link, after } = ui.footer
   return (
     <footer className={styles.footer}>
       <p>
-        {built} {sourcePrefix}
-        <a href="https://github.com/Stari89/damjanko-homepage" target="_blank" rel="noreferrer">
-          {sourceLink}
+        {before}
+        <a href={repositoryUrl} target="_blank" rel="noreferrer">
+          {link}
         </a>
-        {sourceSuffix}
+        {after}
       </p>
       <p className={styles.version}>v{__APP_VERSION__}</p>
     </footer>

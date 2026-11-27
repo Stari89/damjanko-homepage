@@ -17,8 +17,8 @@ export function render(language: Language): string {
   )
 }
 
-/** The text of the page's meta description in one language. */
-export function description(language: Language): string {
+/** The page's title and meta description in one language. */
+export function head(language: Language): { title: string; description: string } {
   const content = getContent(language)
-  return `${content.name}, ${content.title}`
+  return { title: content.name, description: `${content.name}, ${content.title}` }
 }

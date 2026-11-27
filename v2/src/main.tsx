@@ -5,6 +5,7 @@ import '@fontsource-variable/jetbrains-mono'
 import './styles/tokens.css'
 import './styles/global.css'
 import App from './App.tsx'
+import { getContent } from './content/content.ts'
 import type { Language } from './content/ui.ts'
 
 /**
@@ -18,10 +19,17 @@ function pageLanguage(): Language {
   return document.documentElement.lang === 'sl' ? 'sl' : 'en'
 }
 
+const language = pageLanguage()
+
+// A built page already has its title; the dev server's page does not.
+if (import.meta.env.DEV) {
+  document.title = getContent(language).name
+}
+
 const root = document.getElementById('root')!
 const app = (
   <StrictMode>
-    <App language={pageLanguage()} />
+    <App language={language} />
   </StrictMode>
 )
 

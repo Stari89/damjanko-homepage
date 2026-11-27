@@ -48,9 +48,9 @@ Exact versions are pinned in `package.json` and `package-lock.json` when the pro
 
 Added on 2026-11-27.
 
-**The text comes from the CV.** The page shares its text with a CV that is kept outside this repository. The CV's build writes the public part of that text to `src/content/cv.generated.json`, in English and Slovenian. That file is never edited here: a change is made at the source and arrives with the next CV build, and the changed file is then committed. Prettier skips it.
+**All text comes from one file.** The page shares its text with a CV that is kept outside this repository. The CV's build writes the public part of that text to `src/content/cv.generated.json`, in English and Slovenian. The file also holds the page's own text, such as section names, link labels and the footer, in its `web` part. That file is never edited here: a change is made at the source and arrives with the next CV build, and the changed file is then committed. Prettier skips it.
 
-**What stays in this repository.** `src/content/ui.ts` holds the text that belongs to the page and not to the CV: section names, link labels, the footer and the two site addresses. `src/content/content.ts` joins the two into the content of the page in one language.
+**What stays in this repository.** No text. `src/content/ui.ts` holds configuration: the languages, the two site addresses, the repository link and the order of the sections. `src/content/content.ts` turns the generated file into the content of the page in one language.
 
 **Two pages, one build.** `npm run build` writes the English page to `dist/index.html` and the Slovenian page to `dist/sl/index.html`. Both use the same scripts, styles and images. A page's language is the `lang` attribute of its HTML, so there is still no router.
 

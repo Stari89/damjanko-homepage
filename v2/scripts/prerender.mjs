@@ -13,9 +13,10 @@ const outputPath = { en: 'dist/index.html', sl: 'dist/sl/index.html' }
 const appPlaceholder = '<!--app-html-->'
 const languageAttribute = '<html lang="en">'
 const descriptionTag = /<meta name="description" content="[^"]*" \/>/
+const titleTag = /<title>[^<]*<\/title>/
 const headEnd = '</head>'
 
-function escapeAttribute(value) {
+function escapeHtml(value) {
   return value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;')
 }
 
@@ -40,7 +41,7 @@ await build({
 })
 
 try {
-  const { render, description, languages, siteUrl } = await import(
+  const { render, head, languages, siteUrl } = await import(
     pathToFileURL(`${ssrDir}/entry-server.js`).href
   )
   const template = await readFile(templatePath, 'utf8')
@@ -53,12 +54,14 @@ try {
     .join('\n    ')
 
   for (const language of languages) {
+    const { title, description } = head(language)
     let html = template
     html = replaceOnce(html, languageAttribute, `<html lang="${language}">`)
+    html = replaceOnce(html, titleTag, `<title>${escapeHtml(title)}</title>`)
     html = replaceOnce(
       html,
       descriptionTag,
-      `<meta name="description" content="${escapeAttribute(description(language))}" />`,
+      `<meta name="description" content="${escapeHtml(description)}" />`,
     )
     html = replaceOnce(
       html,

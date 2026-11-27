@@ -16,6 +16,8 @@
   --color-accent-fill: #f5b83d;
   --color-on-accent-fill: #0f1012;
   --color-tag-text: var(--color-text-strong);
+  /* The bright line is faint on a light background, so it is thicker there. */
+  --active-line-height: 2px;
   --color-bg-veil: rgb(247 247 245 / 85%);
   --show-in-light: block;
   --show-in-dark: none;
@@ -60,6 +62,7 @@
     --color-accent: #f5b83d;
     --color-accent-soft: rgb(245 184 61 / 12%);
     --color-tag-text: var(--color-accent);
+    --active-line-height: 1px;
     --color-bg-veil: rgb(15 16 18 / 85%);
     --show-in-light: none;
     --show-in-dark: block;
@@ -77,6 +80,7 @@
   --color-accent: #f5b83d;
   --color-accent-soft: rgb(245 184 61 / 12%);
   --color-tag-text: var(--color-accent);
+  --active-line-height: 1px;
   --color-bg-veil: rgb(15 16 18 / 85%);
   --show-in-light: none;
   --show-in-dark: block;

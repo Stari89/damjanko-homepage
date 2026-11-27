@@ -156,7 +156,7 @@
   .navLink:hover .navLine,
   .navLink[aria-current] .navLine {
     width: 4rem;
-    height: 2px;
+    height: var(--active-line-height);
     background: var(--color-accent-fill);
   }
 

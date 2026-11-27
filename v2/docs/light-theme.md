@@ -1,6 +1,6 @@
 # Light theme
 
-Status: design agreed on 2026-11-27, not built yet.
+Status: built on 2026-11-27.
 
 ## Why
 
@@ -18,7 +18,7 @@ The CV is also published as a PDF, which is light so that it prints well. The pa
 
 - Changing the PDF. That is done at the CV source.
 - A way back to "follow the device" once a choice is saved.
-- A text name for the toggle. It is an icon only, so screen readers announce it as "button". A name can be added later through the generated content file.
+- A text name for the toggle. It is an icon only, so screen readers announce it as "button". The site's owner decided this. A name can be added later through the generated content file.
 
 ## Approaches
 
@@ -32,9 +32,9 @@ The CV is also published as a PDF, which is light so that it prints well. The pa
 
 `tokens.css` holds the light values in `:root`. The dark values apply in two cases: the device prefers dark and no light choice is saved, or `data-theme="dark"` is set. `color-scheme` follows the same rules, so scrollbars and form controls match.
 
-First proposal for the light values, to be tuned by eye in the browser:
+The values as built. `tokens.css` is the source of truth:
 
-| Token                 | Dark (today)            | Light (proposed)      |
+| Token                 | Dark                    | Light                 |
 | --------------------- | ----------------------- | --------------------- |
 | `--color-bg`          | `#0f1012`               | `#f7f7f5`             |
 | `--color-surface`     | `#17191c`               | `#ffffff`             |
@@ -55,7 +55,7 @@ A few lines of inline script in the `<head>` of `index.html` read `theme` from l
 
 ### Toggle
 
-- An icon button in the row of contact links, after the language link. On phones it is in the same row.
+- An icon button in the row of contact links, after the language link. The two are one group. Where the row is too narrow for the group to fit beside the contact icons (phones, narrow desktop windows), the group is on its own row.
 - It shows a sun in the dark theme and a moon in the light theme (Font Awesome Free, as the other icons).
 - Both icons are in the HTML and CSS shows the right one. The prebuilt page is then correct in either theme before any script runs.
 - A click works out the theme now shown (the attribute, or else the device setting), sets the other one as `data-theme` and saves it.
@@ -70,7 +70,7 @@ A few lines of inline script in the `<head>` of `index.html` read `theme` from l
 - Unit test for the function that picks the other theme.
 - Browser tests: the page is light on a light device and dark on a dark one; the toggle flips the theme; the choice survives a reload and wins over the device setting.
 
-## Documents to update when built
+## Documents updated
 
 - [Visual design](visual-design.md): decision 5 ("no light theme") is replaced, and the Look table gets both palettes.
 - [Handoff](handoff.md): the toggle in the left column, the test counts.

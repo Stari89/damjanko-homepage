@@ -1,10 +1,10 @@
 # Visual design
 
-Status: direction and look agreed on 2026-11-26, sections and languages on 2026-11-27.
+Status: direction and look agreed on 2026-11-26, sections, languages and the light theme on 2026-11-27.
 
 ## Direction
 
-Dark, minimal, one page. The layout is modeled on [brittanychiang.com](https://brittanychiang.com): a fixed column with the name and navigation on the left, and the content scrolling on the right.
+Light and dark, minimal, one page. A first-time visitor sees the theme their device is set to, and a toggle switches to the other one. The layout is modeled on [brittanychiang.com](https://brittanychiang.com): a fixed column with the name and navigation on the left, and the content scrolling on the right.
 
 The layout is borrowed; the colors, type and details are our own, so the site does not read as a copy.
 
@@ -22,7 +22,7 @@ Two columns, centered, with a maximum width of about 1200 px.
 - Location, as a small label
 - One-line tagline
 - Section navigation: About, Experience, Projects. The section currently in view is highlighted.
-- Contact links at the bottom, shown as small icons (Font Awesome Free), followed by a text link to the page in the other language. A link's name is its tooltip and what screen readers read; a kind of link without an icon shows its name as text.
+- Contact links at the bottom, shown as small icons (Font Awesome Free), followed by a text link to the page in the other language and the theme toggle, an icon only: a sun while the page is dark, a moon while it is light. The link and the toggle are one group. Where the row is too narrow for the group to fit beside the contact icons, the group is on its own row. A link's name is its tooltip and what screen readers read; a kind of link without an icon shows its name as text. The toggle has no name and is announced as "button"; see Accessibility.
 
 **Right column, scrolling:**
 
@@ -70,23 +70,26 @@ The page shares its text with the CV but is shorter. It has no skills list, no b
 
 ## Look
 
-| Element                                | Choice                                                                               |
-| -------------------------------------- | ------------------------------------------------------------------------------------ |
-| Background                             | Near-black neutral, not navy                                                         |
-| Text                                   | Off-white for headings, muted grey for body text                                     |
-| Accent                                 | Amber, used for links, the active navigation item, tag pills and hover states        |
-| Body and heading font                  | Inter                                                                                |
-| Small labels (dates, tags, navigation) | JetBrains Mono                                                                       |
-| Fonts                                  | Served from the site, no third-party requests                                        |
-| Corners and borders                    | Slightly rounded cards, hairline borders, no drop shadows                            |
-| Motion                                 | Short hover transitions only; none when the visitor's system asks for reduced motion |
+| Element                                | Choice                                                                                                               |
+| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Background                             | Dark: near-black neutral `#0f1012`, not navy. Light: warm off-white `#f7f7f5`                                        |
+| Cards                                  | Dark: `#17191c`. Light: white                                                                                        |
+| Text                                   | Headings `#eceef1` on dark, `#16181b` on light; body text muted grey in both                                         |
+| Accent                                 | Amber: `#f5b83d` on dark, `#8a5a00` on light. Used for links, the active navigation item, tag pills and hover states |
+| Body and heading font                  | Inter                                                                                                                |
+| Small labels (dates, tags, navigation) | JetBrains Mono                                                                                                       |
+| Fonts                                  | Served from the site, no third-party requests                                                                        |
+| Corners and borders                    | Slightly rounded cards, hairline borders, no drop shadows                                                            |
+| Motion                                 | Short hover transitions only; none when the visitor's system asks for reduced motion                                 |
 
-All colors, spacing and type sizes are defined once as CSS custom properties.
+All colors, spacing and type sizes are defined once as CSS custom properties. The full list of values for both themes is in `tokens.css` and in [Light theme](light-theme.md).
+
+The choice made with the toggle is saved in the browser's local storage under `theme` and wins over the device setting from then on. There is no way back to following the device. The .com and the .si domain each remember the choice separately, because browser storage is per domain.
 
 ## Accessibility
 
-- Text contrast meets WCAG AA on the dark background.
-- Every interactive element is reachable by keyboard and has a visible focus outline.
+- Text contrast meets WCAG AA on both the dark and the light background.
+- Every interactive element is reachable by keyboard and has a visible focus outline. The theme toggle has no accessible name and is announced as "button"; every other link and button has a name.
 - Section navigation uses real links and headings, so it works without JavaScript.
 
 ## Decisions
@@ -97,7 +100,7 @@ Agreed on 2026-11-26.
 2. **Skill levels.** Dropped. v1's 25/50/75/100 bars are not carried over.
 3. **Portrait.** A small round portrait next to the name.
 4. **Company logos.** Dropped. Employers are shown as text.
-5. **Light theme.** None. The site is dark only.
+5. **Light theme.** None. The site is dark only. Replaced on 2026-11-27 by decision 14.
 6. **Credit.** None. The footer does not mention the reference site.
 
 Agreed on 2026-11-27.
@@ -110,6 +113,7 @@ Agreed on 2026-11-27.
 
 12. **How the two languages are served.** The .com domain shows English and the .si domain shows Slovenian, each at its root address. A link next to the contact links leads to the other language.
 13. **Tagline.** "Programmer. Metalhead. LEGO fan." It is on the page only, not in the CV.
+14. **Light and dark, following the device, with a toggle.** Replaces decision 5. The CV is also published as a light PDF for printing, so the page gets a light theme and the PDF takes its look from the page. A first-time visitor sees the theme of their device, and the page follows if the device switches while it is open. The toggle sits after the link to the other language, shows only an icon, and has no name for screen readers; the site's owner decided this. The choice is saved per domain. Amber is the accent in both themes. Details: [Light theme](light-theme.md).
 
 ## Open decisions
 

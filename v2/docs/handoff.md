@@ -4,14 +4,14 @@ Written on 2026-11-26, when work moved to another computer. It describes where t
 
 ## Where things stand
 
-| Part                    | State                                                                         |
-| ----------------------- | ----------------------------------------------------------------------------- |
-| Live site, damjanko.com | v1.1.14, built from `v1/`, deployed by hand to Apache on the NAS              |
-| `v1/`                   | Frozen. Only touched if the live site needs a fix before v2 replaces it       |
-| `v2/`                   | Working page in English and Slovenian with real content. Not deployed         |
-| Version of v2           | `2.0.0-alpha.0` in `v2/package.json`                                          |
-| Checks on v2            | Formatting, lint, 42 unit tests and 18 browser tests all pass                 |
-| CI                      | `.github/workflows/v2.yml` runs all of the above on every push touching `v2/` |
+| Part                    | State                                                                                  |
+| ----------------------- | -------------------------------------------------------------------------------------- |
+| Live site, damjanko.com | v1.1.14, built from `v1/`, deployed by hand to Apache on the NAS                       |
+| `v1/`                   | Frozen. Only touched if the live site needs a fix before v2 replaces it                |
+| `v2/`                   | Working page in English and Slovenian with real content. Not deployed                  |
+| Version of v2           | `2.0.0-alpha.0` in `v2/package.json`                                                   |
+| Checks on v2            | Formatting, lint, 48 unit tests and 38 browser tests pass; 2 browser tests are skipped |
+| CI                      | `.github/workflows/v2.yml` runs all of the above on every push touching `v2/`          |
 
 ## Setting up on a new computer
 
@@ -39,16 +39,17 @@ The commands are listed in [`../README.md`](../README.md).
 These are settled; the reasons are in the linked documents.
 
 - [Tech stack](tech-stack.md): Vite, React, TypeScript, plain CSS with CSS Modules, content in typed data files, prerendered HTML, no router, no analytics, no service worker.
-- [Visual design](visual-design.md): dark, minimal, one page; fixed left column and scrolling right column; amber accent; Inter and JetBrains Mono; a portrait; no skill levels, no company logos, no light theme, no credit line.
+- [Visual design](visual-design.md): light and dark theme following the device, with a toggle; minimal, one page; fixed left column and scrolling right column; amber accent; Inter and JetBrains Mono; a portrait; no skill levels, no company logos, no credit line.
 
 ## What is built in v2
 
 - **Two languages:** English and Slovenian, built as two pages from the same code.
-- **Left column:** portrait, name, title, location, tagline, section links that highlight while scrolling, GitHub, LinkedIn and email links, and a link to the other language.
+- **Left column:** portrait, name, title, location, tagline, section links that highlight while scrolling, GitHub, LinkedIn and email links, a link to the other language, and the theme toggle (a sun or a moon, saved in local storage per domain).
 - **About:** one paragraph, the CV's summary.
 - **Experience:** seven jobs. The three newest are cards with years, a short paragraph and technology tags; the four oldest are compact rows with one sentence, which unfold to the full description and tags under the pointer.
 - **Projects:** three personal projects with years, links, a description and tags.
 - **Footer:** how the site is built, a link to the repository, and the version.
+- **Light and dark theme:** the page follows the device, and the toggle overrides it. See [Light theme](light-theme.md).
 - **Phone layout:** one column, with section headings that stick to the top.
 
 ## What is left

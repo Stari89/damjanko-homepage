@@ -99,6 +99,16 @@
       "en": "English",
       "sl": "Slovenščina"
     },
+    "resume": {
+      "label": {
+        "en": "Download CV (PDF)",
+        "sl": "Prenesi življenjepis (PDF)"
+      },
+      "file": {
+        "en": "cv-en.pdf",
+        "sl": "cv-sl.pdf"
+      }
+    },
     "footer": {
       "en": "Built with React, TypeScript and Vite. The source is on [GitHub].",
       "sl": "Narejeno z Reactom, TypeScriptom in Vitom. Izvorna koda je na [GitHubu]."

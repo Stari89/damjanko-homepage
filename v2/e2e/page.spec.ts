@@ -60,6 +60,22 @@ for (const { language, path, experience, sections, otherLabel, otherUrl } of pag
       expect(html).not.toContain('<meta name="description" content="" />')
     })
 
+    test('the experience section offers the CV in this language as a PDF', async ({
+      page,
+      request,
+    }) => {
+      await page.goto(path)
+      const link = page.locator('#experience a[download]')
+      await expect(link).toBeVisible()
+      await expect(link).toHaveAttribute('href', `/cv-${language}.pdf`)
+      await expect(link).toContainText('PDF')
+
+      const file = await request.get(`/cv-${language}.pdf`)
+      expect(file.status()).toBe(200)
+      expect(file.headers()['content-type']).toContain('application/pdf')
+      expect((await file.body()).subarray(0, 5).toString()).toBe('%PDF-')
+    })
+
     test('links to the page in the other language', async ({ page }) => {
       await page.goto(path)
       await expect(page.getByRole('link', { name: otherLabel })).toHaveAttribute('href', otherUrl)

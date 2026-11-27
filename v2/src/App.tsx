@@ -42,8 +42,9 @@ export default function App({ language }: { language: Language }) {
               ))}
             </CardList>
             {ui.resume && (
-              <a className={styles.resume} href={ui.resume.href} target="_blank" rel="noreferrer">
-                {ui.resume.label} <span aria-hidden="true">↗</span>
+              // The label says "download", so the browser saves the file and does not open it.
+              <a className={styles.resume} href={ui.resume.href} download>
+                {ui.resume.label} <span aria-hidden="true">↓</span>
               </a>
             )}
           </Section>

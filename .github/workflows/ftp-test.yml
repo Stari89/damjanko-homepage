@@ -31,11 +31,20 @@ jobs:
           esac
           echo "This runner's address: $(curl --silent --max-time 10 https://api.ipify.org || echo unknown)"
 
+      - name: Which ports can be reached
+        run: |
+          # 21 FTP, 22 SSH and SFTP, 443 the website, 2222 the hosting panel.
+          for port in 21 22 443 2222; do
+            if timeout 10 bash -c "exec 3<>/dev/tcp/$FTP_HOST/$port" 2> /dev/null; then
+              echo "Port $port answers."
+            else
+              echo "::warning::Port $port does not answer from this runner."
+            fi
+          done
+
       - name: Can the FTP port be reached
         run: |
-          if timeout 20 bash -c "exec 3<>/dev/tcp/$FTP_HOST/21 && head -c 200 <&3 | head -1"; then
-            echo "Port 21 answers."
-          else
+          if ! timeout 10 bash -c "exec 3<>/dev/tcp/$FTP_HOST/21" 2> /dev/null; then
             echo "::error::Port 21 does not answer from this runner. The host may block addresses outside its country."
             exit 1
           fi

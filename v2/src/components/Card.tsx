@@ -1,6 +1,9 @@
-import type { ReactNode } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 import type { Link } from '../content/content.ts'
 import styles from './Card.module.css'
+
+/** How long the pointer has to rest on a compact card before it opens. */
+const OPEN_DELAY_MS = 120
 
 interface CardProps {
   /** Small label in the left column, such as a date range. */
@@ -16,7 +19,8 @@ interface CardProps {
   tags?: string[]
   /**
    * A short row: title and subtitle on one line, less space around it. Its
-   * details and tags are hidden until it is under the pointer or has focus.
+   * details and tags are hidden until the pointer rests on it or it gets focus;
+   * after that it stays open.
    */
   compact?: boolean
   /** Names of the link and tag lists, read out by screen readers. */
@@ -38,11 +42,24 @@ export function Card({
   // Details that only repeat the description would swap a text for itself.
   const details = givenDetails === description ? undefined : givenDetails
   const expandable = compact && (details !== undefined || tags.length > 0)
+  // An opened card stays open. Closing it again would move the cards below it
+  // while the pointer is on them.
+  const [open, setOpen] = useState(false)
+  const openTimer = useRef<number | undefined>(undefined)
+  useEffect(() => () => window.clearTimeout(openTimer.current), [])
+
+  // The short wait keeps cards from opening while the pointer only passes over them.
+  const openSoon = () => {
+    openTimer.current = window.setTimeout(() => setOpen(true), OPEN_DELAY_MS)
+  }
+  const cancelOpen = () => window.clearTimeout(openTimer.current)
+
   const className = [
     styles.card,
     !meta && styles.noMeta,
     compact && styles.compact,
     expandable && styles.expandable,
+    open && styles.open,
   ]
     .filter(Boolean)
     .join(' ')
@@ -59,7 +76,13 @@ export function Card({
 
   return (
     // An expandable card takes focus so that it also opens by keyboard and by tap.
-    <li className={className} tabIndex={expandable ? 0 : undefined}>
+    <li
+      className={className}
+      tabIndex={expandable ? 0 : undefined}
+      {...(expandable && !open
+        ? { onMouseEnter: openSoon, onMouseLeave: cancelOpen, onFocus: () => setOpen(true) }
+        : {})}
+    >
       {meta && <p className={styles.meta}>{meta}</p>}
       <div>
         <h3 className={styles.title}>

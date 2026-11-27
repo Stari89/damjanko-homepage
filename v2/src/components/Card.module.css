@@ -97,15 +97,12 @@
   overflow: hidden;
 }
 
-/* Opens for keyboard focus and for a tap; the pointer is handled further down. */
-.expandable:focus .more,
-.expandable:focus-within .more {
+.open .more {
   grid-template-rows: 1fr;
   visibility: visible;
 }
 
-.expandable:focus .less,
-.expandable:focus-within .less {
+.open .less {
   grid-template-rows: 0fr;
   visibility: hidden;
 }
@@ -192,19 +189,6 @@
 
   .card:hover .title {
     color: var(--color-accent);
-  }
-
-  /* The short delay keeps rows from opening while the pointer only passes over them. */
-  .expandable:hover .more {
-    grid-template-rows: 1fr;
-    visibility: visible;
-    transition-delay: 120ms;
-  }
-
-  .expandable:hover .less {
-    grid-template-rows: 0fr;
-    visibility: hidden;
-    transition-delay: 120ms;
   }
 }
 
